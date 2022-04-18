@@ -1,7 +1,0 @@
-fonts:
-  inputs: ${PROJECT_DIR}/${TARGET_NAME}/Resources/Sources/Fonts
-  outputs:
-    templateName: swift5
-    output: ${PROJECT_DIR}/${TARGET_NAME}/Resources/Generated/FontCollections.swift
-    params:
-        enumName: FontCollections

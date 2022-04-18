@@ -1,0 +1,11 @@
+input_dir: ${PROJECT_DIR}/${TARGET_NAME}/Resources/Sources/
+output_dir: ${PROJECT_DIR}/${TARGET_NAME}/Resources/Generated/
+
+fonts:
+  inputs: Fonts
+  outputs:
+    templateName: swift5
+    output: FontCollections.swift
+    params:
+        enumName: FontCollections
+        fontTypeName: SFont
