@@ -6,5 +6,6 @@ target 'iOSBoilerplate' do
   use_frameworks!
 
   # Pods for iOSBoilerplate
+  pod 'SwiftGen', '~> 6.5.1'
 
 end
