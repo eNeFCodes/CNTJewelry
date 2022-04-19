@@ -20,6 +20,11 @@
 		8F2A204A280D70B80008DB86 /* FontCollections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2A2049280D70B80008DB86 /* FontCollections.swift */; };
 		8F2A204C280D71DA0008DB86 /* Font+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2A204B280D71DA0008DB86 /* Font+Ext.swift */; };
 		8FBB378C280E47F400DB7476 /* APIRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBB378B280E47F400DB7476 /* APIRequestProtocol.swift */; };
+		8FBB378E280E4A3D00DB7476 /* APIResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBB378D280E4A3D00DB7476 /* APIResponseProtocol.swift */; };
+		8FBB3791280E4A9600DB7476 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBB3790280E4A9600DB7476 /* APIError.swift */; };
+		8FBB3793280E4D1800DB7476 /* APIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBB3792280E4D1800DB7476 /* APIRepository.swift */; };
+		8FBB3795280E567900DB7476 /* APIRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBB3794280E567900DB7476 /* APIRepositoryProtocol.swift */; };
+		8FBB3798280E57FC00DB7476 /* APIResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBB3797280E57FC00DB7476 /* APIResponseError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +49,11 @@
 		8FBB377F280E3C0D00DB7476 /* production.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = production.xcconfig; sourceTree = "<group>"; };
 		8FBB3780280E3C0D00DB7476 /* staging.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = staging.xcconfig; sourceTree = "<group>"; };
 		8FBB378B280E47F400DB7476 /* APIRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestProtocol.swift; sourceTree = "<group>"; };
+		8FBB378D280E4A3D00DB7476 /* APIResponseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseProtocol.swift; sourceTree = "<group>"; };
+		8FBB3790280E4A9600DB7476 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		8FBB3792280E4D1800DB7476 /* APIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRepository.swift; sourceTree = "<group>"; };
+		8FBB3794280E567900DB7476 /* APIRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRepositoryProtocol.swift; sourceTree = "<group>"; };
+		8FBB3797280E57FC00DB7476 /* APIResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseError.swift; sourceTree = "<group>"; };
 		92A605BEF9EFD722332A0324 /* Pods-iOSBoilerplate.debug (qa).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSBoilerplate.debug (qa).xcconfig"; path = "Target Support Files/Pods-iOSBoilerplate/Pods-iOSBoilerplate.debug (qa).xcconfig"; sourceTree = "<group>"; };
 		C77105EBC81F4430C0566355 /* Pods-iOSBoilerplate.release (staging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSBoilerplate.release (staging).xcconfig"; path = "Target Support Files/Pods-iOSBoilerplate/Pods-iOSBoilerplate.release (staging).xcconfig"; sourceTree = "<group>"; };
 		DD8EBC154DA91EB63BF12382 /* Pods-iOSBoilerplate.release (production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSBoilerplate.release (production).xcconfig"; path = "Target Support Files/Pods-iOSBoilerplate/Pods-iOSBoilerplate.release (production).xcconfig"; sourceTree = "<group>"; };
@@ -208,9 +218,30 @@
 		8FBB378A280E46C700DB7476 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				8FBB378B280E47F400DB7476 /* APIRequestProtocol.swift */,
+				8FBB3796280E56E200DB7476 /* Protocols */,
+				8FBB378F280E4A8000DB7476 /* Model */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		8FBB378F280E4A8000DB7476 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8FBB3790280E4A9600DB7476 /* APIError.swift */,
+				8FBB3797280E57FC00DB7476 /* APIResponseError.swift */,
+				8FBB3792280E4D1800DB7476 /* APIRepository.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8FBB3796280E56E200DB7476 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8FBB378B280E47F400DB7476 /* APIRequestProtocol.swift */,
+				8FBB378D280E4A3D00DB7476 /* APIResponseProtocol.swift */,
+				8FBB3794280E567900DB7476 /* APIRepositoryProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,10 +383,15 @@
 			files = (
 				8F2A2014280D173E0008DB86 /* AppDelegate.swift in Sources */,
 				8F2A2016280D173E0008DB86 /* SceneDelegate.swift in Sources */,
+				8FBB378E280E4A3D00DB7476 /* APIResponseProtocol.swift in Sources */,
 				8F2A204A280D70B80008DB86 /* FontCollections.swift in Sources */,
 				8F2A204C280D71DA0008DB86 /* Font+Ext.swift in Sources */,
+				8FBB3798280E57FC00DB7476 /* APIResponseError.swift in Sources */,
+				8FBB3791280E4A9600DB7476 /* APIError.swift in Sources */,
 				8FBB378C280E47F400DB7476 /* APIRequestProtocol.swift in Sources */,
 				8F2A2028280D5A690008DB86 /* ContentView.swift in Sources */,
+				8FBB3795280E567900DB7476 /* APIRepositoryProtocol.swift in Sources */,
+				8FBB3793280E4D1800DB7476 /* APIRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
