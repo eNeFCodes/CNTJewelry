@@ -10,11 +10,17 @@ import Combine
 
 class APIRepository: APIRepositoryProtocol {
 
-    static let NetworkQueue = DispatchQueue(label: "com.CNTIOSBootstrapApp.NetworkRequest",
-                                               qos: .background,
-                                               attributes: .concurrent,
-                                               autoreleaseFrequency: .workItem,
-                                               target: .global())
+    static let NetworkRequestQueue = DispatchQueue(label: "com.CNTIOSBootstrapApp.NetworkRequestQueue",
+                                                   qos: .background,
+                                                   attributes: .concurrent,
+                                                   autoreleaseFrequency: .workItem,
+                                                   target: .global())
+
+    static let NetworkRequestCompletionQueue = DispatchQueue(label: "com.CNTIOSBootstrapApp.NetworkRequestCompletionQueue",
+                                                             qos: .userInteractive,
+                                                             attributes: .concurrent,
+                                                             autoreleaseFrequency: .workItem,
+                                                             target: .global())
 
     func request<Request>(api: Request) -> AnyPublisher<APIResponse, Never> where Request: APIRequestProtocol {
         let publisher = PassthroughSubject<APIResponse, Never>()
@@ -28,15 +34,17 @@ class APIRepository: APIRepositoryProtocol {
                    headers: api.headers,
                    interceptor: api.interceptor,
                    requestModifier: api.requestModifier)
-            .response(queue: APIRepository.NetworkQueue) { [weak self] response in
+            .response(queue: APIRepository.NetworkRequestQueue) { [weak self] response in
                 guard let self = self else { return }
                 guard let data = response.data else {
-                    if let error = response.error {
-                        publisher.send(.error(error: .error(error: error)))
-                    } else {
-                        publisher.send(.error(error: .unknown))
+                    APIRepository.NetworkRequestCompletionQueue.async {
+                        if let error = response.error {
+                            publisher.send(.error(error: .error(error: error)))
+                        } else {
+                            publisher.send(.error(error: .unknown))
+                        }
+                        publisher.send(completion: .finished)
                     }
-                    publisher.send(completion: .finished)
                     return
                 }
 
