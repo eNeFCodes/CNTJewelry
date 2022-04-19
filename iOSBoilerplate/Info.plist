@@ -19,5 +19,13 @@
 			</array>
 		</dict>
 	</dict>
+	<key>CFBundleName</key>
+	<string>$(APP_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(APP_IDENTIFIER)</string>
+	<key>APP_ENV</key>
+	<string>$(APP_ENV)</string>
+	<key>APP_ROOT_URL</key>
+	<string>$(APP_ROOT_URL)</string>
 </dict>
 </plist>
