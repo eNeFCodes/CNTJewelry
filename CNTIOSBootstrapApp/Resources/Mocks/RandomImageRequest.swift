@@ -64,14 +64,15 @@ extension RandomImageRequest: APIRequestProtocol {
 
 extension RandomImageRequest {
 
-    func responseProcessor<API>(api: API, publisher: PassthroughSubject<APIResponse, Never>, data: Data) where API : APIRequestProtocol {
+    func responseProcessor<API>(api: API, publisher: PassthroughSubject<APIResponse, Never>, data: Data, shouldFinishImmediately: Bool) where API : APIRequestProtocol {
         if let image = UIImage(data: data) {
-            print("image: ", image)
             publisher.send(.success(data: RandomImage(message: "\(image)")))
-        } else {
-            publisher.send(.error(error: .errorMessage(message: APIError.ErrorTypeConversionFailed)))
-        }
 
-        publisher.send(completion: .finished)
+            if shouldFinishImmediately {
+                publisher.send(completion: .finished)
+            }
+        } else {
+            APIRepository.processErrorAndSuccessOnlyResponse(publisher: publisher, data: data, shouldFinishImmediately: shouldFinishImmediately)
+        }
     }
 }

@@ -14,26 +14,35 @@ class RandomImageFetcher: APIRepository {
     private var subscriptions = Set<AnyCancellable>()
 
     func start() {
-        let publisher = RandomImageFetcher.shared
+        RandomImageFetcher.shared
             .request(api: RandomImageRequest.imageBy1000)
-
-        publisher
-            .map({ response in
-                switch response {
-                case .success(let data):
-                    if let image = data as? RandomImage {
-                        return image.message
-                    }
-                default: break
-                }
-
-                return nil
-            })
-            .replaceNil(with: "unknown")
             .sink(receiveCompletion: { c in
                 print("completion: ", c)
             }, receiveValue: { result in
-                print("result: ", result)
+                switch result {
+                case .success(let data):
+                    if let image = data as? RandomImage {
+                        print("message: ", image.message)
+                    }
+                default: break
+                }
+            })
+            .store(in: &subscriptions)
+    }
+
+    func startMultiple() {
+        RandomImageFetcher.shared
+            .request(apis: [RandomImageRequest.imageBy1000, RandomImageRequest.imageBy2000])
+            .sink(receiveCompletion: { c in
+                print("multile completion: ", c)
+            }, receiveValue: { result in
+                switch result {
+                case .success(let data):
+                    if let image = data as? RandomImage {
+                        print("multile message: ", image.message)
+                    }
+                default: break
+                }
             })
             .store(in: &subscriptions)
     }

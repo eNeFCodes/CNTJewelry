@@ -47,7 +47,9 @@ class APIRepository {
                     return
                 }
 
-                api.responseProcessor(api: api, publisher: publisher, data: data)
+                APIRepository.NetworkRequestCompletionQueue.async {
+                    api.responseProcessor(api: api, publisher: publisher, data: data, shouldFinishImmediately: true)
+                }
             }
 
         return publisher.eraseToAnyPublisher()
@@ -83,7 +85,10 @@ class APIRepository {
                         return
                     }
 
-                    api.responseProcessor(api: api, publisher: publisher, data: data)
+                    APIRepository.NetworkRequestCompletionQueue.async {
+                        api.responseProcessor(api: api, publisher: publisher, data: data, shouldFinishImmediately: false)
+                        group.leave() // send leave dispatch
+                    }
                 }
         }
 
@@ -93,14 +98,19 @@ class APIRepository {
 
         return publisher.eraseToAnyPublisher()
     }
+}
 
-    func processErrorAndSuccessOnlyResponse(publisher: PassthroughSubject<APIResponse, Never>, data: Data) {
+extension APIRepository {
+
+    class func processErrorAndSuccessOnlyResponse(publisher: PassthroughSubject<APIResponse, Never>, data: Data, shouldFinishImmediately: Bool) {
         if let error = try? JSONDecoder().decode(APIResponseError.self, from: data) {
             publisher.send(.error(error: .responseError(error: error)))
         } else {
             publisher.send(.error(error: .errorMessage(message: APIError.ErrorTypeConversionFailed)))
         }
 
-        publisher.send(completion: .finished)
+        if shouldFinishImmediately {
+            publisher.send(completion: .finished)
+        }
     }
 }
