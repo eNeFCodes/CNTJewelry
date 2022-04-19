@@ -18,6 +18,9 @@
 		8F2A2047280D6BB40008DB86 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8F2A2046280D6BB40008DB86 /* swiftgen.yml */; };
 		8F2A204A280D70B80008DB86 /* FontCollections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2A2049280D70B80008DB86 /* FontCollections.swift */; };
 		8F2A204C280D71DA0008DB86 /* Font+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2A204B280D71DA0008DB86 /* Font+Ext.swift */; };
+		8F43CA12280E97DA0011552D /* RandomImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F43CA11280E97DA0011552D /* RandomImageFetcher.swift */; };
+		8F43CA14280E97F80011552D /* RandomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F43CA13280E97F80011552D /* RandomImage.swift */; };
+		8F43CA16280E99CA0011552D /* RandomImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F43CA15280E99CA0011552D /* RandomImageRequest.swift */; };
 		8FBB378C280E47F400DB7476 /* APIRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBB378B280E47F400DB7476 /* APIRequestProtocol.swift */; };
 		8FBB378E280E4A3D00DB7476 /* APIResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBB378D280E4A3D00DB7476 /* APIResponseProtocol.swift */; };
 		8FBB3791280E4A9600DB7476 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBB3790280E4A9600DB7476 /* APIError.swift */; };
@@ -47,6 +50,9 @@
 		8F2A2046280D6BB40008DB86 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = SOURCE_ROOT; };
 		8F2A2049280D70B80008DB86 /* FontCollections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontCollections.swift; sourceTree = "<group>"; };
 		8F2A204B280D71DA0008DB86 /* Font+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Ext.swift"; sourceTree = "<group>"; };
+		8F43CA11280E97DA0011552D /* RandomImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomImageFetcher.swift; sourceTree = "<group>"; };
+		8F43CA13280E97F80011552D /* RandomImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomImage.swift; sourceTree = "<group>"; };
+		8F43CA15280E99CA0011552D /* RandomImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomImageRequest.swift; sourceTree = "<group>"; };
 		8FBB377C280E3C0D00DB7476 /* qa.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = qa.xcconfig; sourceTree = "<group>"; };
 		8FBB377E280E3C0D00DB7476 /* development.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = development.xcconfig; sourceTree = "<group>"; };
 		8FBB377F280E3C0D00DB7476 /* production.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = production.xcconfig; sourceTree = "<group>"; };
@@ -166,7 +172,7 @@
 		8F2A2034280D63BD0008DB86 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8F2A2043280D65720008DB86 /* Mocks */,
+				8F43CA10280E97850011552D /* Mocks */,
 				8F2A2037280D64B40008DB86 /* Sources */,
 				8F2A2036280D64930008DB86 /* Generated */,
 				8F2A201C280D173F0008DB86 /* Assets.xcassets */,
@@ -201,13 +207,6 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		8F2A2043280D65720008DB86 /* Mocks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Mocks;
-			sourceTree = "<group>";
-		};
 		8F2A2044280D65A70008DB86 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +220,16 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		8F43CA10280E97850011552D /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				8F43CA13280E97F80011552D /* RandomImage.swift */,
+				8F43CA15280E99CA0011552D /* RandomImageRequest.swift */,
+				8F43CA11280E97DA0011552D /* RandomImageFetcher.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		8FBB378A280E46C700DB7476 /* Network */ = {
@@ -393,6 +402,9 @@
 				8F2A2016280D173E0008DB86 /* SceneDelegate.swift in Sources */,
 				8FBB378E280E4A3D00DB7476 /* APIResponseProtocol.swift in Sources */,
 				8F2A204A280D70B80008DB86 /* FontCollections.swift in Sources */,
+				8F43CA16280E99CA0011552D /* RandomImageRequest.swift in Sources */,
+				8F43CA12280E97DA0011552D /* RandomImageFetcher.swift in Sources */,
+				8F43CA14280E97F80011552D /* RandomImage.swift in Sources */,
 				8F2A204C280D71DA0008DB86 /* Font+Ext.swift in Sources */,
 				8FBB3798280E57FC00DB7476 /* APIResponseError.swift in Sources */,
 				8FBB3791280E4A9600DB7476 /* APIError.swift in Sources */,

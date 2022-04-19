@@ -6,9 +6,10 @@
 //
 
 import Alamofire
+import Combine
 import Foundation
 
-protocol APIRequestProtocol {
+protocol APIRequestProtocol: APIRepositoryProtocol {
     /// Format: Environment.API_URL
     var baseURL: URL { get }
     /// Format: "/url-path"

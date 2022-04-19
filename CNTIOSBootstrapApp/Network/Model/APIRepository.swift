@@ -8,7 +8,7 @@
 import Alamofire
 import Combine
 
-class APIRepository: APIRepositoryProtocol {
+class APIRepository {
 
     static let NetworkRequestQueue = DispatchQueue(label: "com.CNTIOSBootstrapApp.NetworkRequestQueue",
                                                    qos: .background,
@@ -34,7 +34,7 @@ class APIRepository: APIRepositoryProtocol {
                    interceptor: api.interceptor,
                    requestModifier: api.requestModifier)
             .response(queue: APIRepository.NetworkRequestQueue) { [weak self] response in
-                guard let self = self else { return }
+                guard let _ = self else { return }
                 guard let data = response.data else {
                     APIRepository.NetworkRequestCompletionQueue.async {
                         if let error = response.error {
@@ -47,7 +47,7 @@ class APIRepository: APIRepositoryProtocol {
                     return
                 }
 
-                self.processResponse(api: api, publisher: publisher, data: data)
+                api.responseProcessor(api: api, publisher: publisher, data: data)
             }
 
         return publisher.eraseToAnyPublisher()
@@ -70,7 +70,7 @@ class APIRepository: APIRepositoryProtocol {
                        interceptor: api.interceptor,
                        requestModifier: api.requestModifier)
                 .response(queue: APIRepository.NetworkRequestQueue) { [weak self] response in
-                    guard let self = self else { return }
+                    guard let _ = self else { return }
                     guard let data = response.data else {
                         APIRepository.NetworkRequestCompletionQueue.async {
                             if let error = response.error {
@@ -83,7 +83,7 @@ class APIRepository: APIRepositoryProtocol {
                         return
                     }
 
-                    self.processResponse(api: api, publisher: publisher, data: data)
+                    api.responseProcessor(api: api, publisher: publisher, data: data)
                 }
         }
 
@@ -92,10 +92,6 @@ class APIRepository: APIRepositoryProtocol {
         }
 
         return publisher.eraseToAnyPublisher()
-    }
-
-    func processResponse<API>(api: API, publisher: PassthroughSubject<APIResponse, Never>, data: Data) where API : APIRequestProtocol {
-        // override this from subclasses
     }
 
     func processErrorAndSuccessOnlyResponse(publisher: PassthroughSubject<APIResponse, Never>, data: Data) {

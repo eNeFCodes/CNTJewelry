@@ -12,5 +12,5 @@ import Foundation
  * func nameAPIRequest<API: APIProtocol>(api: API, observer: AnyObserver<APIResponse>, data: Data)
  */
 protocol APIRepositoryProtocol {
-    func processResponse<API: APIRequestProtocol>(api: API, publisher: PassthroughSubject<APIResponse, Never>, data: Data)
+    func responseProcessor<API: APIRequestProtocol>(api: API, publisher: PassthroughSubject<APIResponse, Never>, data: Data)
 }
