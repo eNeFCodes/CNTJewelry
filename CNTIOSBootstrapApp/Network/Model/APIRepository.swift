@@ -23,10 +23,9 @@ class APIRepository: APIRepositoryProtocol {
                                                              target: .global())
 
     func request<Request>(api: Request) -> AnyPublisher<APIResponse, Never> where Request: APIRequestProtocol {
-        let publisher = PassthroughSubject<APIResponse, Never>()
-
         // check internet and send internet error
 
+        let publisher = PassthroughSubject<APIResponse, Never>()
         AF.request(api.fullURL,
                    method: api.method,
                    parameters: api.parameters,
@@ -50,6 +49,47 @@ class APIRepository: APIRepositoryProtocol {
 
                 self.processResponse(api: api, publisher: publisher, data: data)
             }
+
+        return publisher.eraseToAnyPublisher()
+    }
+
+    // use for multiple request instance - ignores request order
+    func request<Request>(apis: [Request]) -> AnyPublisher<APIResponse, Never> where Request: APIRequestProtocol {
+        // check internet and send internet error
+
+        let group = DispatchGroup()
+        let publisher = PassthroughSubject<APIResponse, Never>()
+
+        for api in apis {
+            group.enter() // send enter dispatch
+            AF.request(api.fullURL,
+                       method: api.method,
+                       parameters: api.parameters,
+                       encoding: api.encoding,
+                       headers: api.headers,
+                       interceptor: api.interceptor,
+                       requestModifier: api.requestModifier)
+                .response(queue: APIRepository.NetworkRequestQueue) { [weak self] response in
+                    guard let self = self else { return }
+                    guard let data = response.data else {
+                        APIRepository.NetworkRequestCompletionQueue.async {
+                            if let error = response.error {
+                                publisher.send(.error(error: .error(error: error)))
+                            } else {
+                                publisher.send(.error(error: .unknown))
+                            }
+                            group.leave() // send leave dispatch
+                        }
+                        return
+                    }
+
+                    self.processResponse(api: api, publisher: publisher, data: data)
+                }
+        }
+
+        group.notify(queue: APIRepository.NetworkRequestCompletionQueue) {
+            publisher.send(completion: .finished)
+        }
 
         return publisher.eraseToAnyPublisher()
     }
