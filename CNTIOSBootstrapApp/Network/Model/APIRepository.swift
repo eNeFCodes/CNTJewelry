@@ -10,6 +10,12 @@ import Combine
 
 class APIRepository: APIRepositoryProtocol {
 
+    static let NetworkQueue = DispatchQueue(label: "com.CNTIOSBootstrapApp.NetworkRequest",
+                                               qos: .background,
+                                               attributes: .concurrent,
+                                               autoreleaseFrequency: .workItem,
+                                               target: .global())
+
     func request<Request>(api: Request) -> AnyPublisher<APIResponse, Never> where Request: APIRequestProtocol {
         let publisher = PassthroughSubject<APIResponse, Never>()
 
@@ -22,7 +28,7 @@ class APIRepository: APIRepositoryProtocol {
                    headers: api.headers,
                    interceptor: api.interceptor,
                    requestModifier: api.requestModifier)
-            .response { [weak self] response in
+            .response(queue: APIRepository.NetworkQueue) { [weak self] response in
                 guard let self = self else { return }
                 guard let data = response.data else {
                     if let error = response.error {
