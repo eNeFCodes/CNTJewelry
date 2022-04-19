@@ -19,6 +19,7 @@
 		8F2A2047280D6BB40008DB86 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8F2A2046280D6BB40008DB86 /* swiftgen.yml */; };
 		8F2A204A280D70B80008DB86 /* FontCollections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2A2049280D70B80008DB86 /* FontCollections.swift */; };
 		8F2A204C280D71DA0008DB86 /* Font+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2A204B280D71DA0008DB86 /* Font+Ext.swift */; };
+		8FBB378C280E47F400DB7476 /* APIRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBB378B280E47F400DB7476 /* APIRequestProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		8FBB377E280E3C0D00DB7476 /* development.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = development.xcconfig; sourceTree = "<group>"; };
 		8FBB377F280E3C0D00DB7476 /* production.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = production.xcconfig; sourceTree = "<group>"; };
 		8FBB3780280E3C0D00DB7476 /* staging.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = staging.xcconfig; sourceTree = "<group>"; };
+		8FBB378B280E47F400DB7476 /* APIRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestProtocol.swift; sourceTree = "<group>"; };
 		92A605BEF9EFD722332A0324 /* Pods-iOSBoilerplate.debug (qa).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSBoilerplate.debug (qa).xcconfig"; path = "Target Support Files/Pods-iOSBoilerplate/Pods-iOSBoilerplate.debug (qa).xcconfig"; sourceTree = "<group>"; };
 		C77105EBC81F4430C0566355 /* Pods-iOSBoilerplate.release (staging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSBoilerplate.release (staging).xcconfig"; path = "Target Support Files/Pods-iOSBoilerplate/Pods-iOSBoilerplate.release (staging).xcconfig"; sourceTree = "<group>"; };
 		DD8EBC154DA91EB63BF12382 /* Pods-iOSBoilerplate.release (production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSBoilerplate.release (production).xcconfig"; path = "Target Support Files/Pods-iOSBoilerplate/Pods-iOSBoilerplate.release (production).xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			children = (
 				8F2A2021280D173F0008DB86 /* Info.plist */,
 				8F2A2030280D629A0008DB86 /* Configs */,
+				8FBB378A280E46C700DB7476 /* Network */,
 				8F2A2033280D63720008DB86 /* Application */,
 				8F2A2044280D65A70008DB86 /* Common */,
 				8F2A2045280D65F30008DB86 /* Models */,
@@ -202,6 +205,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		8FBB378A280E46C700DB7476 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8FBB378B280E47F400DB7476 /* APIRequestProtocol.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -214,6 +225,7 @@
 				8F2A200C280D173E0008DB86 /* Sources */,
 				8F2A200D280D173E0008DB86 /* Frameworks */,
 				8F2A200E280D173E0008DB86 /* Resources */,
+				C73E96F94B1054438BF18737 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -314,6 +326,23 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n$PODS_ROOT/SwiftGen/bin/swiftgen\n";
 		};
+		C73E96F94B1054438BF18737 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOSBoilerplate/Pods-iOSBoilerplate-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOSBoilerplate/Pods-iOSBoilerplate-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOSBoilerplate/Pods-iOSBoilerplate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -325,6 +354,7 @@
 				8F2A2016280D173E0008DB86 /* SceneDelegate.swift in Sources */,
 				8F2A204A280D70B80008DB86 /* FontCollections.swift in Sources */,
 				8F2A204C280D71DA0008DB86 /* Font+Ext.swift in Sources */,
+				8FBB378C280E47F400DB7476 /* APIRequestProtocol.swift in Sources */,
 				8F2A2028280D5A690008DB86 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
