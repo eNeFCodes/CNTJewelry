@@ -13,13 +13,13 @@ struct ContentView: View {
 
     var body: some View {
         VStack(spacing: 20 ) {
-//            let helloFont = Font(name: FontCollections.FancyCutProB7.bold.name, size: 15)!
+            let helloFont = FontCollection.BrilliantCutProB7.bold(size: 25).font
             Text("Hello, World!")
-//                .font(helloFont.toFont())
-//
-//            let dateFont = Font(name: FontCollections.FancyCutCondProB7.regular.name, size: 12)!
+                .font(helloFont)
+
+            let dateFont = FontCollection.FancyCutCondProB7.regularItalic(size: 15).font
             Text("Date is: \(appDelegate.date.description)")
-//                .font(dateFont.toFont())
+                .font(dateFont)
         }
     }
 }

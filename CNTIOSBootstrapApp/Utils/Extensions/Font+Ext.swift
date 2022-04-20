@@ -9,8 +9,8 @@ import Foundation
 import SwiftUI
 
 extension UIFont {
-//    func toFont() -> Font {
-//        let castedFont = Font(self as CTFont)
-//        return castedFont
-//    }
+    func toFont() -> Font {
+        let castedFont = Font(self as CTFont)
+        return castedFont
+    }
 }

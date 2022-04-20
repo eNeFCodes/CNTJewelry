@@ -5,7 +5,7 @@ fonts:
   inputs: Fonts
   outputs:
     templateName: swift5
-    output: FontCollections.swift
+    output: SwiftGenFonts.swift
     params:
-        enumName: FontCollections
-        fontTypeName: SFont
+        enumName: SwiftGenFonts
+        fontTypeName: SwiftGenFont
