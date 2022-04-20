@@ -8,6 +8,7 @@
 import Alamofire
 import Combine
 import Foundation
+import UIKit
 
 enum RandomImageRequest {
     case imageBy1000
