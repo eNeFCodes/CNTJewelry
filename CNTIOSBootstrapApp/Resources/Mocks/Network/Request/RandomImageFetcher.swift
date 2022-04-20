@@ -32,7 +32,7 @@ class RandomImageFetcher: APIRepository {
 
     func startMultiple() {
         RandomImageFetcher.shared
-            .request(apis: [RandomImageRequest.imageBy1000, RandomImageRequest.imageBy2000])
+            .request(apis: [RandomImageRequest.imageBy2000, RandomImageRequest.imageBy3000])
             .sink(receiveCompletion: { c in
                 print("multile completion: ", c)
             }, receiveValue: { result in

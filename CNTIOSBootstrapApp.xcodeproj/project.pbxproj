@@ -225,11 +225,35 @@
 		8F43CA10280E97850011552D /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				8F43CA13280E97F80011552D /* RandomImage.swift */,
+				8F7772D0280F902A00FF09AA /* Network */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		8F7772CF280F901B00FF09AA /* Request */ = {
+			isa = PBXGroup;
+			children = (
 				8F43CA15280E99CA0011552D /* RandomImageRequest.swift */,
 				8F43CA11280E97DA0011552D /* RandomImageFetcher.swift */,
 			);
-			path = Mocks;
+			path = Request;
+			sourceTree = "<group>";
+		};
+		8F7772D0280F902A00FF09AA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8F7772D1280F903D00FF09AA /* Model */,
+				8F7772CF280F901B00FF09AA /* Request */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		8F7772D1280F903D00FF09AA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8F43CA13280E97F80011552D /* RandomImage.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		8FBB378A280E46C700DB7476 /* Network */ = {

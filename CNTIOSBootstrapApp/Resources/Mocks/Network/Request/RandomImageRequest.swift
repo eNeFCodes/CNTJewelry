@@ -12,6 +12,7 @@ import Foundation
 enum RandomImageRequest {
     case imageBy1000
     case imageBy2000
+    case imageBy3000
 }
 
 extension RandomImageRequest: APIRequestProtocol {
@@ -26,6 +27,8 @@ extension RandomImageRequest: APIRequestProtocol {
             return "/1000"
         case .imageBy2000:
             return "/2000"
+        case .imageBy3000:
+            return "/3000"
         }
     }
 
@@ -62,7 +65,7 @@ extension RandomImageRequest: APIRequestProtocol {
     }
 }
 
-extension RandomImageRequest {
+extension RandomImageRequest: APIRepositoryProtocol {
 
     func responseProcessor<API>(api: API, publisher: PassthroughSubject<APIResponse, Never>, data: Data, shouldFinishImmediately: Bool) where API : APIRequestProtocol {
         if let image = UIImage(data: data) {
