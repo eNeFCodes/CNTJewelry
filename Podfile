@@ -7,7 +7,6 @@ target 'CNTIOSBootstrapApp' do
 
   # Pods for CNTIOSBootstrapApp
   pod 'SwiftGen', '~> 6.5.1'
-  pod 'Alamofire', '~> 5.6.1'
 
   post_install do |installer|
     installer.pods_project.build_configurations.each do |config|
