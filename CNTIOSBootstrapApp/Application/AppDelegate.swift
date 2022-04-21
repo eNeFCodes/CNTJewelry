@@ -5,17 +5,26 @@
 //  Created by Neil Francis Hipona on 4/18/22.
 //
 
+import Combine
 import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, ObservableObject {
 
-    var date: Date = .now
+    @Published var date: Date = .now
+    private var subscriptions = Set<AnyCancellable>()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
         MockTest.runTest()
+
+        Timer.publish(every: 1, on: .main, in: .default)
+            .autoconnect()
+            .sink { date in
+                self.date = date
+            }
+            .store(in: &subscriptions)
 
         return true
     }
