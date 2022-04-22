@@ -16,5 +16,7 @@
 * `Presentations` - contains main views and its view models grouped by named folders.
 * `Resources` - contains sources files, assets, mocks, and generated files. `MockTest` class file acts as a trigger class for all mock samples.
     * `Mocks` - contains sample mocks for especific use case grouped by folders.
-    * `Sources` - contains source files like: `Fonts`, `Localization strings` etc...
+    * `Sources` - contains source files like: `Fonts`, `Localization strings` etc... Grouped by sub-folders.
+        * `Localization` - contains localizable strings files
+        * `Fonts` - contains `Font` files.
     * `Generated` - contains generated files. Resulting `files` are ignored in `.gitignore` file. File references should be added to project source.
