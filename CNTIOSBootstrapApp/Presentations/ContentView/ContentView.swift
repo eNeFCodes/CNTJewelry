@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-
     @EnvironmentObject private var appDelegate: AppDelegate
+
+    @StateObject var model: ContentViewModel
 
     var body: some View {
         VStack(spacing: 20 ) {
-            let helloFont = FontCollection.BrilliantCutProB7.bold(size: 25).font
-            Text("Hello, World!")
+            let helloFont = FontCollection.BrilliantCutProB7.bold(size: 35).font
+            Text(model.welcome)
+                .accessibilityLabel(model.welcome)
                 .font(helloFont)
 
             let dateFont = FontCollection.FancyCutCondProB7.regularItalic(size: 15).font
@@ -26,6 +28,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(model: .init())
     }
 }
