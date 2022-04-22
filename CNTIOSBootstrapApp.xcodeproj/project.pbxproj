@@ -69,6 +69,7 @@
 		8FBFACB52812423400689F5A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8FBFACB72812423400689F5A /* Localizable.strings */; };
 		8FBFACBB281245B300689F5A /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBFACBA281245B300689F5A /* LocalizedStrings.swift */; };
 		8FBFACBE2812470800689F5A /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBFACBD2812470800689F5A /* ContentViewModel.swift */; };
+		8FBFACC42812536800689F5A /* SampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBFACC32812536800689F5A /* SampleModel.swift */; };
 		B04548C647F582C57A460F99 /* Pods_CNTIOSBootstrapApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AB07C2EBBD058C7812F1821 /* Pods_CNTIOSBootstrapApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -148,6 +149,7 @@
 		8FBFACB9281242D300689F5A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8FBFACBA281245B300689F5A /* LocalizedStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
 		8FBFACBD2812470800689F5A /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		8FBFACC32812536800689F5A /* SampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleModel.swift; sourceTree = "<group>"; };
 		92A605BEF9EFD722332A0324 /* Pods-iOSBoilerplate.debug (qa).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSBoilerplate.debug (qa).xcconfig"; path = "Target Support Files/Pods-iOSBoilerplate/Pods-iOSBoilerplate.debug (qa).xcconfig"; sourceTree = "<group>"; };
 		9AB07C2EBBD058C7812F1821 /* Pods_CNTIOSBootstrapApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CNTIOSBootstrapApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C77105EBC81F4430C0566355 /* Pods-iOSBoilerplate.release (staging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSBoilerplate.release (staging).xcconfig"; path = "Target Support Files/Pods-iOSBoilerplate/Pods-iOSBoilerplate.release (staging).xcconfig"; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 		8F2A2045280D65F30008DB86 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8FBFACC32812536800689F5A /* SampleModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -680,6 +683,7 @@
 				8F7772F0280FB5CF00FF09AA /* Environment.swift in Sources */,
 				8FBFACBE2812470800689F5A /* ContentViewModel.swift in Sources */,
 				8F7772EB280FB20B00FF09AA /* CustomAPIRequest.swift in Sources */,
+				8FBFACC42812536800689F5A /* SampleModel.swift in Sources */,
 				8FBB3793280E4D1800DB7476 /* APIRepository.swift in Sources */,
 				8F7772E8280FAE2400FF09AA /* Optional+Ext.swift in Sources */,
 			);
