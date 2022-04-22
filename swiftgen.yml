@@ -1,11 +1,18 @@
 input_dir: ${PROJECT_DIR}/${TARGET_NAME}/Resources/Sources/
 output_dir: ${PROJECT_DIR}/${TARGET_NAME}/Resources/Generated/
 
-fonts:
-  inputs: Fonts
+# Disabled gen font settings - will wait for v7 release for additional changes
+#fonts:
+#  inputs: Fonts
+#  outputs:
+#    templateName: swift5
+#    output: SwiftGenFonts.swift
+#    params:
+#        enumName: SwiftGenFonts
+#        fontTypeName: SwiftGenFont
+
+strings:
+  inputs: Localization/en.lproj
   outputs:
-    templateName: swift5
-    output: SwiftGenFonts.swift
-    params:
-        enumName: SwiftGenFonts
-        fontTypeName: SwiftGenFont
+    templateName: structured-swift5
+    output: LocalizedStrings.swift
