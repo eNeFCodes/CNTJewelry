@@ -93,3 +93,6 @@ iOSInjectionProject/
 #
 # ex. SwiftGen, R.swift
 */Resources/Generated/*
+
+# prevents this folder from being deleted in source git
+!*/Resources/Generated/.keep
