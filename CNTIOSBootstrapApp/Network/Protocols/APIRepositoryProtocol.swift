@@ -8,9 +8,6 @@
 import Combine
 import Foundation
 
-/** Processor format
- * func nameAPIRequest<API: APIProtocol>(api: API, observer: AnyObserver<APIResponse>, data: Data)
- */
 protocol APIRepositoryProtocol {
     func responseProcessor<API: APIRequestProtocol>(api: API, publisher: PassthroughSubject<APIResponse, Never>, data: Data, shouldFinishImmediately: Bool)
 }

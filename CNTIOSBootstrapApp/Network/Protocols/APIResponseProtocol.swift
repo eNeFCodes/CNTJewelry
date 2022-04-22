@@ -9,11 +9,11 @@ import Foundation
 
 typealias APIResponseProtocol = Decodable
 
-enum APIResponse {
-    case success(data: APIResponseProtocol)
-    case error(error: APIError)
-}
-
 protocol APIResponseErrorProtocol {
     var description: String { get }
+}
+
+enum APIResponse {
+    case success(data: APIResponseProtocol)
+    case error(error: APIServiceError)
 }

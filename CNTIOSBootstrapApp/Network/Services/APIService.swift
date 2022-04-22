@@ -1,5 +1,5 @@
 //
-//  APIRepository.swift
+//  APIService.swift
 //  CNTIOSBootstrapApp
 //
 //  Created by Neil Francis Hipona on 4/19/22.
@@ -9,7 +9,7 @@ import Alamofire
 import Combine
 import Foundation
 
-class APIRepository {
+class APIService {
 
     static let NetworkRequestQueue = DispatchQueue(label: "com.CNTIOSBootstrapApp.NetworkRequestQueue",
                                                    qos: .background,
@@ -34,10 +34,10 @@ class APIRepository {
                    headers: api.headers,
                    interceptor: api.interceptor,
                    requestModifier: api.requestModifier)
-            .response(queue: APIRepository.NetworkRequestQueue) { [weak self] response in
+            .response(queue: APIService.NetworkRequestQueue) { [weak self] response in
                 guard let _ = self else { return }
                 guard let data = response.data else {
-                    APIRepository.NetworkRequestCompletionQueue.async {
+                    APIService.NetworkRequestCompletionQueue.async {
                         if let error = response.error {
                             publisher.send(.error(error: .error(error: error)))
                         } else {
@@ -48,7 +48,7 @@ class APIRepository {
                     return
                 }
 
-                APIRepository.NetworkRequestCompletionQueue.async {
+                APIService.NetworkRequestCompletionQueue.async {
                     api.responseProcessor(api: api, publisher: publisher, data: data, shouldFinishImmediately: true)
                 }
             }
@@ -72,10 +72,10 @@ class APIRepository {
                        headers: api.headers,
                        interceptor: api.interceptor,
                        requestModifier: api.requestModifier)
-                .response(queue: APIRepository.NetworkRequestQueue) { [weak self] response in
+                .response(queue: APIService.NetworkRequestQueue) { [weak self] response in
                     guard let _ = self else { return }
                     guard let data = response.data else {
-                        APIRepository.NetworkRequestCompletionQueue.async {
+                        APIService.NetworkRequestCompletionQueue.async {
                             if let error = response.error {
                                 publisher.send(.error(error: .error(error: error)))
                             } else {
@@ -86,14 +86,14 @@ class APIRepository {
                         return
                     }
 
-                    APIRepository.NetworkRequestCompletionQueue.async {
+                    APIService.NetworkRequestCompletionQueue.async {
                         api.responseProcessor(api: api, publisher: publisher, data: data, shouldFinishImmediately: false)
                         group.leave() // send leave dispatch
                     }
                 }
         }
 
-        group.notify(queue: APIRepository.NetworkRequestCompletionQueue) {
+        group.notify(queue: APIService.NetworkRequestCompletionQueue) {
             publisher.send(completion: .finished)
         }
 
@@ -101,13 +101,13 @@ class APIRepository {
     }
 }
 
-extension APIRepository {
+extension APIService {
 
     class func processErrorAndSuccessOnlyResponse(publisher: PassthroughSubject<APIResponse, Never>, data: Data, shouldFinishImmediately: Bool) {
         if let error = try? JSONDecoder().decode(APIResponseError.self, from: data) {
             publisher.send(.error(error: .responseError(error: error)))
         } else {
-            publisher.send(.error(error: .errorMessage(message: APIError.ErrorTypeConversionFailed)))
+            publisher.send(.error(error: .errorMessage(message: APIServiceError.ErrorTypeConversionFailed)))
         }
 
         if shouldFinishImmediately {

@@ -10,13 +10,13 @@ import Combine
 import Foundation
 import UIKit
 
-enum RandomImageRequest {
+enum RandomImageAPI {
     case imageBy1000
     case imageBy2000
     case imageBy3000
 }
 
-extension RandomImageRequest: APIRequestProtocol {
+extension RandomImageAPI: APIRequestProtocol {
 
     var baseURL: URL {
         URL(string: "https://picsum.photos")!
@@ -66,7 +66,7 @@ extension RandomImageRequest: APIRequestProtocol {
     }
 }
 
-extension RandomImageRequest: APIRepositoryProtocol {
+extension RandomImageAPI: APIRepositoryProtocol {
 
     func responseProcessor<API>(api: API, publisher: PassthroughSubject<APIResponse, Never>, data: Data, shouldFinishImmediately: Bool) where API : APIRequestProtocol {
         if let image = UIImage(data: data) {
@@ -76,7 +76,7 @@ extension RandomImageRequest: APIRepositoryProtocol {
                 publisher.send(completion: .finished)
             }
         } else {
-            APIRepository.processErrorAndSuccessOnlyResponse(publisher: publisher, data: data, shouldFinishImmediately: shouldFinishImmediately)
+            APIService.processErrorAndSuccessOnlyResponse(publisher: publisher, data: data, shouldFinishImmediately: shouldFinishImmediately)
         }
     }
 }

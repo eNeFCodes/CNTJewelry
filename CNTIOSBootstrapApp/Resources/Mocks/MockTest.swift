@@ -17,7 +17,7 @@ class MockTest {
 private extension MockTest {
 
     class func runNetworkTest() {
-        RandomImageFetcher.shared.start()
-        RandomImageFetcher.shared.startMultiple()
+        RandomImageAPIService.shared.start()
+        RandomImageAPIService.shared.startMultiple()
     }
 }

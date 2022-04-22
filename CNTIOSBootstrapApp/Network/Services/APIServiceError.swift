@@ -1,5 +1,5 @@
 //
-//  APIError.swift
+//  APIServiceError.swift
 //  CNTIOSBootstrapApp
 //
 //  Created by Neil Francis Hipona on 4/19/22.
@@ -7,7 +7,7 @@
 
 import Alamofire
 
-enum APIError: Error {
+enum APIServiceError: Error {
     case responseError(error: APIResponseErrorProtocol)
     case errorMessage(message: String)
     case error(error: Error)
@@ -30,8 +30,8 @@ enum APIError: Error {
     }
 }
 
-extension APIError: Equatable {
-    static func == (lhs: APIError, rhs: APIError) -> Bool {
+extension APIServiceError: Equatable {
+    static func == (lhs: APIServiceError, rhs: APIServiceError) -> Bool {
         switch (lhs, rhs) {
         case (.responseError, .responseError):
             return true
@@ -49,6 +49,6 @@ extension APIError: Equatable {
     }
 }
 
-extension APIError {
+extension APIServiceError {
     static let ErrorTypeConversionFailed = "Conversion failed"
 }

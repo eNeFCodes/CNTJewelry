@@ -1,5 +1,5 @@
 //
-//  RandomImageFetcher.swift
+//  RandomImageAPIService.swift
 //  CNTIOSBootstrapApp
 //
 //  Created by Neil Francis Hipona on 4/19/22.
@@ -8,14 +8,14 @@
 import Combine
 import Foundation
 
-class RandomImageFetcher: APIRepository {
-    static let shared = RandomImageFetcher()
+class RandomImageAPIService: APIService {
+    static let shared = RandomImageAPIService()
 
     private var subscriptions = Set<AnyCancellable>()
 
     func start() {
-        RandomImageFetcher.shared
-            .request(api: RandomImageRequest.imageBy1000)
+        RandomImageAPIService.shared
+            .request(api: RandomImageAPI.imageBy1000)
             .sink(receiveCompletion: { c in
                 print("completion: ", c)
             }, receiveValue: { result in
@@ -31,8 +31,8 @@ class RandomImageFetcher: APIRepository {
     }
 
     func startMultiple() {
-        RandomImageFetcher.shared
-            .request(apis: [RandomImageRequest.imageBy2000, RandomImageRequest.imageBy3000])
+        RandomImageAPIService.shared
+            .request(apis: [RandomImageAPI.imageBy2000, RandomImageAPI.imageBy3000])
             .sink(receiveCompletion: { c in
                 print("multile completion: ", c)
             }, receiveValue: { result in
