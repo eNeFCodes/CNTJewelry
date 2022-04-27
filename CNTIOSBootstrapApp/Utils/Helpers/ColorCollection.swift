@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ColorCollection {
     static let accentColor = Color("AccentColor")
+    static let background = Color("background")
     static let black = Color("black")
     static let blue = Color("blue")
     static let green = Color("green")

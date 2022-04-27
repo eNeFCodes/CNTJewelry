@@ -18,11 +18,14 @@ struct ContentView: View {
             Text(model.welcome)
                 .accessibilityLabel(model.welcome)
                 .font(helloFont)
+                .foregroundColor(ColorCollection.green)
 
             let dateFont = FontCollection.FancyCutCondProB7.regularItalic(size: 15).font
             Text("Date is: \(appDelegate.date.description)")
                 .font(dateFont)
+                .foregroundColor(ColorCollection.orange)
         }
+        .background(ColorCollection.background)
     }
 }
 
