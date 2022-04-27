@@ -23,7 +23,7 @@ struct LoaderView<Content: View>: View {
                     .progressViewStyle(CircularProgressViewStyle(tint: ColorCollection.accentColor))
             }
             .frame(width: 150, height: 150, alignment: .center)
-            .background(ColorCollection.black.opacity(0.7))
+            .background(ColorCollection.loader.opacity(0.7))
             .opacity(isLoading ? 1 : 0)
             .cornerRadius(20)
         }

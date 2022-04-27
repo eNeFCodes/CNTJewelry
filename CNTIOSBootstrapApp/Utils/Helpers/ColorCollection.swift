@@ -13,6 +13,7 @@ struct ColorCollection {
     static let black = Color("black")
     static let blue = Color("blue")
     static let green = Color("green")
+    static let loader = Color("loader")
     static let orange = Color("orange")
     static let red = Color("red")
     static let white = Color("white")

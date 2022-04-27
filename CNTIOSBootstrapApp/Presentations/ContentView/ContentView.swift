@@ -9,24 +9,27 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject private var appDelegate: AppDelegate
+    @EnvironmentObject private var appEnv: AppEnvironment
 
     @StateObject var model: ContentViewModel
 
     var body: some View {
-        NavigationView {
-            VStack(spacing: 20 ) {
-                let helloFont = FontCollection.BrilliantCutProB7.bold(size: 35).font
-                Text(model.welcome)
-                    .accessibilityLabel(model.welcome)
-                    .font(helloFont)
-                    .foregroundColor(ColorCollection.green)
+        LoaderView(isLoading: $appEnv.isLoading) {
+            NavigationView {
+                VStack(spacing: 20 ) {
+                    let helloFont = FontCollection.BrilliantCutProB7.bold(size: 35).font
+                    Text(model.welcome)
+                        .accessibilityLabel(model.welcome)
+                        .font(helloFont)
+                        .foregroundColor(ColorCollection.green)
 
-                let dateFont = FontCollection.FancyCutCondProB7.regularItalic(size: 15).font
-                Text("Date is: \(appDelegate.date.description)")
-                    .font(dateFont)
-                    .foregroundColor(ColorCollection.orange)
+                    let dateFont = FontCollection.FancyCutCondProB7.regularItalic(size: 15).font
+                    Text("Date is: \(appDelegate.date.description)")
+                        .font(dateFont)
+                        .foregroundColor(ColorCollection.orange)
+                }
+                .background(ColorCollection.background)
             }
-            .background(ColorCollection.background)
         }
     }
 }
