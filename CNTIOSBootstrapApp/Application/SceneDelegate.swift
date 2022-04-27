@@ -20,9 +20,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, ObservableObject {
               let appDelegate = UIApplication.shared.delegate as? AppDelegate
         else { return }
 
+        let appEnvironment = AppEnvironment()
         let rootView = ContentView(model: .init())
             .environmentObject(appDelegate)
             .environmentObject(self)
+            .environmentObject(appEnvironment)
 
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = UIHostingController(rootView: rootView)

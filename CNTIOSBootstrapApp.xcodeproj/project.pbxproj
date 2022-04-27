@@ -70,6 +70,7 @@
 		8FBFACBE2812470800689F5A /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBFACBD2812470800689F5A /* ContentViewModel.swift */; };
 		8FBFACC42812536800689F5A /* SampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBFACC32812536800689F5A /* SampleModel.swift */; };
 		8FBFACCF2819377500689F5A /* ColorCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBFACCE2819377500689F5A /* ColorCollection.swift */; };
+		8FBFACD328193B9100689F5A /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBFACD228193B9100689F5A /* AppEnvironment.swift */; };
 		B04548C647F582C57A460F99 /* Pods_CNTIOSBootstrapApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AB07C2EBBD058C7812F1821 /* Pods_CNTIOSBootstrapApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -150,6 +151,7 @@
 		8FBFACBD2812470800689F5A /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		8FBFACC32812536800689F5A /* SampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleModel.swift; sourceTree = "<group>"; };
 		8FBFACCE2819377500689F5A /* ColorCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollection.swift; sourceTree = "<group>"; };
+		8FBFACD228193B9100689F5A /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		92A605BEF9EFD722332A0324 /* Pods-iOSBoilerplate.debug (qa).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSBoilerplate.debug (qa).xcconfig"; path = "Target Support Files/Pods-iOSBoilerplate/Pods-iOSBoilerplate.debug (qa).xcconfig"; sourceTree = "<group>"; };
 		9AB07C2EBBD058C7812F1821 /* Pods_CNTIOSBootstrapApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CNTIOSBootstrapApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C77105EBC81F4430C0566355 /* Pods-iOSBoilerplate.release (staging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSBoilerplate.release (staging).xcconfig"; path = "Target Support Files/Pods-iOSBoilerplate/Pods-iOSBoilerplate.release (staging).xcconfig"; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 		8F2A2045280D65F30008DB86 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8FBFACD428193B9B00689F5A /* Application */,
 				8FBFACC72812882A00689F5A /* Network */,
 				8FBFACC32812536800689F5A /* SampleModel.swift */,
 			);
@@ -511,6 +514,14 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		8FBFACD428193B9B00689F5A /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				8FBFACD228193B9100689F5A /* AppEnvironment.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -676,6 +687,7 @@
 				8FBB378E280E4A3D00DB7476 /* APIResponseProtocol.swift in Sources */,
 				8FBFACBB281245B300689F5A /* LocalizedStrings.swift in Sources */,
 				8F7772EE280FB44200FF09AA /* Router.swift in Sources */,
+				8FBFACD328193B9100689F5A /* AppEnvironment.swift in Sources */,
 				8F43CA16280E99CA0011552D /* RandomImageAPI.swift in Sources */,
 				8F7772D3280F90B900FF09AA /* MockTest.swift in Sources */,
 				8F43CA12280E97DA0011552D /* RandomImageAPIService.swift in Sources */,
