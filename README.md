@@ -1,4 +1,4 @@
-# CNTIOSBootstrapApp
+# CNTJewelry
 
 #### Folders
 * `Configs` - contains configurations files. 
