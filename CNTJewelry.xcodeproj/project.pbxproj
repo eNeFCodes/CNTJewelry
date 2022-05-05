@@ -60,6 +60,8 @@
 		8F777341280FBDA600FF09AA /* BrilliantCutProB7-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8F77733B280FBDA600FF09AA /* BrilliantCutProB7-Thin.otf */; };
 		8F777342280FBDA600FF09AA /* BrilliantCutProB7-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8F77733C280FBDA600FF09AA /* BrilliantCutProB7-Regular.otf */; };
 		8F777343280FBDA600FF09AA /* BrilliantCutProB7-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8F77733D280FBDA600FF09AA /* BrilliantCutProB7-Bold.otf */; };
+		8FB61FE028239B840087BB3F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB61FDF28239B840087BB3F /* LoginView.swift */; };
+		8FB61FE228239C540087BB3F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB61FE128239C540087BB3F /* LoginViewModel.swift */; };
 		8FBB378C280E47F400DB7476 /* APIRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBB378B280E47F400DB7476 /* APIRequestProtocol.swift */; };
 		8FBB378E280E4A3D00DB7476 /* APIResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBB378D280E4A3D00DB7476 /* APIResponseProtocol.swift */; };
 		8FBB3791280E4A9600DB7476 /* APIServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBB3790280E4A9600DB7476 /* APIServiceError.swift */; };
@@ -137,6 +139,8 @@
 		8F77733B280FBDA600FF09AA /* BrilliantCutProB7-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BrilliantCutProB7-Thin.otf"; sourceTree = "<group>"; };
 		8F77733C280FBDA600FF09AA /* BrilliantCutProB7-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BrilliantCutProB7-Regular.otf"; sourceTree = "<group>"; };
 		8F77733D280FBDA600FF09AA /* BrilliantCutProB7-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BrilliantCutProB7-Bold.otf"; sourceTree = "<group>"; };
+		8FB61FDF28239B840087BB3F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		8FB61FE128239C540087BB3F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		8FBB377C280E3C0D00DB7476 /* qa.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = qa.xcconfig; sourceTree = "<group>"; };
 		8FBB377E280E3C0D00DB7476 /* development.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = development.xcconfig; sourceTree = "<group>"; };
 		8FBB377F280E3C0D00DB7476 /* production.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = production.xcconfig; sourceTree = "<group>"; };
@@ -244,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				8FBFACBC281246F600689F5A /* ContentView */,
+				8FB61FE328239E160087BB3F /* Login */,
 			);
 			path = Presentations;
 			sourceTree = "<group>";
@@ -468,6 +473,15 @@
 				8F77733B280FBDA600FF09AA /* BrilliantCutProB7-Thin.otf */,
 			);
 			path = BrilliantCutPro;
+			sourceTree = "<group>";
+		};
+		8FB61FE328239E160087BB3F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8FB61FDF28239B840087BB3F /* LoginView.swift */,
+				8FB61FE128239C540087BB3F /* LoginViewModel.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		8FBB378A280E46C700DB7476 /* Network */ = {
@@ -701,8 +715,10 @@
 				8FBFACD328193B9100689F5A /* AppEnvironment.swift in Sources */,
 				8F43CA16280E99CA0011552D /* RandomImageAPI.swift in Sources */,
 				8F7772D3280F90B900FF09AA /* MockTest.swift in Sources */,
+				8FB61FE228239C540087BB3F /* LoginViewModel.swift in Sources */,
 				8F43CA12280E97DA0011552D /* RandomImageAPIService.swift in Sources */,
 				8F43CA14280E97F80011552D /* RandomImage.swift in Sources */,
+				8FB61FE028239B840087BB3F /* LoginView.swift in Sources */,
 				8F2A204C280D71DA0008DB86 /* Font+Ext.swift in Sources */,
 				8F7772F3280FBA2700FF09AA /* FontCollection.swift in Sources */,
 				8FBB3798280E57FC00DB7476 /* APIResponseError.swift in Sources */,
