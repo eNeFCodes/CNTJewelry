@@ -10,9 +10,9 @@ import SwiftUI
 
 class ContentViewModel: ObservableObject {
 
-    let welcome: String
+    let welcome: WelcomeViewModel
 
-    init(welcome: String = L10n.App.Content.welcomeMessage) {
+    init(welcome: WelcomeViewModel = .init()) {
         self.welcome = welcome
     }
 }
