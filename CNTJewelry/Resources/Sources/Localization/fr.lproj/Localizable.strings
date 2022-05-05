@@ -7,3 +7,4 @@
 */
 
 "app.Content.welcomeMessage" = "Bonjour!";
+"app.Content.getStarted" = "GET STARTED";

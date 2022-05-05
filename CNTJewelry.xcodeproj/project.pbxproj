@@ -64,6 +64,12 @@
 		8FB61FE228239C540087BB3F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB61FE128239C540087BB3F /* LoginViewModel.swift */; };
 		8FB61FE72823AB690087BB3F /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB61FE62823AB690087BB3F /* WelcomeView.swift */; };
 		8FB61FE92823AB7B0087BB3F /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB61FE82823AB7B0087BB3F /* WelcomeViewModel.swift */; };
+		8FB61FEC2823AEB30087BB3F /* DotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB61FEB2823AEB30087BB3F /* DotView.swift */; };
+		8FB61FEE2823AF180087BB3F /* BorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB61FED2823AF180087BB3F /* BorderView.swift */; };
+		8FB61FF02823AF340087BB3F /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB61FEF2823AF340087BB3F /* ShapeView.swift */; };
+		8FB61FF22823B71F0087BB3F /* DotOnlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB61FF12823B71F0087BB3F /* DotOnlyView.swift */; };
+		8FB61FF52823B74E0087BB3F /* DotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB61FF42823B74E0087BB3F /* DotViewModel.swift */; };
+		8FB61FF72823B75D0087BB3F /* DotOnlyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB61FF62823B75D0087BB3F /* DotOnlyViewModel.swift */; };
 		8FBB378C280E47F400DB7476 /* APIRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBB378B280E47F400DB7476 /* APIRequestProtocol.swift */; };
 		8FBB378E280E4A3D00DB7476 /* APIResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBB378D280E4A3D00DB7476 /* APIResponseProtocol.swift */; };
 		8FBB3791280E4A9600DB7476 /* APIServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBB3790280E4A9600DB7476 /* APIServiceError.swift */; };
@@ -145,6 +151,12 @@
 		8FB61FE128239C540087BB3F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		8FB61FE62823AB690087BB3F /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		8FB61FE82823AB7B0087BB3F /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
+		8FB61FEB2823AEB30087BB3F /* DotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotView.swift; sourceTree = "<group>"; };
+		8FB61FED2823AF180087BB3F /* BorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderView.swift; sourceTree = "<group>"; };
+		8FB61FEF2823AF340087BB3F /* ShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
+		8FB61FF12823B71F0087BB3F /* DotOnlyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotOnlyView.swift; sourceTree = "<group>"; };
+		8FB61FF42823B74E0087BB3F /* DotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotViewModel.swift; sourceTree = "<group>"; };
+		8FB61FF62823B75D0087BB3F /* DotOnlyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotOnlyViewModel.swift; sourceTree = "<group>"; };
 		8FBB377C280E3C0D00DB7476 /* qa.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = qa.xcconfig; sourceTree = "<group>"; };
 		8FBB377E280E3C0D00DB7476 /* development.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = development.xcconfig; sourceTree = "<group>"; };
 		8FBB377F280E3C0D00DB7476 /* production.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = production.xcconfig; sourceTree = "<group>"; };
@@ -387,6 +399,9 @@
 			isa = PBXGroup;
 			children = (
 				8FBFACD528193D3E00689F5A /* LoaderView.swift */,
+				8FB61FF32823B7290087BB3F /* DotView */,
+				8FB61FED2823AF180087BB3F /* BorderView.swift */,
+				8FB61FEF2823AF340087BB3F /* ShapeView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -496,6 +511,17 @@
 				8FB61FE82823AB7B0087BB3F /* WelcomeViewModel.swift */,
 			);
 			path = Welcome;
+			sourceTree = "<group>";
+		};
+		8FB61FF32823B7290087BB3F /* DotView */ = {
+			isa = PBXGroup;
+			children = (
+				8FB61FEB2823AEB30087BB3F /* DotView.swift */,
+				8FB61FF42823B74E0087BB3F /* DotViewModel.swift */,
+				8FB61FF12823B71F0087BB3F /* DotOnlyView.swift */,
+				8FB61FF62823B75D0087BB3F /* DotOnlyViewModel.swift */,
+			);
+			path = DotView;
 			sourceTree = "<group>";
 		};
 		8FBB378A280E46C700DB7476 /* Network */ = {
@@ -734,14 +760,20 @@
 				8F43CA12280E97DA0011552D /* RandomImageAPIService.swift in Sources */,
 				8F43CA14280E97F80011552D /* RandomImage.swift in Sources */,
 				8FB61FE028239B840087BB3F /* LoginView.swift in Sources */,
+				8FB61FF22823B71F0087BB3F /* DotOnlyView.swift in Sources */,
 				8F2A204C280D71DA0008DB86 /* Font+Ext.swift in Sources */,
+				8FB61FEC2823AEB30087BB3F /* DotView.swift in Sources */,
 				8F7772F3280FBA2700FF09AA /* FontCollection.swift in Sources */,
 				8FBB3798280E57FC00DB7476 /* APIResponseError.swift in Sources */,
 				8FBB3791280E4A9600DB7476 /* APIServiceError.swift in Sources */,
 				8FBB378C280E47F400DB7476 /* APIRequestProtocol.swift in Sources */,
 				8F2A2028280D5A690008DB86 /* ContentView.swift in Sources */,
 				8FBB3795280E567900DB7476 /* APIRepositoryProtocol.swift in Sources */,
+				8FB61FF52823B74E0087BB3F /* DotViewModel.swift in Sources */,
+				8FB61FF72823B75D0087BB3F /* DotOnlyViewModel.swift in Sources */,
 				8F7772F0280FB5CF00FF09AA /* Environment.swift in Sources */,
+				8FB61FF02823AF340087BB3F /* ShapeView.swift in Sources */,
+				8FB61FEE2823AF180087BB3F /* BorderView.swift in Sources */,
 				8FBFACBE2812470800689F5A /* ContentViewModel.swift in Sources */,
 				8F7772EB280FB20B00FF09AA /* CustomAPIRequest.swift in Sources */,
 				8FBFACC42812536800689F5A /* SampleModel.swift in Sources */,
