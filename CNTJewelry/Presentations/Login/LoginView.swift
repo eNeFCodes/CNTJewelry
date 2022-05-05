@@ -8,13 +8,40 @@
 import SwiftUI
 
 struct LoginView: View {
+    let model: LoginViewModel
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            GeometryReader { proxy in
+                buildBackdropViewStack(proxy: proxy)
+            }
+        }
+        .background(ColorCollection.black)
+    }
+
+    private func buildBackdropViewStack(proxy: GeometryProxy) -> some View {
+        Group {
+            let frameHeight = proxy.size.height * 0.6
+            let frameWidth = proxy.size.width * 0.75
+
+            HStack {
+                Spacer()
+                Image("img_bg_login")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: frameWidth,
+                           height: frameHeight,
+                           alignment: .trailing)
+            }
+        }
+        .ignoresSafeArea()
     }
 }
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(model: .init())
+            .environmentObject(AppEnvironment())
+            .environmentObject(AppSettings())
     }
 }
