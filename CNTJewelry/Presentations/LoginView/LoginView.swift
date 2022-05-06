@@ -13,33 +13,43 @@ struct LoginView: View {
     var body: some View {
         ZStack {
             GeometryReader { geometry in
-                buildBackdropViewStack(geometry: geometry)
+                let welcomeViewFrameHeight: CGFloat = abs(geometry.size.height - 330)
+                let backdropViewFrameHeight = welcomeViewFrameHeight - 40
 
-                VStack(spacing: 20) {
+                buildBackdropViewStack(frameSize: .init(width: geometry.size.width * 0.6, height: backdropViewFrameHeight))
+
+                VStack {
                     LoginPageHeaderView(model: model.header, geometry: geometry)
+                    Spacer()
+                }
+
+                VStack {
+                    Spacer()
                     LoginPageWelcomeView(model: model.welcome, geometry: geometry)
                 }
-            }
-        }
-        .background(ColorCollection.black)
-    }
+                .frame(width: geometry.size.width, height: welcomeViewFrameHeight, alignment: .bottom)
 
-    private func buildBackdropViewStack(geometry: GeometryProxy) -> some View {
-        Group {
-            let frameHeight = geometry.size.height * 0.6
-            let frameWidth = geometry.size.width * 0.75
-
-            HStack {
-                Spacer()
-                Image("img_bg_login")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: frameWidth,
-                           height: frameHeight,
-                           alignment: .trailing)
+                let optionViewFrameHeight = welcomeViewFrameHeight + 56
+                VStack {
+                    LoginPageOptionView(model: model.option, geometry: geometry)
+                }
+                .padding(.top, optionViewFrameHeight)
             }
         }
         .ignoresSafeArea()
+        .background(ColorCollection.black)
+    }
+
+    private func buildBackdropViewStack(frameSize: CGSize) -> some View {
+        HStack {
+            Spacer()
+            Image("img_bg_login")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: frameSize.width,
+                       height: frameSize.height,
+                       alignment: .trailing)
+        }
     }
 }
 

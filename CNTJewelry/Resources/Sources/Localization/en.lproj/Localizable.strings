@@ -18,3 +18,6 @@
 "app.Welcome.cntMessage" = "Please select how you wish to log in:";
 "app.Welcome.atlasTitle" = "WELCOME TO\nCARTIER ATLAS";
 "app.Welcome.atlasMessage" = "Please enter your login details below:";
+
+"login.Option.atlas" = "ATLAS LOGIN";
+"login.Option.biometrics" = "FACE/TOUCH ID LOGIN";
