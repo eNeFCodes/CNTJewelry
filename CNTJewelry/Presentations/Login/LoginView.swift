@@ -12,17 +12,22 @@ struct LoginView: View {
 
     var body: some View {
         ZStack {
-            GeometryReader { proxy in
-                buildBackdropViewStack(proxy: proxy)
+            GeometryReader { geometry in
+                buildBackdropViewStack(geometry: geometry)
+
+                VStack(spacing: 20) {
+                    LoginPageHeaderView(model: model.header, geometry: geometry)
+                    LoginPageWelcomeView(model: model.welcome, geometry: geometry)
+                }
             }
         }
         .background(ColorCollection.black)
     }
 
-    private func buildBackdropViewStack(proxy: GeometryProxy) -> some View {
+    private func buildBackdropViewStack(geometry: GeometryProxy) -> some View {
         Group {
-            let frameHeight = proxy.size.height * 0.6
-            let frameWidth = proxy.size.width * 0.75
+            let frameHeight = geometry.size.height * 0.6
+            let frameWidth = geometry.size.width * 0.75
 
             HStack {
                 Spacer()

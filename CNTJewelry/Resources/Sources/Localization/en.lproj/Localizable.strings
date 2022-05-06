@@ -8,3 +8,13 @@
 
 "app.Content.welcomeMessage" = "Welcome!";
 "app.Content.getStarted" = "GET STARTED";
+
+"app.Title.cntTitle" = "CNT";
+"app.Title.cntSubTitle" = "Jewelry";
+"app.Title.atlasTitle" = "Cartier";
+"app.Title.atlasSubTitle" = "ATLAS";
+
+"app.Welcome.cntTitle" = "WELCOME";
+"app.Welcome.cntMessage" = "Please select how you wish to log in:";
+"app.Welcome.atlasTitle" = "WELCOME TO\nCARTIER ATLAS";
+"app.Welcome.atlasMessage" = "Please enter your login details below:";

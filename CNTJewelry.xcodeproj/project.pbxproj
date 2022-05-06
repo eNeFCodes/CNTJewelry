@@ -72,6 +72,10 @@
 		8FB61FF72823B75D0087BB3F /* DotOnlyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB61FF62823B75D0087BB3F /* DotOnlyViewModel.swift */; };
 		8FB61FF92823BEB50087BB3F /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB61FF82823BEB50087BB3F /* AppSettings.swift */; };
 		8FB61FFB2823BECD0087BB3F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB61FFA2823BECD0087BB3F /* User.swift */; };
+		8FB61FFF28249BE60087BB3F /* LoginPageHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB61FFE28249BE60087BB3F /* LoginPageHeaderViewModel.swift */; };
+		8FB6200128249FB00087BB3F /* LoginPageHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB6200028249FB00087BB3F /* LoginPageHeaderView.swift */; };
+		8FB620032824B06C0087BB3F /* LoginPageWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB620022824B06C0087BB3F /* LoginPageWelcomeView.swift */; };
+		8FB620052824B0780087BB3F /* LoginPageWelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB620042824B0780087BB3F /* LoginPageWelcomeViewModel.swift */; };
 		8FBB378C280E47F400DB7476 /* APIRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBB378B280E47F400DB7476 /* APIRequestProtocol.swift */; };
 		8FBB378E280E4A3D00DB7476 /* APIResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBB378D280E4A3D00DB7476 /* APIResponseProtocol.swift */; };
 		8FBB3791280E4A9600DB7476 /* APIServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBB3790280E4A9600DB7476 /* APIServiceError.swift */; };
@@ -161,6 +165,10 @@
 		8FB61FF62823B75D0087BB3F /* DotOnlyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotOnlyViewModel.swift; sourceTree = "<group>"; };
 		8FB61FF82823BEB50087BB3F /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		8FB61FFA2823BECD0087BB3F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8FB61FFE28249BE60087BB3F /* LoginPageHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageHeaderViewModel.swift; sourceTree = "<group>"; };
+		8FB6200028249FB00087BB3F /* LoginPageHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageHeaderView.swift; sourceTree = "<group>"; };
+		8FB620022824B06C0087BB3F /* LoginPageWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageWelcomeView.swift; sourceTree = "<group>"; };
+		8FB620042824B0780087BB3F /* LoginPageWelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageWelcomeViewModel.swift; sourceTree = "<group>"; };
 		8FBB377C280E3C0D00DB7476 /* qa.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = qa.xcconfig; sourceTree = "<group>"; };
 		8FBB377E280E3C0D00DB7476 /* development.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = development.xcconfig; sourceTree = "<group>"; };
 		8FBB377F280E3C0D00DB7476 /* production.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = production.xcconfig; sourceTree = "<group>"; };
@@ -505,6 +513,10 @@
 			children = (
 				8FB61FDF28239B840087BB3F /* LoginView.swift */,
 				8FB61FE128239C540087BB3F /* LoginViewModel.swift */,
+				8FB6200028249FB00087BB3F /* LoginPageHeaderView.swift */,
+				8FB61FFE28249BE60087BB3F /* LoginPageHeaderViewModel.swift */,
+				8FB620022824B06C0087BB3F /* LoginPageWelcomeView.swift */,
+				8FB620042824B0780087BB3F /* LoginPageWelcomeViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -767,10 +779,12 @@
 				8F43CA14280E97F80011552D /* RandomImage.swift in Sources */,
 				8FB61FE028239B840087BB3F /* LoginView.swift in Sources */,
 				8FB61FF22823B71F0087BB3F /* DotOnlyView.swift in Sources */,
+				8FB620052824B0780087BB3F /* LoginPageWelcomeViewModel.swift in Sources */,
 				8FB61FF92823BEB50087BB3F /* AppSettings.swift in Sources */,
 				8F2A204C280D71DA0008DB86 /* Font+Ext.swift in Sources */,
 				8FB61FEC2823AEB30087BB3F /* DotView.swift in Sources */,
 				8F7772F3280FBA2700FF09AA /* FontCollection.swift in Sources */,
+				8FB620032824B06C0087BB3F /* LoginPageWelcomeView.swift in Sources */,
 				8FBB3798280E57FC00DB7476 /* APIResponseError.swift in Sources */,
 				8FBB3791280E4A9600DB7476 /* APIServiceError.swift in Sources */,
 				8FBB378C280E47F400DB7476 /* APIRequestProtocol.swift in Sources */,
@@ -781,7 +795,9 @@
 				8FB61FF72823B75D0087BB3F /* DotOnlyViewModel.swift in Sources */,
 				8F7772F0280FB5CF00FF09AA /* Environment.swift in Sources */,
 				8FB61FF02823AF340087BB3F /* ShapeView.swift in Sources */,
+				8FB61FFF28249BE60087BB3F /* LoginPageHeaderViewModel.swift in Sources */,
 				8FB61FEE2823AF180087BB3F /* BorderView.swift in Sources */,
+				8FB6200128249FB00087BB3F /* LoginPageHeaderView.swift in Sources */,
 				8FBFACBE2812470800689F5A /* ContentViewModel.swift in Sources */,
 				8F7772EB280FB20B00FF09AA /* CustomAPIRequest.swift in Sources */,
 				8FBFACC42812536800689F5A /* SampleModel.swift in Sources */,
