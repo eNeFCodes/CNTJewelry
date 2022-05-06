@@ -277,7 +277,7 @@
 			children = (
 				8FBFACBC281246F600689F5A /* ContentView */,
 				8FB61FEA2823AB7F0087BB3F /* Welcome */,
-				8FB61FE328239E160087BB3F /* Login */,
+				8FB61FE328239E160087BB3F /* LoginView */,
 			);
 			path = Presentations;
 			sourceTree = "<group>";
@@ -508,7 +508,7 @@
 			path = BrilliantCutPro;
 			sourceTree = "<group>";
 		};
-		8FB61FE328239E160087BB3F /* Login */ = {
+		8FB61FE328239E160087BB3F /* LoginView */ = {
 			isa = PBXGroup;
 			children = (
 				8FB61FDF28239B840087BB3F /* LoginView.swift */,
@@ -518,7 +518,7 @@
 				8FB620022824B06C0087BB3F /* LoginPageWelcomeView.swift */,
 				8FB620042824B0780087BB3F /* LoginPageWelcomeViewModel.swift */,
 			);
-			path = Login;
+			path = LoginView;
 			sourceTree = "<group>";
 		};
 		8FB61FEA2823AB7F0087BB3F /* Welcome */ = {
