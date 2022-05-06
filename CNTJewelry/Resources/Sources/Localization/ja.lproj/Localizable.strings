@@ -21,3 +21,5 @@
 
 "login.Option.atlas" = "ATLAS LOGIN";
 "login.Option.biometrics" = "FACE/TOUCH ID LOGIN";
+"login.InputField.emailPlaceholder" = "EMAIL";
+"login.InputField.passwordPlaceholder" = "PASSWORD";
