@@ -10,6 +10,8 @@ import SwiftUI
 struct LoginView: View {
     let model: LoginViewModel
 
+    @State var isLoginModeAtlas: Bool = false
+
     var body: some View {
         ZStack {
             GeometryReader { geometry in
@@ -35,6 +37,8 @@ struct LoginView: View {
                 }
                 .padding(.top, optionViewFrameHeight)
             }
+
+            buildNavigationViewStack()
         }
         .ignoresSafeArea()
         .background(ColorCollection.black)
@@ -49,6 +53,14 @@ struct LoginView: View {
                 .frame(width: frameSize.width,
                        height: frameSize.height,
                        alignment: .trailing)
+        }
+    }
+
+    private func buildNavigationViewStack() -> some View {
+        Group {
+            NavigationLink("", isActive: $isLoginModeAtlas) {
+                LoginPageAtlasView(model: .init())
+            }
         }
     }
 }
