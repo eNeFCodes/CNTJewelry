@@ -29,11 +29,12 @@ struct LoginPageAtlasView: View {
                 }
                 .frame(width: geometry.size.width, height: welcomeViewFrameHeight, alignment: .bottom)
 
-                let optionViewFrameHeight = welcomeViewFrameHeight + 56
+                let optionViewFrameHeight = welcomeViewFrameHeight + 40
                 VStack {
-
+                    LoginPageInputView(model: model.input, geometry: geometry)
                 }
                 .padding(.top, optionViewFrameHeight)
+                .padding(.bottom, 32)
             }
         }
         .ignoresSafeArea()

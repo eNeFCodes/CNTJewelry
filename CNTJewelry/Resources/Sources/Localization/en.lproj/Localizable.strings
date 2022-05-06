@@ -23,3 +23,4 @@
 "login.Option.biometrics" = "FACE/TOUCH ID LOGIN";
 "login.InputField.emailPlaceholder" = "EMAIL";
 "login.InputField.passwordPlaceholder" = "PASSWORD";
+"login.InputField.actionTitle" = "LOG IN";

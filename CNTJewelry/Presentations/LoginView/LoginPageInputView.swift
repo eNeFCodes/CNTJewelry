@@ -8,26 +8,52 @@
 import SwiftUI
 
 struct LoginPageInputView: View {
-    @ObservedObject var  model: LoginPageInputViewModel
-    let geometry: GeometryProxy
+    @ObservedObject private var  model: LoginPageInputViewModel
+    private let geometry: GeometryProxy
+    private let padding: CGFloat
+
+    init(model: LoginPageInputViewModel,
+         geometry: GeometryProxy,
+         padding: CGFloat = 32) {
+        self.model = model
+        self.geometry = geometry
+        self.padding = padding
+    }
 
     var body: some View {
         VStack(spacing: 20) {
             buildInputFieldViewStack(for: $model.email)
             buildInputFieldViewStack(for: $model.password)
+
+            let buttonSize = CGSize(width: abs(geometry.size.width - (padding * 2)), height: 56)
+
+            Spacer()
+            
+            Button {
+
+            } label: {
+                Text(model.actionTitle)
+                    .accessibilityLabel(model.actionTitle)
+                    .frame(width: buttonSize.width, height: buttonSize.height, alignment: .center)
+            }
+            .border(.gray, width: 1)
+            .foregroundColor(model.canProceed ? ColorCollection.white : ColorCollection.grayInactive)
+            .disabled(!model.canProceed)
         }
     }
 
     @ViewBuilder
     private func buildInputFieldViewStack(for field: Binding<LoginPageInputViewModel.Field>) -> some View {
+
+        let maxFieldWidth = abs(geometry.size.width - (padding * 2))
         let maxFieldHeight: CGFloat = 56
 
         ZStack(alignment: .bottomLeading) {
             VStack { }
-                .frame(width: geometry.size.width, height: 1, alignment: .center)
+                .frame(width: maxFieldWidth, height: 1, alignment: .center)
                 .overlay {
                     let p1 = CGPoint(x: 0, y: 0)
-                    let p2 = CGPoint(x: geometry.size.width, y: 0)
+                    let p2 = CGPoint(x: maxFieldWidth, y: 0)
                     BorderView(coordinates: [p1, p2])
                         .stroke(style: StrokeStyle(lineWidth: 1))
                         .foregroundColor(ColorCollection.white)
@@ -44,6 +70,7 @@ struct LoginPageInputView: View {
                 .frame(height: maxFieldHeight, alignment: .leading)
                 .foregroundColor(.white)
         }
+        .padding([.leading, .trailing], padding)
         .frame(height: maxFieldHeight, alignment: .leading)
     }
 }

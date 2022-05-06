@@ -22,14 +22,24 @@ class LoginPageInputViewModel: ObservableObject {
 
     var email: Field
     var password: Field
+    let actionTitle: String
 
     init(email: Field = .init(placeholder: L10n.Login.InputField.emailPlaceholder,
                               inpuString: ""),
          password: Field = .init(placeholder: L10n.Login.InputField.passwordPlaceholder,
                                  inpuString: "",
-                                 isSecured: true)) {
+                                 isSecured: true),
+         actionTitle: String = L10n.Login.InputField.actionTitle) {
 
         self.email = email
         self.password = password
+        self.actionTitle = actionTitle
+    }
+}
+
+extension LoginPageInputViewModel {
+
+    var canProceed: Bool {
+        !email.inpuString.isEmpty && !password.inpuString.isEmpty
     }
 }
