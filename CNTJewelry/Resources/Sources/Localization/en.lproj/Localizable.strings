@@ -8,11 +8,8 @@
 
 "app.Content.welcomeMessage" = "Welcome!";
 "app.Content.getStarted" = "GET STARTED";
-
-"app.Title.cntTitle" = "CNT";
-"app.Title.cntSubTitle" = "Jewelry";
-"app.Title.atlasTitle" = "Cartier";
-"app.Title.atlasSubTitle" = "ATLAS";
+"app.Content.title" = "CNT";
+"app.Content.subTitle" = "Jewelry";
 
 "app.Welcome.cntTitle" = "WELCOME";
 "app.Welcome.cntMessage" = "Please select how you wish to log in:";
