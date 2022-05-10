@@ -27,7 +27,7 @@ class Biometrics {
         context.localizedCancelTitle = L10n.Login.Biometrics.cancelTitle
 
         var error: NSError?
-        let policy: LAPolicy = .deviceOwnerAuthentication
+        let policy: LAPolicy = .deviceOwnerAuthenticationWithBiometrics
         if context.canEvaluatePolicy(policy, error: &error) {
             context.evaluatePolicy(policy, localizedReason: L10n.Login.Biometrics.evaluateReason) { success, error in
                 DispatchQueue.main.async {
