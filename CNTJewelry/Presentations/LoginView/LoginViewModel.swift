@@ -5,17 +5,14 @@
 //  Created by Neil Francis Hipona on 5/5/22.
 //
 
-import Foundation
 import Combine
+import SwiftUI
 
 class LoginViewModel: ObservableObject {
-
     let header: LoginPageHeaderViewModel
     let welcome: LoginPageWelcomeViewModel
     let option: LoginPageOptionViewModel
     @Published var isLoginModeAtlas: Bool = false
-
-    private var subscriptions = Set<AnyCancellable>()
 
     init(header: LoginPageHeaderViewModel = .init(title: L10n.App.Title.cntTitle,
                                                   subTitle: L10n.App.Title.cntSubTitle),
@@ -26,15 +23,18 @@ class LoginViewModel: ObservableObject {
         self.header = header
         self.welcome = welcome
         self.option = option
-
-        self.setSubscribers()
     }
 
-    private func setSubscribers() {
-        option.publisher.sink { type in
-            self.isLoginModeAtlas = type == .atlasLogin
+    func triggerBiometrics(completion: @escaping (Bool) -> Void) {
+        Biometrics.triggerBiometrics { status in
+            switch status {
+            case .authenticated:
+                print("Biometrics status: Authenticated")
+                completion(true)
+            case .failed(let error as NSError):
+                print("Biometrics failed:", error)
+            }
         }
-        .store(in: &subscriptions)
     }
 }
 

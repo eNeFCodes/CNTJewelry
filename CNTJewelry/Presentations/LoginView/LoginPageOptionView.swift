@@ -11,6 +11,11 @@ struct LoginPageOptionView: View {
     let model: LoginPageOptionViewModel
     let geometry: GeometryProxy
 
+    init(model: LoginPageOptionViewModel, geometry: GeometryProxy) {
+        self.model = model
+        self.geometry = geometry
+    }
+
     var body: some View {
         VStack(spacing: 24) {
             ForEach(model.actions, id: \.id) { action in

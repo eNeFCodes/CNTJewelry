@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
+    @EnvironmentObject private var appEnv: AppEnvironment
     @StateObject var model: LoginViewModel
 
     var body: some View {
@@ -34,6 +35,18 @@ struct LoginView: View {
                     LoginPageOptionView(model: model.option, geometry: geometry)
                 }
                 .padding(.top, optionViewFrameHeight)
+            }
+            .onReceive(model.option.publisher) { type in
+                switch type {
+                case .atlasLogin:
+                    print("atlasLogin")
+                    model.isLoginModeAtlas = true
+                case .faceAndTouchID:
+                    print("faceAndTouchID")
+                    model.triggerBiometrics { state in
+                        appEnv.isUserLoggedIn = state
+                    }
+                }
             }
 
             buildNavigationViewStack()
