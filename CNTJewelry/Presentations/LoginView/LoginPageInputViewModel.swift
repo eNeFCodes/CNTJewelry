@@ -21,35 +21,22 @@ class LoginPageInputViewModel: ObservableObject {
         }
     }
 
-    var email: Field
-    var password: Field
+    @Published var email: String
+    @Published var password: String
     let actionTitle: String
 
-    @Published private(set) var canProceed: Bool = false
-    private var subscriptions = Set<AnyCancellable>()
-
-    private(set) lazy var canProceedPublisher: CurrentValueSubject<Bool, Never> = {
-        let canProceed = !email.inpuString.isEmpty && !password.inpuString.isEmpty
-        let publisher = CurrentValueSubject<Bool, Never>(canProceed)
-        return publisher
-    }()
-
-    init(email: Field = .init(placeholder: L10n.Login.InputField.emailPlaceholder,
-                              inpuString: ""),
-         password: Field = .init(placeholder: L10n.Login.InputField.passwordPlaceholder,
-                                 inpuString: "",
-                                 isSecured: true),
+    init(email: String = "",
+         password: String = "",
          actionTitle: String = L10n.Login.InputField.actionTitle) {
 
         self.email = email
         self.password = password
         self.actionTitle = actionTitle
+    }
+}
 
-        let merged = email.inpuString.publisher.merge(with: password.inpuString.publisher)
-        merged.sink { [weak self] _ in
-            guard let self = self else { return }
-            self.canProceed = !email.inpuString.isEmpty && !password.inpuString.isEmpty
-        }
-        .store(in: &subscriptions)
+extension LoginPageInputViewModel {
+    var canProceed: Bool {
+        !email.isEmpty && !password.isEmpty
     }
 }

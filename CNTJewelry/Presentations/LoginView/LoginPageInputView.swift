@@ -22,9 +22,10 @@ struct LoginPageInputView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            buildInputFieldViewStack(for: $model.email)
-            buildInputFieldViewStack(for: $model.password)
+            buildInputFieldViewStack(for: $model.email, placeholderString: L10n.Login.InputField.emailPlaceholder)
+            buildInputFieldViewStack(for: $model.password, placeholderString: L10n.Login.InputField.passwordPlaceholder, isSecured: true)
 
+            // button
             let buttonSize = CGSize(width: abs(geometry.size.width - (padding * 2)), height: 56)
 
             Spacer()
@@ -43,8 +44,7 @@ struct LoginPageInputView: View {
     }
 
     @ViewBuilder
-    private func buildInputFieldViewStack(for field: Binding<LoginPageInputViewModel.Field>) -> some View {
-
+    private func buildInputFieldViewStack(for inputString: Binding<String>, placeholderString: String, isSecured: Bool = false) -> some View {
         let maxFieldWidth = abs(geometry.size.width - (padding * 2))
         let maxFieldHeight: CGFloat = 56
 
@@ -59,17 +59,23 @@ struct LoginPageInputView: View {
                         .foregroundColor(ColorCollection.white)
                 }
 
-            if field.inpuString.wrappedValue.isEmpty {
-                Text(field.placeholder.wrappedValue)
-                    .accessibility(hidden: true)
-                    .foregroundColor(ColorCollection.white)
-                    .frame(height: maxFieldHeight, alignment: .leading)
-            }
+            Text(placeholderString)
+                .accessibility(hidden: true)
+                .foregroundColor(ColorCollection.white)
+                .frame(width: maxFieldWidth, height: maxFieldHeight, alignment: .leading)
+                .opacity(inputString.wrappedValue.isEmpty ? 1 : 0)
 
-            SecureField("", text: field.inpuString)
-                .accessibilityLabel(field.placeholder.wrappedValue)
-                .frame(height: maxFieldHeight, alignment: .leading)
-                .foregroundColor(.white)
+            if isSecured {
+                SecureField("", text: inputString)
+                    .accessibilityLabel(inputString.wrappedValue)
+                    .frame(width: maxFieldWidth, height: maxFieldHeight, alignment: .leading)
+                    .foregroundColor(ColorCollection.white)
+            } else {
+                TextField("", text: inputString)
+                    .accessibilityLabel(inputString.wrappedValue)
+                    .frame(width: maxFieldWidth, height: maxFieldHeight, alignment: .leading)
+                    .foregroundColor(ColorCollection.white)
+            }
         }
         .padding([.leading, .trailing], padding)
         .frame(height: maxFieldHeight, alignment: .leading)

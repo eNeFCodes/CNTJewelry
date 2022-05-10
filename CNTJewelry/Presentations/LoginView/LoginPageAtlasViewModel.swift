@@ -18,11 +18,8 @@ class LoginPageAtlasViewModel: ObservableObject {
                                                   isPlain: false),
          welcome: LoginPageWelcomeViewModel = .init(title: L10n.App.Welcome.atlasTitle,
                                                     message: L10n.App.Welcome.atlasMessage),
-         input: LoginPageInputViewModel = .init(email: .init(placeholder: L10n.Login.InputField.emailPlaceholder,
-                                                             inpuString: ""),
-                                                password: .init(placeholder: L10n.Login.InputField.passwordPlaceholder,
-                                                                inpuString: "",
-                                                                isSecured: true))) {
+         input: LoginPageInputViewModel = .init(email: "",
+                                                password: "")) {
         self.header = header
         self.welcome = welcome
         self.input = input
