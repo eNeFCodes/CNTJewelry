@@ -13,7 +13,7 @@
 
 "app.Welcome.cntTitle" = "WELCOME";
 "app.Welcome.cntMessage" = "Please select how you wish to log in:";
-"app.Welcome.atlasTitle" = "WELCOME TO\nCARTIER ATLAS";
+"app.Welcome.atlasTitle" = "WELCOME TO\nCNT ATLAS";
 "app.Welcome.atlasMessage" = "Please enter your login details below:";
 
 "login.Option.atlas" = "ATLAS LOGIN";

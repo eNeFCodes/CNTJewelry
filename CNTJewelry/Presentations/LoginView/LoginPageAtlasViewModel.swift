@@ -13,9 +13,8 @@ class LoginPageAtlasViewModel: ObservableObject {
     let welcome: LoginPageWelcomeViewModel
     let input: LoginPageInputViewModel
 
-    init(header: LoginPageHeaderViewModel = .init(title: L10n.App.Title.atlasTitle,
-                                                  subTitle: L10n.App.Title.atlasSubTitle,
-                                                  isPlain: false),
+    init(header: LoginPageHeaderViewModel = .init(title: L10n.App.Content.title,
+                                                  subTitle: L10n.App.Content.subTitle),
          welcome: LoginPageWelcomeViewModel = .init(title: L10n.App.Welcome.atlasTitle,
                                                     message: L10n.App.Welcome.atlasMessage),
          input: LoginPageInputViewModel = .init(email: "",

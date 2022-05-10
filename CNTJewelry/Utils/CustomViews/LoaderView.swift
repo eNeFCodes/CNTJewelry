@@ -27,6 +27,7 @@ struct LoaderView<Content: View>: View {
             .opacity(isLoading ? 1 : 0)
             .cornerRadius(20)
         }
+        .ignoresSafeArea()
     }
 }
 

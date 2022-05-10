@@ -17,7 +17,7 @@ struct LoginView: View {
                 let welcomeViewFrameHeight: CGFloat = abs(geometry.size.height - 330)
                 let backdropViewFrameHeight = welcomeViewFrameHeight - 40
 
-                buildBackdropViewStack(frameSize: .init(width: geometry.size.width * 0.6, height: backdropViewFrameHeight))
+                buildBackdropViewStack(frameSize: .init(width: geometry.size.width * 0.75, height: backdropViewFrameHeight))
 
                 VStack {
                     LoginPageHeaderView(model: model.header, geometry: geometry)
@@ -61,15 +61,14 @@ struct LoginView: View {
             Image("img_bg_login")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: frameSize.width,
-                       height: frameSize.height,
-                       alignment: .trailing)
+                .frame(width: frameSize.width, height: frameSize.height, alignment: .trailing)
+                .clipped()
         }
     }
 
     private func buildNavigationViewStack() -> some View {
         NavigationLink("", isActive: $model.isLoginModeAtlas) {
-            LoginPageAtlasView(model: .init())
+            LoginPageAtlasView(model: model.atlasModel)
         }
     }
 }

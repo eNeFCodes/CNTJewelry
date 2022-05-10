@@ -86,8 +86,8 @@ struct LoginPageHeaderView: View {
 }
 
 struct LoginPageHeaderView_Previews: PreviewProvider {
-    static let model: LoginPageHeaderViewModel = .init(title: L10n.App.Title.atlasTitle,
-                                                       subTitle: L10n.App.Title.atlasSubTitle,
+    static let model: LoginPageHeaderViewModel = .init(title: L10n.App.Content.title,
+                                                       subTitle: L10n.App.Content.subTitle,
                                                        isPlain: false)
     static var previews: some View {
         GeometryReader { geometry in

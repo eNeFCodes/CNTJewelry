@@ -11,8 +11,12 @@ import SwiftUI
 class ContentViewModel: ObservableObject {
 
     let welcome: WelcomeViewModel
+    let login: LoginViewModel
 
-    init(welcome: WelcomeViewModel = .init()) {
+    init(welcome: WelcomeViewModel = .init(),
+         login: LoginViewModel = .init()) {
+
         self.welcome = welcome
+        self.login = login
     }
 }

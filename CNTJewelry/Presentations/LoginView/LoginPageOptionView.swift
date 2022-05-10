@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct LoginPageOptionView: View {
-    let model: LoginPageOptionViewModel
-    let geometry: GeometryProxy
+    @ObservedObject private var model: LoginPageOptionViewModel
+    private let geometry: GeometryProxy
 
     init(model: LoginPageOptionViewModel, geometry: GeometryProxy) {
         self.model = model
