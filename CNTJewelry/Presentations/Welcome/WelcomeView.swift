@@ -21,14 +21,14 @@ struct WelcomeView: View {
                 .foregroundColor(ColorCollection.green)
 
             let appNameFont = FontCollection.BrilliantCutProB7.black(size: 55).font
-            Text(Environment.appName)
-                .accessibilityLabel(Environment.appName)
+            Text(ConfigEnvironment.appName)
+                .accessibilityLabel(ConfigEnvironment.appName)
                 .font(appNameFont)
                 .foregroundColor(ColorCollection.orange)
 
             let bundleIDFont = FontCollection.FancyCutExtProB7.thin(size: 10).font
-            Text(Environment.appBundleID)
-                .accessibilityLabel(Environment.appBundleID)
+            Text(ConfigEnvironment.appBundleID)
+                .accessibilityLabel(ConfigEnvironment.appBundleID)
                 .font(bundleIDFont)
                 .foregroundColor(ColorCollection.black)
 
@@ -44,5 +44,7 @@ struct WelcomeView: View {
 struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
         WelcomeView(model: .init())
+            .environmentObject(AppEnvironment())
+            .environmentObject(AppSettings())
     }
 }

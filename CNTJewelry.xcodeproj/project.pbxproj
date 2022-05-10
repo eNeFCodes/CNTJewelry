@@ -22,7 +22,7 @@
 		8F7772E8280FAE2400FF09AA /* Optional+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7772E7280FAE2400FF09AA /* Optional+Ext.swift */; };
 		8F7772EB280FB20B00FF09AA /* CustomAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7772EA280FB20B00FF09AA /* CustomAPIRequest.swift */; };
 		8F7772EE280FB44200FF09AA /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7772ED280FB44200FF09AA /* Router.swift */; };
-		8F7772F0280FB5CF00FF09AA /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7772EF280FB5CF00FF09AA /* Environment.swift */; };
+		8F7772F0280FB5CF00FF09AA /* ConfigEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7772EF280FB5CF00FF09AA /* ConfigEnvironment.swift */; };
 		8F7772F3280FBA2700FF09AA /* FontCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7772F2280FBA2700FF09AA /* FontCollection.swift */; };
 		8F777303280FBD6800FF09AA /* FancyCutProB7-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8F7772F9280FBD6700FF09AA /* FancyCutProB7-LightItalic.otf */; };
 		8F777304280FBD6800FF09AA /* FancyCutProB7-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8F7772FA280FBD6700FF09AA /* FancyCutProB7-Medium.otf */; };
@@ -121,7 +121,7 @@
 		8F7772E7280FAE2400FF09AA /* Optional+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Ext.swift"; sourceTree = "<group>"; };
 		8F7772EA280FB20B00FF09AA /* CustomAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAPIRequest.swift; sourceTree = "<group>"; };
 		8F7772ED280FB44200FF09AA /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		8F7772EF280FB5CF00FF09AA /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		8F7772EF280FB5CF00FF09AA /* ConfigEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigEnvironment.swift; sourceTree = "<group>"; };
 		8F7772F2280FBA2700FF09AA /* FontCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontCollection.swift; sourceTree = "<group>"; };
 		8F7772F9280FBD6700FF09AA /* FancyCutProB7-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FancyCutProB7-LightItalic.otf"; sourceTree = "<group>"; };
 		8F7772FA280FBD6700FF09AA /* FancyCutProB7-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FancyCutProB7-Medium.otf"; sourceTree = "<group>"; };
@@ -302,7 +302,7 @@
 				8FBB3780280E3C0D00DB7476 /* staging.xcconfig */,
 				8FBB377F280E3C0D00DB7476 /* production.xcconfig */,
 				8F2A2046280D6BB40008DB86 /* swiftgen.yml */,
-				8F7772EF280FB5CF00FF09AA /* Environment.swift */,
+				8F7772EF280FB5CF00FF09AA /* ConfigEnvironment.swift */,
 			);
 			path = Configs;
 			sourceTree = "<group>";
@@ -816,7 +816,7 @@
 				8FB61FFB2823BECD0087BB3F /* User.swift in Sources */,
 				8FB61FF52823B74E0087BB3F /* DotViewModel.swift in Sources */,
 				8FB61FF72823B75D0087BB3F /* DotOnlyViewModel.swift in Sources */,
-				8F7772F0280FB5CF00FF09AA /* Environment.swift in Sources */,
+				8F7772F0280FB5CF00FF09AA /* ConfigEnvironment.swift in Sources */,
 				8FB61FF02823AF340087BB3F /* ShapeView.swift in Sources */,
 				8FB61FFF28249BE60087BB3F /* LoginPageHeaderViewModel.swift in Sources */,
 				8FB61FEE2823AF180087BB3F /* BorderView.swift in Sources */,

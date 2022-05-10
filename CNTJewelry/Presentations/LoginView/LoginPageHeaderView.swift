@@ -25,6 +25,7 @@ struct LoginPageHeaderView: View {
                 }
             }
         }
+        .padding(.top, 40)
         .frame(width: geometry.size.width, height: 340, alignment: .center)
     }
 
@@ -77,7 +78,8 @@ struct LoginPageHeaderView: View {
             Image("ic_logo")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 200, height: 200, alignment: .trailing)
+                .frame(width: 200, height: 200, alignment: .center)
+                .clipped()
         }
         .frame(width: geometry.size.width, alignment: .bottomTrailing)
     }

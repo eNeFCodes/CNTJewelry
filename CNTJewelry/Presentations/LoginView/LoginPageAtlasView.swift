@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LoginPageAtlasView: View {
+    @Environment(\.presentationMode) private var presentationMode
     let model: LoginPageAtlasViewModel
 
     var body: some View {
@@ -39,6 +40,12 @@ struct LoginPageAtlasView: View {
         }
         .ignoresSafeArea()
         .background(ColorCollection.black)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: Button(action: {
+            presentationMode.wrappedValue.dismiss()
+        }, label: {
+            Image("ic_back")
+        }))
     }
 
     private func buildBackdropViewStack(frameSize: CGSize) -> some View {

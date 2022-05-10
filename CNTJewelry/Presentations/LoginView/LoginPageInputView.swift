@@ -59,11 +59,12 @@ struct LoginPageInputView: View {
                         .foregroundColor(ColorCollection.white)
                 }
 
-            Text(field.placeholder.wrappedValue)
-                .accessibility(hidden: true)
-                .foregroundColor(ColorCollection.white)
-                .frame(height: maxFieldHeight, alignment: .leading)
-                .opacity(field.inpuString.wrappedValue.isEmpty ? 1 : 0)
+            if field.inpuString.wrappedValue.isEmpty {
+                Text(field.placeholder.wrappedValue)
+                    .accessibility(hidden: true)
+                    .foregroundColor(ColorCollection.white)
+                    .frame(height: maxFieldHeight, alignment: .leading)
+            }
 
             SecureField("", text: field.inpuString)
                 .accessibilityLabel(field.placeholder.wrappedValue)

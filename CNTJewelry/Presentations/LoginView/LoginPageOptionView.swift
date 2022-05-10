@@ -25,7 +25,7 @@ struct LoginPageOptionView: View {
         let frameSize = CGSize(width: abs(geometry.size.width - 64), height: 56)
 
         Button {
-            model.triggerAction(with: action.id)
+            model.triggerAction(with: action.type)
         } label: {
             let titleFont = FontCollection.BrilliantCutProB7.bold(size: 12).font
             Text(action.title)
@@ -39,8 +39,8 @@ struct LoginPageOptionView: View {
 
 struct LoginPageOptionView_Previews: PreviewProvider {
     static let model: LoginPageOptionViewModel = .init(actions: [
-        .init(id: 0, title: L10n.Login.Option.atlas),
-        .init(id: 1, title: L10n.Login.Option.biometrics)
+        .init(id: 0, title: L10n.Login.Option.atlas, type: .atlasLogin),
+        .init(id: 1, title: L10n.Login.Option.biometrics, type: .faceAndTouchID)
     ])
     static var previews: some View {
         GeometryReader { geometry in

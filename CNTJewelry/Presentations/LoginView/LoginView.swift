@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    let model: LoginViewModel
-
-    @State var isLoginModeAtlas: Bool = false
+    @StateObject var model: LoginViewModel
 
     var body: some View {
         ZStack {
@@ -58,7 +56,7 @@ struct LoginView: View {
 
     private func buildNavigationViewStack() -> some View {
         Group {
-            NavigationLink("", isActive: $isLoginModeAtlas) {
+            NavigationLink("", isActive: $model.isLoginModeAtlas) {
                 LoginPageAtlasView(model: .init())
             }
         }

@@ -15,7 +15,7 @@ class LoginViewModel: ObservableObject {
     let option: LoginPageOptionViewModel
     @Published var isLoginModeAtlas: Bool = false
 
-    private var subscribers = Set<AnyCancellable>()
+    private var subscriptions = Set<AnyCancellable>()
 
     init(header: LoginPageHeaderViewModel = .init(title: L10n.App.Title.cntTitle,
                                                   subTitle: L10n.App.Title.cntSubTitle),
@@ -27,19 +27,22 @@ class LoginViewModel: ObservableObject {
         self.welcome = welcome
         self.option = option
 
-        setSubscribers()
+        self.setSubscribers()
     }
 
     private func setSubscribers() {
-
+        option.publisher.sink { type in
+            self.isLoginModeAtlas = type == .atlasLogin
+        }
+        .store(in: &subscriptions)
     }
 }
 
 extension LoginViewModel {
     class func loginOptions() -> [LoginPageOptionViewModel.Action] {
         [
-            .init(id: 0, title: L10n.Login.Option.atlas),
-            .init(id: 1, title: L10n.Login.Option.biometrics)
+            .init(id: 0, title: L10n.Login.Option.atlas, type: .atlasLogin),
+            .init(id: 1, title: L10n.Login.Option.biometrics, type: .faceAndTouchID)
         ]
     }
 }

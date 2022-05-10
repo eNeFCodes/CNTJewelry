@@ -10,17 +10,17 @@ import Foundation
 /// Contains routing URLs
 enum Router {
 
-    typealias PlistKeys = Environment.Keys.Plist
+    typealias PlistKeys = ConfigEnvironment.Keys.Plist
 
     static let environment: String = {
-        guard let string = Environment.infoDictionary[PlistKeys.appEnv] as? String else {
+        guard let string = ConfigEnvironment.infoDictionary[PlistKeys.appEnv] as? String else {
             fatalError("App Environment not set in plist for this environment")
         }
         return string
     }()
 
     static let appRootURL: URL = {
-        guard let string = Environment.infoDictionary[PlistKeys.appRootURL] as? String else {
+        guard let string = ConfigEnvironment.infoDictionary[PlistKeys.appRootURL] as? String else {
             fatalError("App Root URL not set in plist for this environment")
         }
         guard let url = URL(string: string) else {

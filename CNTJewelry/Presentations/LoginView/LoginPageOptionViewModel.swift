@@ -9,22 +9,27 @@ import Foundation
 import Combine
 
 class LoginPageOptionViewModel: ObservableObject {
+    enum LoginOptionType {
+        case atlasLogin
+        case faceAndTouchID
+    }
+
     struct Action: Identifiable {
         let id: Int
         let title: String
+        let type: LoginOptionType
     }
 
     let actions: [Action]
-
-    var publisher: PassthroughSubject<Int, Never>
+    let publisher: PassthroughSubject<LoginOptionType, Never>
 
     init(actions: [Action],
-         publisher: PassthroughSubject<Int, Never> = PassthroughSubject<Int, Never>()) {
+         publisher: PassthroughSubject<LoginOptionType, Never> = PassthroughSubject<LoginOptionType, Never>()) {
         self.actions = actions
         self.publisher = publisher
     }
 
-    func triggerAction(with id: Int) {
-        publisher.send(id)
+    func triggerAction(with type: LoginOptionType) {
+        publisher.send(type)
     }
 }

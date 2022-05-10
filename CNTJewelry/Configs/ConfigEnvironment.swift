@@ -1,5 +1,5 @@
 //
-//  Environment.swift
+//  ConfigEnvironment.swift
 //  CNTJewelry
 //
 //  Created by Neil Francis Hipona on 4/20/22.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Environment {
+enum ConfigEnvironment {
 
     // MARK: - Keys
     enum Keys {
@@ -29,17 +29,17 @@ enum Environment {
     }()
 }
 
-extension Environment {
+extension ConfigEnvironment {
 
     static let appName: String = {
-        guard let string = Environment.infoDictionary[Keys.Plist.appName] as? String else {
+        guard let string = ConfigEnvironment.infoDictionary[Keys.Plist.appName] as? String else {
             fatalError("AppName not set in plist for this environment")
         }
         return string
     }()
 
     static let appBundleID: String = {
-        guard let string = Environment.infoDictionary[Keys.Plist.appBundleID] as? String else {
+        guard let string = ConfigEnvironment.infoDictionary[Keys.Plist.appBundleID] as? String else {
             fatalError("AppBundleID not set in plist for this environment")
         }
         return string
