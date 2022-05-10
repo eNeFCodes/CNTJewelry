@@ -82,6 +82,7 @@
 		8FB6200D2824D3BC0087BB3F /* LoginPageAtlasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB6200C2824D3BC0087BB3F /* LoginPageAtlasViewModel.swift */; };
 		8FB6200F2824D4750087BB3F /* LoginPageInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB6200E2824D4750087BB3F /* LoginPageInputView.swift */; };
 		8FB620112824D47C0087BB3F /* LoginPageInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB620102824D47C0087BB3F /* LoginPageInputViewModel.swift */; };
+		8FB62013282A11650087BB3F /* Biometrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB62012282A11650087BB3F /* Biometrics.swift */; };
 		8FBB378C280E47F400DB7476 /* APIRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBB378B280E47F400DB7476 /* APIRequestProtocol.swift */; };
 		8FBB378E280E4A3D00DB7476 /* APIResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBB378D280E4A3D00DB7476 /* APIResponseProtocol.swift */; };
 		8FBB3791280E4A9600DB7476 /* APIServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBB3790280E4A9600DB7476 /* APIServiceError.swift */; };
@@ -181,6 +182,7 @@
 		8FB6200C2824D3BC0087BB3F /* LoginPageAtlasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageAtlasViewModel.swift; sourceTree = "<group>"; };
 		8FB6200E2824D4750087BB3F /* LoginPageInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageInputView.swift; sourceTree = "<group>"; };
 		8FB620102824D47C0087BB3F /* LoginPageInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageInputViewModel.swift; sourceTree = "<group>"; };
+		8FB62012282A11650087BB3F /* Biometrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Biometrics.swift; sourceTree = "<group>"; };
 		8FBB377C280E3C0D00DB7476 /* qa.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = qa.xcconfig; sourceTree = "<group>"; };
 		8FBB377E280E3C0D00DB7476 /* development.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = development.xcconfig; sourceTree = "<group>"; };
 		8FBB377F280E3C0D00DB7476 /* production.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = production.xcconfig; sourceTree = "<group>"; };
@@ -452,6 +454,7 @@
 			children = (
 				8F7772F2280FBA2700FF09AA /* FontCollection.swift */,
 				8FBFACCE2819377500689F5A /* ColorCollection.swift */,
+				8FB62012282A11650087BB3F /* Biometrics.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -795,6 +798,7 @@
 				8FB61FE92823AB7B0087BB3F /* WelcomeViewModel.swift in Sources */,
 				8F43CA16280E99CA0011552D /* RandomImageAPI.swift in Sources */,
 				8F7772D3280F90B900FF09AA /* MockTest.swift in Sources */,
+				8FB62013282A11650087BB3F /* Biometrics.swift in Sources */,
 				8FB61FE228239C540087BB3F /* LoginViewModel.swift in Sources */,
 				8F43CA12280E97DA0011552D /* RandomImageAPIService.swift in Sources */,
 				8F43CA14280E97F80011552D /* RandomImage.swift in Sources */,

@@ -24,3 +24,7 @@
 "login.InputField.emailPlaceholder" = "EMAIL";
 "login.InputField.passwordPlaceholder" = "PASSWORD";
 "login.InputField.actionTitle" = "LOG IN";
+"login.Biometrics.contextReason" = "Use to login to your account";
+"login.Biometrics.cancelTitle" = "Use Default Login";
+"login.Biometrics.evaluateReason" = "Log in using Biometrics";
+"login.Biometrics.evaluateError" = "Can't evaluate policy";

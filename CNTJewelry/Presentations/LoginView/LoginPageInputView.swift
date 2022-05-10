@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LoginPageInputView: View {
+    @EnvironmentObject private var appEnv: AppEnvironment
     @ObservedObject private var  model: LoginPageInputViewModel
     private let geometry: GeometryProxy
     private let padding: CGFloat
@@ -25,13 +26,15 @@ struct LoginPageInputView: View {
             buildInputFieldViewStack(for: $model.email, placeholderString: L10n.Login.InputField.emailPlaceholder)
             buildInputFieldViewStack(for: $model.password, placeholderString: L10n.Login.InputField.passwordPlaceholder, isSecured: true)
 
+            Spacer()
             // button
             let buttonSize = CGSize(width: abs(geometry.size.width - (padding * 2)), height: 56)
-
-            Spacer()
-            
             Button {
-
+                Task {
+                    appEnv.isLoading = true
+                    appEnv.isUserLoggedIn = await model.triggerLogin()
+                    appEnv.isLoading = false
+                }
             } label: {
                 Text(model.actionTitle)
                     .accessibilityLabel(model.actionTitle)

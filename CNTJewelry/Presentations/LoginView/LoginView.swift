@@ -55,10 +55,8 @@ struct LoginView: View {
     }
 
     private func buildNavigationViewStack() -> some View {
-        Group {
-            NavigationLink("", isActive: $model.isLoginModeAtlas) {
-                LoginPageAtlasView(model: .init())
-            }
+        NavigationLink("", isActive: $model.isLoginModeAtlas) {
+            LoginPageAtlasView(model: .init())
         }
     }
 }
