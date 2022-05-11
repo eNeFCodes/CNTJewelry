@@ -48,6 +48,9 @@ struct LoginPageInputView: View {
             .foregroundColor(model.canProceed ? ColorCollection.white : ColorCollection.grayInactive)
             .disabled(!model.canProceed)
         }
+        .onAppear {
+            model.clearInputs()
+        }
     }
 
     @ViewBuilder

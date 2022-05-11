@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct FTUEView: View {
+    @EnvironmentObject private var appRouting: AppRouting
     @Environment(\.presentationMode) private var presentationMode
+    
     @StateObject private var model: FTUEViewModel
 
     init(model: FTUEViewModel) {
@@ -92,7 +94,7 @@ struct FTUEView: View {
             HStack {
                 Spacer()
                 Button {
-                    print("Triggered close")
+                    presentationMode.wrappedValue.dismiss()
                 } label: {
                     Image("ic_close_white")
                         .resizable()

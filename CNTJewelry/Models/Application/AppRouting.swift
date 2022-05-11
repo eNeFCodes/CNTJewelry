@@ -14,11 +14,7 @@ class AppRouting: ObservableObject {
         case biometrics
     }
 
-    @Published var isUserLoggedIn: Bool {
-        didSet {
-            loginMode = .default
-        }
-    }
+    @Published var isUserLoggedIn: Bool
     @Published var isLoginModeAtlas: Bool
 
     @Published var loginMode: LoginType {

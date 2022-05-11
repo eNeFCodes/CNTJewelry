@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct LoginPageAtlasView: View {
+    @EnvironmentObject private var appRouting: AppRouting
     @Environment(\.presentationMode) private var presentationMode
-    @ObservedObject private var model: LoginPageAtlasViewModel
+
+    @StateObject private var model: LoginPageAtlasViewModel
 
     init(model: LoginPageAtlasViewModel) {
-        self.model = model
+        _model = .init(wrappedValue: model)
     }
 
     var body: some View {
@@ -41,6 +43,8 @@ struct LoginPageAtlasView: View {
                 .padding(.top, optionViewFrameHeight)
                 .padding(.bottom, 32)
             }
+
+            buildNavigationViewStack()
         }
         .ignoresSafeArea()
         .background(ColorCollection.black)
@@ -60,6 +64,12 @@ struct LoginPageAtlasView: View {
                 .aspectRatio(contentMode: .fill)
                 .frame(width: frameSize.width, height: frameSize.height, alignment: .trailing)
                 .clipped()
+        }
+    }
+
+    private func buildNavigationViewStack() -> some View {
+        NavigationLink("", isActive: $appRouting.isUserLoggedIn) {
+            FTUEView(model: .init(items: FTUEViewModel.mockItems()))
         }
     }
 }

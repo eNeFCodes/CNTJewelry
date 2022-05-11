@@ -12,19 +12,16 @@ class LoginViewModel: ObservableObject {
     let header: LoginPageHeaderViewModel
     let welcome: LoginPageWelcomeViewModel
     @Published var option: LoginPageOptionViewModel
-    @Published var atlasModel: LoginPageAtlasViewModel
 
     init(header: LoginPageHeaderViewModel = .init(title: L10n.App.Content.title,
                                                   subTitle: L10n.App.Content.subTitle),
          welcome: LoginPageWelcomeViewModel = .init(title: L10n.App.Welcome.cntTitle,
                                                     message: L10n.App.Welcome.cntMessage),
-         option: LoginPageOptionViewModel = .init(actions: LoginViewModel.loginOptions()),
-         atlasModel: LoginPageAtlasViewModel = .init()) {
+         option: LoginPageOptionViewModel = .init(actions: LoginViewModel.loginOptions())) {
 
         self.header = header
         self.welcome = welcome
         self.option = option
-        self.atlasModel = atlasModel
     }
 
     func triggerBiometrics(completion: @escaping (Bool) -> Void) {

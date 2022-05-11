@@ -75,7 +75,7 @@ struct LoginView: View {
     @ViewBuilder
     private func buildNavigationViewStack() -> some View {
         NavigationLink("", isActive: $appRouting.isLoginModeAtlas) {
-            LoginPageAtlasView(model: model.atlasModel)
+            LoginPageAtlasView(model: .init())
         }
 
         NavigationLink("", isActive: $appRouting.isUserLoggedIn) {

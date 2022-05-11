@@ -10,18 +10,9 @@ import Foundation
 class AppSettings: ObservableObject {
 
     static let shared = AppSettings()
+    var user: User?
 
-    @Published var isUserLoggedIn: Bool
-    var user: User? {
-        didSet {
-            isUserLoggedIn = user != nil
-        }
-    }
-
-    init(isUserLoggedIn: Bool = false,
-         user: User? = nil) {
-
-        self.isUserLoggedIn = isUserLoggedIn
+    init(user: User? = nil) {
         self.user = user
     }
 }

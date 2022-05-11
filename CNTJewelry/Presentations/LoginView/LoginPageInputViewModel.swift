@@ -31,6 +31,11 @@ extension LoginPageInputViewModel {
         !email.isEmpty && !password.isEmpty
     }
 
+    func clearInputs() {
+        email = ""
+        password = ""
+    }
+
     @MainActor
     func triggerLogin() async -> Bool {
         let requestURL = URL(string: "https://github.com/eNeFCodes/CNTJewelry")!
