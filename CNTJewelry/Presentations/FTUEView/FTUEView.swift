@@ -68,7 +68,6 @@ struct FTUEView: View {
         let frameHeight = abs(geometry.size.height - 160)
         VStack {
             Spacer()
-
             switch item.type {
             case .showcase:
                 if let item = item as? FTUEShowcaseViewModel {
@@ -83,7 +82,6 @@ struct FTUEView: View {
                         .frame(width: geometry.size.width, height: frameHeight, alignment: .center)
                 }
             }
-
             Spacer()
         }
         .padding(.bottom, 32)
@@ -100,9 +98,10 @@ struct FTUEView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 50, height: 50, alignment: .center)
-                        .padding(10)
                 }
+                .padding(10)
             }
+            .padding(.top, 30)
             Spacer()
         }
     }

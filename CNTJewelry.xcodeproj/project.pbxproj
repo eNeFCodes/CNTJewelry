@@ -23,6 +23,7 @@
 		8F678CAE282B486200608B98 /* FTUEIntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F678CAD282B486200608B98 /* FTUEIntroViewModel.swift */; };
 		8F678CB0282B556300608B98 /* FTUEShowcaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F678CAF282B556300608B98 /* FTUEShowcaseView.swift */; };
 		8F678CB2282B556A00608B98 /* FTUEShowcaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F678CB1282B556A00608B98 /* FTUEShowcaseViewModel.swift */; };
+		8F678CB4282B967C00608B98 /* ScrollView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F678CB3282B967C00608B98 /* ScrollView+Ext.swift */; };
 		8F7772D3280F90B900FF09AA /* MockTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7772D2280F90B900FF09AA /* MockTest.swift */; };
 		8F7772D6280F91EE00FF09AA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8F7772D5280F91EE00FF09AA /* Alamofire */; };
 		8F7772E8280FAE2400FF09AA /* Optional+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7772E7280FAE2400FF09AA /* Optional+Ext.swift */; };
@@ -130,6 +131,7 @@
 		8F678CAD282B486200608B98 /* FTUEIntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTUEIntroViewModel.swift; sourceTree = "<group>"; };
 		8F678CAF282B556300608B98 /* FTUEShowcaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTUEShowcaseView.swift; sourceTree = "<group>"; };
 		8F678CB1282B556A00608B98 /* FTUEShowcaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTUEShowcaseViewModel.swift; sourceTree = "<group>"; };
+		8F678CB3282B967C00608B98 /* ScrollView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScrollView+Ext.swift"; sourceTree = "<group>"; };
 		8F7772D2280F90B900FF09AA /* MockTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTest.swift; sourceTree = "<group>"; };
 		8F7772E7280FAE2400FF09AA /* Optional+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Ext.swift"; sourceTree = "<group>"; };
 		8F7772EA280FB20B00FF09AA /* CustomAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAPIRequest.swift; sourceTree = "<group>"; };
@@ -444,6 +446,7 @@
 			children = (
 				8F2A204B280D71DA0008DB86 /* Font+Ext.swift */,
 				8F7772E7280FAE2400FF09AA /* Optional+Ext.swift */,
+				8F678CB3282B967C00608B98 /* ScrollView+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -829,6 +832,7 @@
 				8F7772D3280F90B900FF09AA /* MockTest.swift in Sources */,
 				8FB62013282A11650087BB3F /* Biometrics.swift in Sources */,
 				8F678CAE282B486200608B98 /* FTUEIntroViewModel.swift in Sources */,
+				8F678CB4282B967C00608B98 /* ScrollView+Ext.swift in Sources */,
 				8FB61FE228239C540087BB3F /* LoginViewModel.swift in Sources */,
 				8F678CAC282B485600608B98 /* FTUEIntroView.swift in Sources */,
 				8F43CA12280E97DA0011552D /* RandomImageAPIService.swift in Sources */,
