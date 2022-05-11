@@ -24,6 +24,7 @@
 		8F678CB0282B556300608B98 /* FTUEShowcaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F678CAF282B556300608B98 /* FTUEShowcaseView.swift */; };
 		8F678CB2282B556A00608B98 /* FTUEShowcaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F678CB1282B556A00608B98 /* FTUEShowcaseViewModel.swift */; };
 		8F678CB4282B967C00608B98 /* ScrollView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F678CB3282B967C00608B98 /* ScrollView+Ext.swift */; };
+		8F678CB6282BA2CA00608B98 /* AppRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F678CB5282BA2CA00608B98 /* AppRouting.swift */; };
 		8F7772D3280F90B900FF09AA /* MockTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7772D2280F90B900FF09AA /* MockTest.swift */; };
 		8F7772D6280F91EE00FF09AA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8F7772D5280F91EE00FF09AA /* Alamofire */; };
 		8F7772E8280FAE2400FF09AA /* Optional+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7772E7280FAE2400FF09AA /* Optional+Ext.swift */; };
@@ -132,6 +133,7 @@
 		8F678CAF282B556300608B98 /* FTUEShowcaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTUEShowcaseView.swift; sourceTree = "<group>"; };
 		8F678CB1282B556A00608B98 /* FTUEShowcaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTUEShowcaseViewModel.swift; sourceTree = "<group>"; };
 		8F678CB3282B967C00608B98 /* ScrollView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScrollView+Ext.swift"; sourceTree = "<group>"; };
+		8F678CB5282BA2CA00608B98 /* AppRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouting.swift; sourceTree = "<group>"; };
 		8F7772D2280F90B900FF09AA /* MockTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTest.swift; sourceTree = "<group>"; };
 		8F7772E7280FAE2400FF09AA /* Optional+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Ext.swift"; sourceTree = "<group>"; };
 		8F7772EA280FB20B00FF09AA /* CustomAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAPIRequest.swift; sourceTree = "<group>"; };
@@ -650,6 +652,7 @@
 			isa = PBXGroup;
 			children = (
 				8FBFACD228193B9100689F5A /* AppEnvironment.swift */,
+				8F678CB5282BA2CA00608B98 /* AppRouting.swift */,
 				8FB61FF82823BEB50087BB3F /* AppSettings.swift */,
 			);
 			path = Application;
@@ -819,6 +822,7 @@
 				8F2A2016280D173E0008DB86 /* SceneDelegate.swift in Sources */,
 				8FB620092824B8900087BB3F /* LoginPageOptionViewModel.swift in Sources */,
 				8FB620072824B8880087BB3F /* LoginPageOptionView.swift in Sources */,
+				8F678CB6282BA2CA00608B98 /* AppRouting.swift in Sources */,
 				8FBB378E280E4A3D00DB7476 /* APIResponseProtocol.swift in Sources */,
 				8F678CA7282B46D500608B98 /* FTUEView.swift in Sources */,
 				8FB6200B2824D33E0087BB3F /* LoginPageAtlasView.swift in Sources */,

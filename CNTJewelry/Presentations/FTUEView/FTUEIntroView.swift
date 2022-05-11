@@ -32,7 +32,7 @@ struct FTUEIntroView: View {
                 let detailsFont = FontCollection.BrilliantCutProB7.light(size: 29).font
                 Text(model.introMessage)
                     .accessibilityLabel(model.introMessage)
-                    .foregroundColor(.gray)
+                    .foregroundColor(ColorCollection.gray)
                     .multilineTextAlignment(.center)
                     .font(detailsFont)
                     .minimumScaleFactor(0.3)

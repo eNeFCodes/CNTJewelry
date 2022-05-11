@@ -9,7 +9,8 @@ import SwiftUI
 
 struct LoginPageInputView: View {
     @EnvironmentObject private var appEnv: AppEnvironment
-    @ObservedObject private var  model: LoginPageInputViewModel
+    @EnvironmentObject private var appRouting: AppRouting
+    @ObservedObject private var model: LoginPageInputViewModel
     
     private let geometry: GeometryProxy
     private let padding: CGFloat
@@ -17,6 +18,7 @@ struct LoginPageInputView: View {
     init(model: LoginPageInputViewModel,
          geometry: GeometryProxy,
          padding: CGFloat = 32) {
+
         self.model = model
         self.geometry = geometry
         self.padding = padding
@@ -34,7 +36,7 @@ struct LoginPageInputView: View {
             Button {
                 Task {
                     appEnv.isLoading = true
-                    appEnv.isUserLoggedIn = await model.triggerLogin()
+                    appRouting.isUserLoggedIn = await model.triggerLogin()
                     appEnv.isLoading = false
                 }
             } label: {
@@ -42,7 +44,7 @@ struct LoginPageInputView: View {
                     .accessibilityLabel(model.actionTitle)
                     .frame(width: buttonSize.width, height: buttonSize.height, alignment: .center)
             }
-            .border(.gray, width: 1)
+            .border(ColorCollection.gray, width: 1)
             .foregroundColor(model.canProceed ? ColorCollection.white : ColorCollection.grayInactive)
             .disabled(!model.canProceed)
         }

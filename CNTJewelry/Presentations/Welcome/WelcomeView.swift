@@ -46,5 +46,6 @@ struct WelcomeView_Previews: PreviewProvider {
         WelcomeView(model: .init())
             .environmentObject(AppEnvironment())
             .environmentObject(AppSettings())
+            .environmentObject(AppRouting())
     }
 }

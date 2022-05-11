@@ -112,6 +112,7 @@ struct FTUEView_Previews: PreviewProvider {
         FTUEView(model: .init(items: FTUEViewModel.mockItems()))
             .environmentObject(AppEnvironment())
             .environmentObject(AppSettings())
+            .environmentObject(AppRouting())
             .background(ColorCollection.black)
     }
 }

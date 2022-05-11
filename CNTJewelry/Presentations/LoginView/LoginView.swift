@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LoginView: View {
     @EnvironmentObject private var appEnv: AppEnvironment
+    @EnvironmentObject private var appRouting: AppRouting
     @StateObject private var model: LoginViewModel
 
     init(model: LoginViewModel) {
@@ -44,11 +45,12 @@ struct LoginView: View {
                 switch type {
                 case .atlasLogin:
                     print("atlasLogin")
-                    model.isLoginModeAtlas = true
+                    appRouting.loginMode = .atlas
                 case .faceAndTouchID:
                     print("faceAndTouchID")
+                    appRouting.loginMode = .biometrics
                     model.triggerBiometrics { state in
-                        appEnv.isUserLoggedIn = state
+                        appRouting.isUserLoggedIn = state
                     }
                 }
             }
@@ -72,11 +74,11 @@ struct LoginView: View {
 
     @ViewBuilder
     private func buildNavigationViewStack() -> some View {
-        NavigationLink("", isActive: $model.isLoginModeAtlas) {
+        NavigationLink("", isActive: $appRouting.isLoginModeAtlas) {
             LoginPageAtlasView(model: model.atlasModel)
         }
 
-        NavigationLink("", isActive: $appEnv.isUserLoggedIn) {
+        NavigationLink("", isActive: $appRouting.isUserLoggedIn) {
             FTUEView(model: .init(items: FTUEViewModel.mockItems()))
         }
     }
@@ -87,5 +89,6 @@ struct LoginView_Previews: PreviewProvider {
         LoginView(model: .init())
             .environmentObject(AppEnvironment())
             .environmentObject(AppSettings())
+            .environmentObject(AppRouting())
     }
 }

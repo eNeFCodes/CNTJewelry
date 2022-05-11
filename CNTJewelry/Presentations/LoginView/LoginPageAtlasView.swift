@@ -9,7 +9,11 @@ import SwiftUI
 
 struct LoginPageAtlasView: View {
     @Environment(\.presentationMode) private var presentationMode
-    let model: LoginPageAtlasViewModel
+    @ObservedObject private var model: LoginPageAtlasViewModel
+
+    init(model: LoginPageAtlasViewModel) {
+        self.model = model
+    }
 
     var body: some View {
         ZStack {
@@ -65,5 +69,6 @@ struct LoginPageAtlasView_Previews: PreviewProvider {
         LoginPageAtlasView(model: .init())
             .environmentObject(AppEnvironment())
             .environmentObject(AppSettings())
+            .environmentObject(AppRouting())
     }
 }

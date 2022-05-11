@@ -13,7 +13,6 @@ class LoginViewModel: ObservableObject {
     let welcome: LoginPageWelcomeViewModel
     @Published var option: LoginPageOptionViewModel
     @Published var atlasModel: LoginPageAtlasViewModel
-    @Published var isLoginModeAtlas: Bool = false
 
     init(header: LoginPageHeaderViewModel = .init(title: L10n.App.Content.title,
                                                   subTitle: L10n.App.Content.subTitle),

@@ -5,17 +5,13 @@
 //  Created by Neil Francis Hipona on 4/27/22.
 //
 
-import Foundation
+import SwiftUI
 
 class AppEnvironment: ObservableObject {
 
     @Published var isLoading: Bool
-    @Published var isUserLoggedIn: Bool
 
-    init(isLoading: Bool = false,
-         isUserLoggedIn: Bool = false) {
-
+    init(isLoading: Bool = false) {
         self.isLoading = isLoading
-        self.isUserLoggedIn = isUserLoggedIn
     }
 }

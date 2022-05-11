@@ -22,11 +22,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, ObservableObject {
 
         let appEnvironment = AppEnvironment()
         let appSettings = AppSettings()
+        let appRouting = AppRouting()
         let rootView = ContentView(model: .init())
             .environmentObject(appDelegate)
             .environmentObject(self)
             .environmentObject(appEnvironment)
             .environmentObject(appSettings)
+            .environmentObject(appRouting)
 
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = UIHostingController(rootView: rootView)

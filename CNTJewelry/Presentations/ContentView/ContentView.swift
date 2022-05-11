@@ -33,5 +33,6 @@ struct ContentView_Previews: PreviewProvider {
         ContentView(model: .init())
             .environmentObject(AppEnvironment())
             .environmentObject(AppSettings())
+            .environmentObject(AppRouting())
     }
 }
