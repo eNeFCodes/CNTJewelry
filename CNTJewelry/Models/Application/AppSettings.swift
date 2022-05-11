@@ -9,6 +9,8 @@ import Foundation
 
 class AppSettings: ObservableObject {
 
+    static let shared = AppSettings()
+
     @Published var isUserLoggedIn: Bool
     var user: User? {
         didSet {

@@ -9,7 +9,11 @@ import SwiftUI
 
 struct LoginView: View {
     @EnvironmentObject private var appEnv: AppEnvironment
-    @StateObject var model: LoginViewModel
+    @StateObject private var model: LoginViewModel
+
+    init(model: LoginViewModel) {
+        _model = .init(wrappedValue: model)
+    }
 
     var body: some View {
         ZStack {

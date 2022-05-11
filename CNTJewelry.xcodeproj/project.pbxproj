@@ -17,6 +17,12 @@
 		8F43CA12280E97DA0011552D /* RandomImageAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F43CA11280E97DA0011552D /* RandomImageAPIService.swift */; };
 		8F43CA14280E97F80011552D /* RandomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F43CA13280E97F80011552D /* RandomImage.swift */; };
 		8F43CA16280E99CA0011552D /* RandomImageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F43CA15280E99CA0011552D /* RandomImageAPI.swift */; };
+		8F678CA7282B46D500608B98 /* FTUEView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F678CA6282B46D500608B98 /* FTUEView.swift */; };
+		8F678CA9282B46DB00608B98 /* FTUEViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F678CA8282B46DB00608B98 /* FTUEViewModel.swift */; };
+		8F678CAC282B485600608B98 /* FTUEIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F678CAB282B485600608B98 /* FTUEIntroView.swift */; };
+		8F678CAE282B486200608B98 /* FTUEIntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F678CAD282B486200608B98 /* FTUEIntroViewModel.swift */; };
+		8F678CB0282B556300608B98 /* FTUEShowcaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F678CAF282B556300608B98 /* FTUEShowcaseView.swift */; };
+		8F678CB2282B556A00608B98 /* FTUEShowcaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F678CB1282B556A00608B98 /* FTUEShowcaseViewModel.swift */; };
 		8F7772D3280F90B900FF09AA /* MockTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7772D2280F90B900FF09AA /* MockTest.swift */; };
 		8F7772D6280F91EE00FF09AA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8F7772D5280F91EE00FF09AA /* Alamofire */; };
 		8F7772E8280FAE2400FF09AA /* Optional+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7772E7280FAE2400FF09AA /* Optional+Ext.swift */; };
@@ -118,6 +124,12 @@
 		8F43CA11280E97DA0011552D /* RandomImageAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomImageAPIService.swift; sourceTree = "<group>"; };
 		8F43CA13280E97F80011552D /* RandomImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomImage.swift; sourceTree = "<group>"; };
 		8F43CA15280E99CA0011552D /* RandomImageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomImageAPI.swift; sourceTree = "<group>"; };
+		8F678CA6282B46D500608B98 /* FTUEView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTUEView.swift; sourceTree = "<group>"; };
+		8F678CA8282B46DB00608B98 /* FTUEViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTUEViewModel.swift; sourceTree = "<group>"; };
+		8F678CAB282B485600608B98 /* FTUEIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTUEIntroView.swift; sourceTree = "<group>"; };
+		8F678CAD282B486200608B98 /* FTUEIntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTUEIntroViewModel.swift; sourceTree = "<group>"; };
+		8F678CAF282B556300608B98 /* FTUEShowcaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTUEShowcaseView.swift; sourceTree = "<group>"; };
+		8F678CB1282B556A00608B98 /* FTUEShowcaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTUEShowcaseViewModel.swift; sourceTree = "<group>"; };
 		8F7772D2280F90B900FF09AA /* MockTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTest.swift; sourceTree = "<group>"; };
 		8F7772E7280FAE2400FF09AA /* Optional+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Ext.swift"; sourceTree = "<group>"; };
 		8F7772EA280FB20B00FF09AA /* CustomAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAPIRequest.swift; sourceTree = "<group>"; };
@@ -292,6 +304,7 @@
 				8FBFACBC281246F600689F5A /* ContentView */,
 				8FB61FEA2823AB7F0087BB3F /* Welcome */,
 				8FB61FE328239E160087BB3F /* LoginView */,
+				8F678CAA282B46E000608B98 /* FTUEView */,
 			);
 			path = Presentations;
 			sourceTree = "<group>";
@@ -385,6 +398,19 @@
 				8F7772D0280F902A00FF09AA /* Network */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		8F678CAA282B46E000608B98 /* FTUEView */ = {
+			isa = PBXGroup;
+			children = (
+				8F678CA6282B46D500608B98 /* FTUEView.swift */,
+				8F678CA8282B46DB00608B98 /* FTUEViewModel.swift */,
+				8F678CAB282B485600608B98 /* FTUEIntroView.swift */,
+				8F678CAD282B486200608B98 /* FTUEIntroViewModel.swift */,
+				8F678CAF282B556300608B98 /* FTUEShowcaseView.swift */,
+				8F678CB1282B556A00608B98 /* FTUEShowcaseViewModel.swift */,
+			);
+			path = FTUEView;
 			sourceTree = "<group>";
 		};
 		8F7772CF280F901B00FF09AA /* Request */ = {
@@ -791,15 +817,20 @@
 				8FB620092824B8900087BB3F /* LoginPageOptionViewModel.swift in Sources */,
 				8FB620072824B8880087BB3F /* LoginPageOptionView.swift in Sources */,
 				8FBB378E280E4A3D00DB7476 /* APIResponseProtocol.swift in Sources */,
+				8F678CA7282B46D500608B98 /* FTUEView.swift in Sources */,
 				8FB6200B2824D33E0087BB3F /* LoginPageAtlasView.swift in Sources */,
 				8FBFACBB281245B300689F5A /* LocalizedStrings.swift in Sources */,
 				8F7772EE280FB44200FF09AA /* Router.swift in Sources */,
 				8FBFACD328193B9100689F5A /* AppEnvironment.swift in Sources */,
+				8F678CA9282B46DB00608B98 /* FTUEViewModel.swift in Sources */,
+				8F678CB2282B556A00608B98 /* FTUEShowcaseViewModel.swift in Sources */,
 				8FB61FE92823AB7B0087BB3F /* WelcomeViewModel.swift in Sources */,
 				8F43CA16280E99CA0011552D /* RandomImageAPI.swift in Sources */,
 				8F7772D3280F90B900FF09AA /* MockTest.swift in Sources */,
 				8FB62013282A11650087BB3F /* Biometrics.swift in Sources */,
+				8F678CAE282B486200608B98 /* FTUEIntroViewModel.swift in Sources */,
 				8FB61FE228239C540087BB3F /* LoginViewModel.swift in Sources */,
+				8F678CAC282B485600608B98 /* FTUEIntroView.swift in Sources */,
 				8F43CA12280E97DA0011552D /* RandomImageAPIService.swift in Sources */,
 				8F43CA14280E97F80011552D /* RandomImage.swift in Sources */,
 				8FB61FE028239B840087BB3F /* LoginView.swift in Sources */,
@@ -810,6 +841,7 @@
 				8FB61FEC2823AEB30087BB3F /* DotView.swift in Sources */,
 				8F7772F3280FBA2700FF09AA /* FontCollection.swift in Sources */,
 				8FB620032824B06C0087BB3F /* LoginPageWelcomeView.swift in Sources */,
+				8F678CB0282B556300608B98 /* FTUEShowcaseView.swift in Sources */,
 				8FBB3798280E57FC00DB7476 /* APIResponseError.swift in Sources */,
 				8FBB3791280E4A9600DB7476 /* APIServiceError.swift in Sources */,
 				8FB6200D2824D3BC0087BB3F /* LoginPageAtlasViewModel.swift in Sources */,
