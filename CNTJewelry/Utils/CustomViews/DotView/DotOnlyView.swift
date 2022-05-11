@@ -10,9 +10,10 @@ import SwiftUI
 struct DotOnlyView: View {
 
     var model: DotOnlyViewModel
-
+    let geometry: GeometryProxy
+    
     var body: some View {
-        HStack(alignment: .center) {
+        HStack {
             ForEach(model.range, id: \.self) { idx in
                 if model.activeIndex == idx {
                     activeDotIndicator(index: idx)
@@ -21,6 +22,7 @@ struct DotOnlyView: View {
                 }
             }
         }
+        .frame(width: geometry.size.width, height: 56, alignment: .center)
     }
 
     private func dotIndicator(index: Int) -> some View {
@@ -66,7 +68,10 @@ struct DotOnlyView: View {
 struct DotOnlyView_Previews: PreviewProvider {
     @State static var activeIndex: Int = 0
     static var previews: some View {
-        let model = DotOnlyViewModel(range: 0...3, activeIndex: $activeIndex)
-        DotOnlyView(model: model)
+        GeometryReader { geometry in
+            let model = DotOnlyViewModel(range: .init(0...3), activeIndex: $activeIndex)
+            DotOnlyView(model: model, geometry: geometry)
+                .background(ColorCollection.black)
+        }
     }
 }

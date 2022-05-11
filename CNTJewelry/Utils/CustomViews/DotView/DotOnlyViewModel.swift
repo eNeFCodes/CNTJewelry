@@ -9,7 +9,7 @@ import SwiftUI
 
 class DotOnlyViewModel: ObservableObject {
 
-    let range: ClosedRange<Int>
+    let range: Range<Int>
     @Binding var activeIndex: Int
 
     let dotColor: Color
@@ -17,7 +17,7 @@ class DotOnlyViewModel: ObservableObject {
     let dotInactiveColor: Color
     let dotInactiveStrokeColor: Color
 
-    init(range: ClosedRange<Int>,
+    init(range: Range<Int>,
          activeIndex: Binding<Int>,
          dotColor: Color = .orange,
          dotStrokeColor: Color = .orange,
@@ -25,7 +25,7 @@ class DotOnlyViewModel: ObservableObject {
          dotInactiveStrokeColor: Color = .orange) {
 
         self.range = range
-        self._activeIndex = activeIndex
+        _activeIndex = activeIndex
         
         self.dotColor = dotColor
         self.dotStrokeColor = dotStrokeColor

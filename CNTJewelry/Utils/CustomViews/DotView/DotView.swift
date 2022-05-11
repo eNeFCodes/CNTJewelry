@@ -9,33 +9,33 @@ import SwiftUI
 
 struct DotView: View {
     var model: DotViewModel
+    let geometry: GeometryProxy
 
     var body: some View {
-        VStack {
-            Spacer()
-            HStack(alignment: .center) {
-                if model.activeIndex == model.range.last {
-                    Button(action: model.action, label: {
-                        let font = FontCollection.FancyCutCondProB7.bold(size: 20).font
-                        Text(model.actionTitle)
-                            .accessibilityLabel(model.actionTitle)
-                            .font(font)
-                            .foregroundColor(ColorCollection.white)
-                            .frame(width: abs(model.geometry.size.width - 40), height: 56, alignment: .center)
-                            .background(Color.red)
-                    })
-                } else {
-                    ForEach(model.range, id: \.self) { idx in
-                        if model.activeIndex == idx {
-                            activeDotIndicator(index: idx)
-                        } else {
-                            dotIndicator(index: idx)
-                        }
+        HStack {
+            if model.activeIndex == model.range.last {
+                Button(action: model.action, label: {
+                    let frameWidth = abs(geometry.size.width - (model.padding * 2))
+                    let font = FontCollection.FancyCutCondProB7.bold(size: 20).font
+
+                    Text(model.actionTitle)
+                        .accessibilityLabel(model.actionTitle)
+                        .font(font)
+                        .foregroundColor(model.actionTitleColor)
+                        .background(model.actionBGColor)
+                        .frame(width: frameWidth, height: 56, alignment: .center)
+                })
+            } else {
+                ForEach(model.range, id: \.self) { idx in
+                    if model.activeIndex == idx {
+                        activeDotIndicator(index: idx)
+                    } else {
+                        dotIndicator(index: idx)
                     }
                 }
             }
-            .padding(.bottom, 40)
         }
+        .frame(width: geometry.size.width, height: 56, alignment: .center)
     }
 
     private func dotIndicator(index: Int) -> some View {
@@ -81,10 +81,11 @@ struct DotView_Previews: PreviewProvider {
     @State static var activeIndex: Int = 0
     static var previews: some View {
         GeometryReader { geometry in
-            let model = DotViewModel(range: 0...3, activeIndex: $activeIndex, geometry: geometry) {
+            let model = DotViewModel(range: .init(0...3), activeIndex: $activeIndex) {
 
             }
-            DotView(model: model)
+            DotView(model: model, geometry: geometry)
         }
+        .background(ColorCollection.black)
     }
 }

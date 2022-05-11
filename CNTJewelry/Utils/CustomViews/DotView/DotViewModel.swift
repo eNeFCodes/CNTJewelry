@@ -9,37 +9,44 @@ import SwiftUI
 
 class DotViewModel: ObservableObject {
 
-    let range: ClosedRange<Int>
+    let range: Range<Int>
     @Binding var activeIndex: Int
     let actionTitle: String
+    let actionTitleColor: Color
+    let actionBGColor: Color
+    let padding: CGFloat
 
     let dotColor: Color
     let dotStrokeColor: Color
     let dotInactiveColor: Color
     let dotInactiveStrokeColor: Color
-    let geometry: GeometryProxy
+
     let action: () -> Void
 
-    init(range: ClosedRange<Int>,
+    init(range: Range<Int>,
          activeIndex: Binding<Int>,
          actionTitle: String = L10n.App.Content.getStarted,
-         dotColor: Color = .orange,
-         dotStrokeColor: Color = .orange,
-         dotInactiveColor: Color = .clear,
-         dotInactiveStrokeColor: Color = .orange,
-         geometry: GeometryProxy,
+         actionTitleColor: Color = ColorCollection.white,
+         actionBGColor: Color = ColorCollection.red,
+         padding: CGFloat = 32,
+         dotColor: Color = ColorCollection.orange,
+         dotStrokeColor: Color = ColorCollection.orange,
+         dotInactiveColor: Color = ColorCollection.clear,
+         dotInactiveStrokeColor: Color = ColorCollection.orange,
          action: @escaping () -> Void) {
 
         self.range = range
-        self._activeIndex = activeIndex
+        _activeIndex = activeIndex
         self.actionTitle = actionTitle
+        self.actionTitleColor = actionTitleColor
+        self.actionBGColor = actionBGColor
+        self.padding = padding
 
         self.dotColor = dotColor
         self.dotStrokeColor = dotStrokeColor
         self.dotInactiveColor = dotInactiveColor
         self.dotInactiveStrokeColor = dotInactiveStrokeColor
 
-        self.geometry = geometry
         self.action = action
     }
 }
