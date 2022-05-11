@@ -13,7 +13,7 @@ struct FTUEIntroView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack(spacing: 20) {
-                buildVerticalDashesViewStack()
+                buildVerticalDashesViewStack(geometry: geometry)
 
                 let squareSize = abs(geometry.size.width * 0.4)
                 Image(model.introLogo)
@@ -35,25 +35,29 @@ struct FTUEIntroView: View {
                     .foregroundColor(.gray)
                     .multilineTextAlignment(.center)
                     .font(detailsFont)
+                    .minimumScaleFactor(0.3)
 
                 Spacer()
 
-                buildVerticalDashesViewStack()
+                buildVerticalDashesViewStack(geometry: geometry)
             }
             .padding([.leading, .trailing], 32)
+            .frame(width: geometry.size.width, alignment: .center)
         }
     }
 
-    private func buildVerticalDashesViewStack() -> some View {
-        return VStack {}
-        .frame(width: 2, height: 80, alignment: .center)
-        .overlay {
-            let start = CGPoint(x: 1, y: 0)
-            let end = CGPoint(x: 1, y: 80)
-            BorderView(coordinates: [start, end])
-                .stroke(style: StrokeStyle(lineWidth: 2, dash: [3]))
-                .foregroundColor(ColorCollection.orange)
+    private func buildVerticalDashesViewStack(geometry: GeometryProxy) -> some View {
+        HStack {
+            VStack {
+                let start = CGPoint(x: 1, y: 0)
+                let end = CGPoint(x: 1, y: 80)
+                BorderView(coordinates: [start, end])
+                    .stroke(style: StrokeStyle(lineWidth: 2, dash: [3]))
+                    .foregroundColor(ColorCollection.orange)
+            }
+            .frame(width: 2, height: 80, alignment: .center)
         }
+        .frame(width: geometry.size.width, alignment: .center)
     }
 }
 
