@@ -16,14 +16,15 @@ struct DotView: View {
             if model.activeIndex == model.range.last {
                 Button(action: model.action, label: {
                     let frameWidth = abs(geometry.size.width - (model.padding * 2))
-                    let font = FontCollection.FancyCutCondProB7.bold(size: 20).font
+                    let titleFont = FontCollection.BrilliantCutProB7.bold(size: 12).font
 
                     Text(model.actionTitle)
                         .accessibilityLabel(model.actionTitle)
-                        .font(font)
+                        .font(titleFont)
                         .foregroundColor(model.actionTitleColor)
-                        .background(model.actionBGColor)
                         .frame(width: frameWidth, height: 56, alignment: .center)
+                        .background(model.actionBGColor)
+                        .clipped()
                 })
             } else {
                 ForEach(model.range, id: \.self) { idx in
@@ -39,46 +40,42 @@ struct DotView: View {
     }
 
     private func dotIndicator(index: Int) -> some View {
-        Button("") {
+        Button {
             model.activeIndex = index
-        }
-        .foregroundColor(.clear)
-        .frame(width: 15, height: 15, alignment: .center)
-        .overlay {
+        } label: {
             Circle()
                 .frame(width: 15, height: 15, alignment: .center)
                 .foregroundColor(model.dotInactiveColor)
-                .overlay {
-                    let rect = CGRect(x: 0, y: 0, width: 15, height: 15)
-                    let roundPath = Path(roundedRect: rect, cornerRadius: 7.5, style: .continuous)
-                    ShapeView(path: roundPath)
-                        .stroke(model.dotInactiveStrokeColor, lineWidth: 2)
-                }
+        }
+        .frame(width: 15, height: 15, alignment: .center)
+        .overlay {
+            let rect = CGRect(x: 0, y: 0, width: 15, height: 15)
+            let roundPath = Path(roundedRect: rect, cornerRadius: 7.5, style: .continuous)
+            ShapeView(path: roundPath)
+                .stroke(model.dotInactiveStrokeColor, lineWidth: 2)
         }
     }
 
     private func activeDotIndicator(index: Int) -> some View {
-        Button("") {
+        Button {
             model.activeIndex = index
-        }
-        .foregroundColor(.clear)
-        .frame(width: 15, height: 15, alignment: .center)
-        .overlay {
+        } label: {
             Circle()
                 .frame(width: 15, height: 15, alignment: .center)
                 .foregroundColor(model.dotColor)
-                .overlay {
-                    let rect = CGRect(x: 0, y: 0, width: 15, height: 15)
-                    let roundPath = Path(roundedRect: rect, cornerRadius: 7.5, style: .continuous)
-                    ShapeView(path: roundPath)
-                        .stroke(model.dotStrokeColor, lineWidth: 2)
-                }
+        }
+        .frame(width: 15, height: 15, alignment: .center)
+        .overlay {
+            let rect = CGRect(x: 0, y: 0, width: 15, height: 15)
+            let roundPath = Path(roundedRect: rect, cornerRadius: 7.5, style: .continuous)
+            ShapeView(path: roundPath)
+                .stroke(model.dotStrokeColor, lineWidth: 2)
         }
     }
 }
 
 struct DotView_Previews: PreviewProvider {
-    @State static var activeIndex: Int = 0
+    @State static var activeIndex: Int = 3
     static var previews: some View {
         GeometryReader { geometry in
             let model = DotViewModel(range: .init(0...3), activeIndex: $activeIndex) {

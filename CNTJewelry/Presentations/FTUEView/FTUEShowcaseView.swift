@@ -49,7 +49,7 @@ struct FTUEShowcaseView: View {
             }
             .frame(height: 520, alignment: .center)
         }
-        .padding([.leading, .trailing], 32)
+        .padding(32)
     }
 
     private func buildContentImageBorderViewStack(frameSize: CGSize) -> some View {

@@ -16,9 +16,15 @@ struct ContentView: View {
         LoaderView(isLoading: $appEnv.isLoading) {
             NavigationView {
                 //WelcomeView(model: model.welcome)
-                LoginView(model: .init())
+                //LoginView(model: .init())
+
+                TestContentPreviewView()
             }
         }
+    }
+
+    private func TestContentPreviewView() -> some View {
+        FTUEView(model: .init(items: FTUEViewModel.mockItems()))
     }
 }
 

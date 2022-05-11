@@ -70,9 +70,14 @@ struct LoginView: View {
         }
     }
 
+    @ViewBuilder
     private func buildNavigationViewStack() -> some View {
         NavigationLink("", isActive: $model.isLoginModeAtlas) {
             LoginPageAtlasView(model: model.atlasModel)
+        }
+
+        NavigationLink("", isActive: $appEnv.isUserLoggedIn) {
+            FTUEView(model: .init(items: FTUEViewModel.mockItems()))
         }
     }
 }

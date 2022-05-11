@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FTUEView: View {
+    @Environment(\.presentationMode) private var presentationMode
     @StateObject private var model: FTUEViewModel
 
     init(model: FTUEViewModel) {
@@ -27,6 +28,11 @@ struct FTUEView: View {
                             }
                         }
                     }
+                    .onChange(of: model.activeIndex) { newValue in
+                        withAnimation {
+                            proxy.scrollTo(newValue, anchor: .center)
+                        }
+                    }
                 }
 
                 buildCloseButtonViewStack()
@@ -37,10 +43,14 @@ struct FTUEView: View {
 
                     }), geometry: geometry)
                 }
-                //.padding(.bottom, 20)
+                .padding(.bottom, 30)
             }
             .frame(width: geometry.size.width, alignment: .center)
         }
+        .ignoresSafeArea()
+        .background(ColorCollection.black)
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
 
     private func buildBackdropViewStack(frameSize: CGSize) -> some View {
@@ -55,8 +65,10 @@ struct FTUEView: View {
 
     @ViewBuilder
     private func buildContentItemViewStack(for item: FTUEViewContentItemProtocol, geometry: GeometryProxy) -> some View {
-        let frameHeight = abs(geometry.size.height - 80)
+        let frameHeight = abs(geometry.size.height - 160)
         VStack {
+            Spacer()
+
             switch item.type {
             case .showcase:
                 if let item = item as? FTUEShowcaseViewModel {
@@ -74,6 +86,7 @@ struct FTUEView: View {
 
             Spacer()
         }
+        .padding(.bottom, 32)
     }
 
     private func buildCloseButtonViewStack() -> some View {
