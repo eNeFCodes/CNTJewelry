@@ -68,6 +68,12 @@
 		8F777341280FBDA600FF09AA /* BrilliantCutProB7-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8F77733B280FBDA600FF09AA /* BrilliantCutProB7-Thin.otf */; };
 		8F777342280FBDA600FF09AA /* BrilliantCutProB7-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8F77733C280FBDA600FF09AA /* BrilliantCutProB7-Regular.otf */; };
 		8F777343280FBDA600FF09AA /* BrilliantCutProB7-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8F77733D280FBDA600FF09AA /* BrilliantCutProB7-Bold.otf */; };
+		8F959F9D2846147500B44C3A /* BriefingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F959F9C2846147500B44C3A /* BriefingView.swift */; };
+		8F959F9F2846147D00B44C3A /* BriefingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F959F9E2846147D00B44C3A /* BriefingViewModel.swift */; };
+		8F959FA1284615BF00B44C3A /* BriefingBottomNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F959FA0284615BF00B44C3A /* BriefingBottomNavigationView.swift */; };
+		8F959FA3284615C700B44C3A /* BriefingBottomNavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F959FA2284615C700B44C3A /* BriefingBottomNavigationViewModel.swift */; };
+		8F959FA52846160300B44C3A /* NavigationButtonItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F959FA42846160300B44C3A /* NavigationButtonItemModel.swift */; };
+		8F959FA72846271900B44C3A /* NavigationButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F959FA62846271900B44C3A /* NavigationButtonItem.swift */; };
 		8FB61FE028239B840087BB3F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB61FDF28239B840087BB3F /* LoginView.swift */; };
 		8FB61FE228239C540087BB3F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB61FE128239C540087BB3F /* LoginViewModel.swift */; };
 		8FB61FE72823AB690087BB3F /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB61FE62823AB690087BB3F /* WelcomeView.swift */; };
@@ -175,6 +181,12 @@
 		8F77733B280FBDA600FF09AA /* BrilliantCutProB7-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BrilliantCutProB7-Thin.otf"; sourceTree = "<group>"; };
 		8F77733C280FBDA600FF09AA /* BrilliantCutProB7-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BrilliantCutProB7-Regular.otf"; sourceTree = "<group>"; };
 		8F77733D280FBDA600FF09AA /* BrilliantCutProB7-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BrilliantCutProB7-Bold.otf"; sourceTree = "<group>"; };
+		8F959F9C2846147500B44C3A /* BriefingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefingView.swift; sourceTree = "<group>"; };
+		8F959F9E2846147D00B44C3A /* BriefingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefingViewModel.swift; sourceTree = "<group>"; };
+		8F959FA0284615BF00B44C3A /* BriefingBottomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefingBottomNavigationView.swift; sourceTree = "<group>"; };
+		8F959FA2284615C700B44C3A /* BriefingBottomNavigationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefingBottomNavigationViewModel.swift; sourceTree = "<group>"; };
+		8F959FA42846160300B44C3A /* NavigationButtonItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButtonItemModel.swift; sourceTree = "<group>"; };
+		8F959FA62846271900B44C3A /* NavigationButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButtonItem.swift; sourceTree = "<group>"; };
 		8FB61FDF28239B840087BB3F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		8FB61FE128239C540087BB3F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		8FB61FE62823AB690087BB3F /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -303,6 +315,7 @@
 		8F2A2029280D5A710008DB86 /* Presentations */ = {
 			isa = PBXGroup;
 			children = (
+				8F959F9B2846126A00B44C3A /* Briefing */,
 				8FBFACBC281246F600689F5A /* ContentView */,
 				8FB61FEA2823AB7F0087BB3F /* Welcome */,
 				8FB61FE328239E160087BB3F /* LoginView */,
@@ -457,6 +470,8 @@
 				8FBFACD528193D3E00689F5A /* LoaderView.swift */,
 				8FB61FF32823B7290087BB3F /* DotView */,
 				8FB61FEF2823AF340087BB3F /* ShapeView.swift */,
+				8F959FA62846271900B44C3A /* NavigationButtonItem.swift */,
+				8F959FA42846160300B44C3A /* NavigationButtonItemModel.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -549,6 +564,17 @@
 				8F77733B280FBDA600FF09AA /* BrilliantCutProB7-Thin.otf */,
 			);
 			path = BrilliantCutPro;
+			sourceTree = "<group>";
+		};
+		8F959F9B2846126A00B44C3A /* Briefing */ = {
+			isa = PBXGroup;
+			children = (
+				8F959F9C2846147500B44C3A /* BriefingView.swift */,
+				8F959F9E2846147D00B44C3A /* BriefingViewModel.swift */,
+				8F959FA0284615BF00B44C3A /* BriefingBottomNavigationView.swift */,
+				8F959FA2284615C700B44C3A /* BriefingBottomNavigationViewModel.swift */,
+			);
+			path = Briefing;
 			sourceTree = "<group>";
 		};
 		8FB61FE328239E160087BB3F /* LoginView */ = {
@@ -821,6 +847,7 @@
 				8FB620072824B8880087BB3F /* LoginPageOptionView.swift in Sources */,
 				8F678CB6282BA2CA00608B98 /* AppRouting.swift in Sources */,
 				8FBB378E280E4A3D00DB7476 /* APIResponseProtocol.swift in Sources */,
+				8F959F9D2846147500B44C3A /* BriefingView.swift in Sources */,
 				8F678CA7282B46D500608B98 /* FTUEView.swift in Sources */,
 				8FB6200B2824D33E0087BB3F /* LoginPageAtlasView.swift in Sources */,
 				8FBFACBB281245B300689F5A /* LocalizedStrings.swift in Sources */,
@@ -833,6 +860,7 @@
 				8F7772D3280F90B900FF09AA /* MockTest.swift in Sources */,
 				8FB62013282A11650087BB3F /* Biometrics.swift in Sources */,
 				8F678CAE282B486200608B98 /* FTUEIntroViewModel.swift in Sources */,
+				8F959FA3284615C700B44C3A /* BriefingBottomNavigationViewModel.swift in Sources */,
 				8F678CB4282B967C00608B98 /* ScrollView+Ext.swift in Sources */,
 				8FB61FE228239C540087BB3F /* LoginViewModel.swift in Sources */,
 				8F678CAC282B485600608B98 /* FTUEIntroView.swift in Sources */,
@@ -843,7 +871,9 @@
 				8FB620052824B0780087BB3F /* LoginPageWelcomeViewModel.swift in Sources */,
 				8FB61FF92823BEB50087BB3F /* AppSettings.swift in Sources */,
 				8F2A204C280D71DA0008DB86 /* Font+Ext.swift in Sources */,
+				8F959FA1284615BF00B44C3A /* BriefingBottomNavigationView.swift in Sources */,
 				8FB61FEC2823AEB30087BB3F /* DotView.swift in Sources */,
+				8F959FA52846160300B44C3A /* NavigationButtonItemModel.swift in Sources */,
 				8F7772F3280FBA2700FF09AA /* FontCollection.swift in Sources */,
 				8FB620032824B06C0087BB3F /* LoginPageWelcomeView.swift in Sources */,
 				8F678CB0282B556300608B98 /* FTUEShowcaseView.swift in Sources */,
@@ -856,12 +886,14 @@
 				8FBB3795280E567900DB7476 /* APIRepositoryProtocol.swift in Sources */,
 				8FB61FFB2823BECD0087BB3F /* User.swift in Sources */,
 				8FB61FF52823B74E0087BB3F /* DotViewModel.swift in Sources */,
+				8F959F9F2846147D00B44C3A /* BriefingViewModel.swift in Sources */,
 				8FB61FF72823B75D0087BB3F /* DotOnlyViewModel.swift in Sources */,
 				8F7772F0280FB5CF00FF09AA /* ConfigEnvironment.swift in Sources */,
 				8FB61FF02823AF340087BB3F /* ShapeView.swift in Sources */,
 				8FB61FFF28249BE60087BB3F /* LoginPageHeaderViewModel.swift in Sources */,
 				8FB6200128249FB00087BB3F /* LoginPageHeaderView.swift in Sources */,
 				8FBFACBE2812470800689F5A /* ContentViewModel.swift in Sources */,
+				8F959FA72846271900B44C3A /* NavigationButtonItem.swift in Sources */,
 				8F7772EB280FB20B00FF09AA /* CustomAPIRequest.swift in Sources */,
 				8FBFACC42812536800689F5A /* SampleModel.swift in Sources */,
 				8FBB3793280E4D1800DB7476 /* APIService.swift in Sources */,
