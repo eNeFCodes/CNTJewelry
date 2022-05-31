@@ -51,7 +51,7 @@ struct FTUEIntroView: View {
             VStack {
                 let start = CGPoint(x: 1, y: 0)
                 let end = CGPoint(x: 1, y: 80)
-                BorderView(coordinates: [start, end])
+                ShapeView(withCoordinates: [start, end])
                     .stroke(style: StrokeStyle(lineWidth: 2, dash: [3]))
                     .foregroundColor(ColorCollection.orange)
             }

@@ -64,7 +64,7 @@ struct LoginPageInputView: View {
                 .overlay {
                     let p1 = CGPoint(x: 0, y: 0)
                     let p2 = CGPoint(x: maxFieldWidth, y: 0)
-                    BorderView(coordinates: [p1, p2])
+                  ShapeView(withCoordinates: [p1, p2])
                         .stroke(style: StrokeStyle(lineWidth: 1))
                         .foregroundColor(ColorCollection.white)
                 }

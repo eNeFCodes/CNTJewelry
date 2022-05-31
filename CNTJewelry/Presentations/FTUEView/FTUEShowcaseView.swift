@@ -68,7 +68,7 @@ struct FTUEShowcaseView: View {
                 let p7 = CGPoint(x: 0, y: frameSize.height - cornerSize)
                 let p8 = CGPoint(x: 0, y: offsetY + cornerSize)
 
-                BorderView(coordinates: [p1, p2, p3, p4, p5, p6, p7, p8], shouldClosePath: true)
+              ShapeView(withCoordinates: [p1, p2, p3, p4, p5, p6, p7, p8], shouldClosePath: true)
                     .stroke(Color.orange, lineWidth: 1)
             }
     }

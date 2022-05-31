@@ -47,7 +47,7 @@ struct LoginPageHeaderView: View {
                     let p5 = CGPoint(x: rect.width - 20, y: rect.height)
                     let p6 = CGPoint(x: 0, y: rect.height)
 
-                    BorderView(coordinates: [p1, p2, p3, p4, p5, p6])
+                  ShapeView(withCoordinates: [p1, p2, p3, p4, p5, p6])
                         .stroke(Color.yellow, lineWidth: 2)
                 }
             Spacer()
