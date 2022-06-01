@@ -23,8 +23,9 @@ struct NeedToKnowView: View {
         buildKnowInfoViewStack(geometry: geometry)
           .padding(.top, 86)
       }
-      .frame(width: geometry.size.width, height: 485, alignment: .center)
+      .frame(width: geometry.size.width, alignment: .center)
     }
+    .frame(height: 498)
   }
 
   private func buildTitleViewStack(geometry: GeometryProxy) -> some View {

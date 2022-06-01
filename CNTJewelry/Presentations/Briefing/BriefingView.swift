@@ -32,14 +32,21 @@ struct BriefingView: View {
 
   var body: some View {
     GeometryReader { geometry in
-      VStack(spacing: 0) {
-        BriefingTopNavigationView(model: topNavigationModel)
-        ScrollView(.vertical, showsIndicators: false) {
+      ScrollView(.vertical, showsIndicators: false) {
+        LazyVStack(spacing: 24) {
           buildBonjurViewStack(geometry: geometry)
             .padding(.top, 26)
+
           NeedToKnowView(model: needToKnowModel)
-            .padding(.top, 24)
+
+          buildBonjurViewStack(geometry: geometry)
         }
+      }
+      .padding(.top, 54)
+
+      VStack {
+        BriefingTopNavigationView(model: topNavigationModel)
+        Spacer()
       }
 
       VStack {
@@ -48,6 +55,9 @@ struct BriefingView: View {
       }
       .frame(width: geometry.size.width, alignment: .center)
     }
+    .background(ColorCollection.black)
+    .navigationBarHidden(true)
+    .navigationBarBackButtonHidden(true)
     .onReceive(topNavigationModel.publisher) { action in
       switch action {
       case .search:
