@@ -8,6 +8,11 @@
 import Foundation
 
 class BriefingViewModel: ObservableObject {
+  let bonjurDate: String
+  let bonjurTitle: String
 
-  
+  init(bonjurDate: String, bonjurTitle: String) {
+    self.bonjurDate = bonjurDate
+    self.bonjurTitle = bonjurTitle
+  }
 }
