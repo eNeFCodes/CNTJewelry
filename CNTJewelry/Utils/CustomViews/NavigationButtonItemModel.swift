@@ -22,6 +22,8 @@ class NavigationButtonItemModel: ObservableObject {
   let cornerRadius: CGFloat
   @Published var isActive: Bool
 
+  let publisher = PassthroughSubject<NavigationButtonItemModel, Never>()
+
   init(id: Int,
        icon: Image,
        activeIcon: Image,
@@ -50,6 +52,6 @@ class NavigationButtonItemModel: ObservableObject {
   }
 
   func triggerAction() {
-    isActive = true
+    publisher.send(self)
   }
 }

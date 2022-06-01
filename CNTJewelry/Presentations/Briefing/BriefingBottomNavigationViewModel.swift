@@ -11,10 +11,31 @@ import Combine
 class BriefingBottomNavigationViewModel: ObservableObject {
   @Published var buttons: [NavigationButtonItemModel]
 
-  let publisher = PassthroughSubject<NavigationButtonItemModel, Never>()
+  private var subscriptions = Set<AnyCancellable>()
 
   init(buttons: [NavigationButtonItemModel]) {
     self.buttons = buttons
+
+    setBindings()
+  }
+
+  private func setBindings() {
+    let mergedPublishers = buttons.reduce(Publishers.MergeMany<PassthroughSubject<NavigationButtonItemModel, Never>>()) { partialResult, btnItem in
+      partialResult.merge(with: btnItem.publisher)
+    }
+
+    mergedPublishers
+      .sink { [weak self] btnItem in
+        guard let self = self else { return }
+        self.updateActiveButtonItem(with: btnItem)
+      }
+      .store(in: &subscriptions)
+  }
+
+  private func updateActiveButtonItem(with btnItem: NavigationButtonItemModel) {
+    buttons.forEach({ item in
+      item.isActive = item.id == btnItem.id
+    })
   }
 }
 
