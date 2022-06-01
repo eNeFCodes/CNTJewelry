@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct BriefingBottomNavigationView: View {
-  @StateObject private var model: BriefingBottomNavigationViewModel
+  @ObservedObject private var model: BriefingBottomNavigationViewModel
 
   init(model: BriefingBottomNavigationViewModel) {
-    _model = .init(wrappedValue: model)
+    self.model = model
   }
 
   var body: some View {
