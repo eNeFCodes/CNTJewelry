@@ -42,7 +42,7 @@ struct WeeklyCollectionItemV3View: View {
           Button {
             model.triggerFavorite()
           } label: {
-            let iconName = model.isFavorite ? "ic_bookmark" : "ic_bookmark"
+            let iconName = model.isFavorite ? "ic_bookmark_selected" : "ic_bookmark"
             Image(iconName)
               .resizable()
               .frame(width: 24, height: 24, alignment: .center)

@@ -16,6 +16,11 @@ struct BriefingView: View {
     .init(buttons: BriefingBottomNavigationViewModel.navigationButtons())
   }()
 
+  @StateObject private var weeklyModel: WeeklyCollectionViewModel = {
+    .init(header: .init(title: "This week\naround CNT".uppercased()),
+          items: WeeklyCollectionViewModel.mockItems())
+  }()
+
   @StateObject private var needToKnowModel: NeedToKnowViewModel
 
   @State private var isSearchPageActive: Bool = false
@@ -33,13 +38,13 @@ struct BriefingView: View {
   var body: some View {
     GeometryReader { geometry in
       ScrollView(.vertical, showsIndicators: false) {
-        LazyVStack(spacing: 24) {
+        LazyVStack(spacing: 32) {
           buildBonjurViewStack(geometry: geometry)
             .padding(.top, 26)
 
           NeedToKnowView(model: needToKnowModel)
 
-          buildBonjurViewStack(geometry: geometry)
+          WeeklyCollectionView(model: weeklyModel, geometry: geometry)
         }
       }
       .padding(.top, 54)
