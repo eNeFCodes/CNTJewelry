@@ -55,7 +55,6 @@ struct BriefingView: View {
       }
       .frame(width: geometry.size.width, alignment: .center)
     }
-    .background(ColorCollection.black)
     .navigationBarHidden(true)
     .navigationBarBackButtonHidden(true)
     .onReceive(topNavigationModel.publisher) { action in
