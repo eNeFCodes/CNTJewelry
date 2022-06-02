@@ -7,8 +7,11 @@
 
 import Foundation
 
+// WeeklyCollectionViewModel.ContentType.variant1
 class WeeklyCollectionItemViewModel: ObservableObject, WeeklyCollectionItemModelProtocol {
   let viewId: UUID
+  let type: WeeklyCollectionViewModel.ContentType
+
   let title: String
   let subTitle: String
   let imageName: String
@@ -17,13 +20,15 @@ class WeeklyCollectionItemViewModel: ObservableObject, WeeklyCollectionItemModel
   let showSeparator: Bool
 
   init(title: String,
-       subTitle: String = "",
-       imageName: String = "",
-       date: String = "",
+       subTitle: String,
+       imageName: String,
+       date: String,
        isFavorite: Bool = false,
        showSeparator: Bool = true) {
 
     self.viewId = UUID()
+    self.type = .variant1
+
     self.title = title
     self.subTitle = subTitle
     self.imageName = imageName

@@ -7,12 +7,10 @@
 
 import Foundation
 
-class WeeklyCollectionHeaderItemViewModel: ObservableObject, WeeklyCollectionItemModelProtocol {
-  let viewId: UUID
+class WeeklyCollectionHeaderItemViewModel: ObservableObject {
   let title: String
 
   init(title: String) {
-    self.viewId = UUID()
     self.title = title
   }
 }
