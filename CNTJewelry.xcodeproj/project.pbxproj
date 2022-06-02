@@ -84,6 +84,8 @@
 		8F959FDE2848661900B44C3A /* WeeklyCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F959FDD2848661900B44C3A /* WeeklyCollectionViewModel.swift */; };
 		8F959FE128486A9A00B44C3A /* WeeklyCollectionHeaderItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F959FE028486A9A00B44C3A /* WeeklyCollectionHeaderItemView.swift */; };
 		8F959FE328486AA600B44C3A /* WeeklyCollectionHeaderItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F959FE228486AA600B44C3A /* WeeklyCollectionHeaderItemViewModel.swift */; };
+		8F959FE5284873A000B44C3A /* WeeklyCollectionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F959FE4284873A000B44C3A /* WeeklyCollectionItemView.swift */; };
+		8F959FE7284873A900B44C3A /* WeeklyCollectionItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F959FE6284873A900B44C3A /* WeeklyCollectionItemViewModel.swift */; };
 		8FB61FE028239B840087BB3F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB61FDF28239B840087BB3F /* LoginView.swift */; };
 		8FB61FE228239C540087BB3F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB61FE128239C540087BB3F /* LoginViewModel.swift */; };
 		8FB61FE72823AB690087BB3F /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB61FE62823AB690087BB3F /* WelcomeView.swift */; };
@@ -207,6 +209,8 @@
 		8F959FDD2848661900B44C3A /* WeeklyCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyCollectionViewModel.swift; sourceTree = "<group>"; };
 		8F959FE028486A9A00B44C3A /* WeeklyCollectionHeaderItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyCollectionHeaderItemView.swift; sourceTree = "<group>"; };
 		8F959FE228486AA600B44C3A /* WeeklyCollectionHeaderItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyCollectionHeaderItemViewModel.swift; sourceTree = "<group>"; };
+		8F959FE4284873A000B44C3A /* WeeklyCollectionItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyCollectionItemView.swift; sourceTree = "<group>"; };
+		8F959FE6284873A900B44C3A /* WeeklyCollectionItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyCollectionItemViewModel.swift; sourceTree = "<group>"; };
 		8FB61FDF28239B840087BB3F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		8FB61FE128239C540087BB3F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		8FB61FE62823AB690087BB3F /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -619,6 +623,8 @@
 				8F959FDD2848661900B44C3A /* WeeklyCollectionViewModel.swift */,
 				8F959FE028486A9A00B44C3A /* WeeklyCollectionHeaderItemView.swift */,
 				8F959FE228486AA600B44C3A /* WeeklyCollectionHeaderItemViewModel.swift */,
+				8F959FE4284873A000B44C3A /* WeeklyCollectionItemView.swift */,
+				8F959FE6284873A900B44C3A /* WeeklyCollectionItemViewModel.swift */,
 			);
 			path = WeeklyUpdateView;
 			sourceTree = "<group>";
@@ -887,6 +893,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F959FE5284873A000B44C3A /* WeeklyCollectionItemView.swift in Sources */,
 				8F2A2014280D173E0008DB86 /* AppDelegate.swift in Sources */,
 				8F2A2016280D173E0008DB86 /* SceneDelegate.swift in Sources */,
 				8FB620092824B8900087BB3F /* LoginPageOptionViewModel.swift in Sources */,
@@ -952,6 +959,7 @@
 				8F7772EB280FB20B00FF09AA /* CustomAPIRequest.swift in Sources */,
 				8FBFACC42812536800689F5A /* SampleModel.swift in Sources */,
 				8FBB3793280E4D1800DB7476 /* APIService.swift in Sources */,
+				8F959FE7284873A900B44C3A /* WeeklyCollectionItemViewModel.swift in Sources */,
 				8FBFACD628193D3E00689F5A /* LoaderView.swift in Sources */,
 				8F7772E8280FAE2400FF09AA /* Optional+Ext.swift in Sources */,
 				8FBFACCF2819377500689F5A /* ColorCollection.swift in Sources */,
