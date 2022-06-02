@@ -31,6 +31,10 @@ struct WeeklyCollectionView: View {
   private func viewForContentType(item: WeeklyCollectionItemModelProtocol, geometry: GeometryProxy) -> some View {
     if item.type == .variant1, let model = item as? WeeklyCollectionItemViewModel {
       WeeklyCollectionItemView(model: model, geometry: geometry)
+    } else if item.type == .variant2 {
+
+    } else if item.type == .variant3, let model = item as? WeeklyCollectionItemV3ViewModel {
+      WeeklyCollectionItemV3View(model: model, geometry: geometry)
     }
   }
 }
