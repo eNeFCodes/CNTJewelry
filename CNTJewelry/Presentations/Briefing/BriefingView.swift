@@ -21,6 +21,18 @@ struct BriefingView: View {
           items: WeeklyCollectionViewModel.mockItems())
   }()
 
+  @StateObject private var articleModel: ArticleCollectionViewModel = {
+    .init(title: "DISCOVER the collection".uppercased(),
+          details: "Here's a selection of articles about Trinity Collection.",
+          items: ArticleCollectionViewModel.mockItems())
+  }()
+
+  @StateObject private var weeklyModel2: WeeklyCollectionViewModel = {
+    .init(header: .init(title: "This week\naround YOUR\nMARKET".uppercased(),
+                        enableBackdrop: false),
+          items: WeeklyCollectionViewModel.mockItems2())
+  }()
+
   @StateObject private var needToKnowModel: NeedToKnowViewModel
 
   @State private var isSearchPageActive: Bool = false
@@ -45,6 +57,10 @@ struct BriefingView: View {
           NeedToKnowView(model: needToKnowModel)
 
           WeeklyCollectionView(model: weeklyModel, geometry: geometry)
+
+          ArticleCollectionView(model: articleModel, geometry: geometry)
+
+          WeeklyCollectionView(model: weeklyModel2, geometry: geometry)
         }
       }
       .padding(.top, 54)

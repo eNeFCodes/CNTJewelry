@@ -18,13 +18,14 @@ struct WeeklyCollectionView: View {
 
   var body: some View {
     VStack(spacing: 0) {
-      WeeklyCollectionHeaderItemView(model: model.header)
+      WeeklyCollectionHeaderItemView(model: model.header, geometry: geometry)
+
       LazyVStack(spacing: 32) {
         ForEach(model.items, id: \.viewId) { item in
           viewForContentType(item: item, geometry: geometry)
         }
       }
-      .padding(.top, 116)
+      .padding(.top, -116)
     }
     .frame(width: geometry.size.width, alignment: .top)
   }
