@@ -10,9 +10,8 @@ import Foundation
 import SwiftUI
 
 extension InputFieldViewModel {
-  enum Action {
+  enum EventAction {
     case onChange(_ id: Int, text: String)
-    case action(_ id: Int, text: String)
   }
 }
 
@@ -33,7 +32,7 @@ class InputFieldViewModel: ObservableObject, Identifiable {
   let icon: Image?
   var activeIcon: Image?
 
-  let publisher = PassthroughSubject<Action, Never>()
+  let publisher = PassthroughSubject<EventAction, Never>()
 
   init(id: Int,
        title: String = "Search CNT",
@@ -68,8 +67,8 @@ class InputFieldViewModel: ObservableObject, Identifiable {
     self.activeIcon = activeIcon
   }
 
-  func trigger() {
-    publisher.send(.action(id, text: inputText))
+  func triggerAction() {
+
   }
 
   func onChange(text: String) {

@@ -7,8 +7,15 @@
 
 import SwiftUI
 
+extension InputFieldView {
+  enum FocusedField: Hashable {
+    case textField
+  }
+}
+
 struct InputFieldView: View {
   @ObservedObject private var model: InputFieldViewModel
+  @FocusState private var focusedField: InputFieldView.FocusedField?
 
   init(model: InputFieldViewModel) {
     self.model = model
@@ -40,11 +47,16 @@ struct InputFieldView: View {
               .onChange(of: model.inputText) { newValue in
                 model.onChange(text: newValue)
               }
+              .focused($focusedField, equals: .textField)
           }
 
           if model.showButton, let icon = model.icon, let activeIcon = model.activeIcon {
             Button {
-              model.trigger()
+              if model.inputText.isEmpty {
+                focusedField = .textField
+              } else {
+                model.inputText = ""
+              }
             } label: {
               if !model.inputText.isEmpty {
                 activeIcon
