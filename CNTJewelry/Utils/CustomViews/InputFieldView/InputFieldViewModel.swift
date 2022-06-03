@@ -40,7 +40,7 @@ class InputFieldViewModel: ObservableObject, Identifiable {
        titleColor: Color = ColorCollection.white,
        titleFont: Font = FontCollection.BrilliantCutProB7.regular(size: 15).font,
        inputText: String = "",
-       showTitle: Bool = true,
+       showTitle: Bool = false,
        placeholder: String = "Search CNT",
        placeholderTextColor: Color = ColorCollection.gray,
        textColor: Color = ColorCollection.green,

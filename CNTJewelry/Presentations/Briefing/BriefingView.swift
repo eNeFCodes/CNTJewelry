@@ -75,6 +75,8 @@ struct BriefingView: View {
         BriefingBottomNavigationView(model: botNavigationModel)
       }
       .frame(width: geometry.size.width, alignment: .center)
+
+      buildNavigationStack()
     }
     .navigationBarHidden(true)
     .navigationBarBackButtonHidden(true)
@@ -108,6 +110,29 @@ struct BriefingView: View {
     .foregroundColor(ColorCollection.black)
     .padding(.horizontal, padding)
     .frame(width: abs(geometry.size.width), alignment: .leading)
+  }
+
+  @ViewBuilder
+  private func buildNavigationStack() -> some View {
+    NavigationLink("", isActive: $isSearchPageActive) {
+      SearchPageView(model: .init())
+    }
+
+    NavigationLink("", isActive: $isFavoritePageActive) {
+      // TODO: add content here
+    }
+
+    NavigationLink("", isActive: $isLivePageActive) {
+      // TODO: add content here
+    }
+
+    NavigationLink("", isActive: $isResourcePageActive) {
+        // TODO: add content here
+    }
+
+    NavigationLink("", isActive: $isAddPageActive) {
+        // TODO: add content here
+    }
   }
 }
 
