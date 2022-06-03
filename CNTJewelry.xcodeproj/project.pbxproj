@@ -118,6 +118,8 @@
 		8FBB3793280E4D1800DB7476 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBB3792280E4D1800DB7476 /* APIService.swift */; };
 		8FBB3795280E567900DB7476 /* APIRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBB3794280E567900DB7476 /* APIRepositoryProtocol.swift */; };
 		8FBB3798280E57FC00DB7476 /* APIResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBB3797280E57FC00DB7476 /* APIResponseError.swift */; };
+		8FBC9FB028499B77009E068C /* ArticleCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBC9FAF28499B77009E068C /* ArticleCollectionView.swift */; };
+		8FBC9FB328499B8B009E068C /* ArticleCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBC9FB228499B8B009E068C /* ArticleCollectionViewModel.swift */; };
 		8FBFACB52812423400689F5A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8FBFACB72812423400689F5A /* Localizable.strings */; };
 		8FBFACBB281245B300689F5A /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBFACBA281245B300689F5A /* LocalizedStrings.swift */; };
 		8FBFACBE2812470800689F5A /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBFACBD2812470800689F5A /* ContentViewModel.swift */; };
@@ -251,6 +253,8 @@
 		8FBB3792280E4D1800DB7476 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		8FBB3794280E567900DB7476 /* APIRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRepositoryProtocol.swift; sourceTree = "<group>"; };
 		8FBB3797280E57FC00DB7476 /* APIResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseError.swift; sourceTree = "<group>"; };
+		8FBC9FAF28499B77009E068C /* ArticleCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCollectionView.swift; sourceTree = "<group>"; };
+		8FBC9FB228499B8B009E068C /* ArticleCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCollectionViewModel.swift; sourceTree = "<group>"; };
 		8FBFACB62812423400689F5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8FBFACB82812425500689F5A /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8FBFACB9281242D300689F5A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -349,6 +353,7 @@
 			children = (
 				8F959FB028473F7200B44C3A /* NeedToKnowView */,
 				8F959FDF2848661D00B44C3A /* WeeklyUpdateView */,
+				8FBC9FB128499B7C009E068C /* ArticleCollectionView */,
 				8F959F9B2846126A00B44C3A /* Briefing */,
 				8FBFACBC281246F600689F5A /* ContentView */,
 				8FB61FEA2823AB7F0087BB3F /* Welcome */,
@@ -710,6 +715,15 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		8FBC9FB128499B7C009E068C /* ArticleCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				8FBC9FAF28499B77009E068C /* ArticleCollectionView.swift */,
+				8FBC9FB228499B8B009E068C /* ArticleCollectionViewModel.swift */,
+			);
+			path = ArticleCollectionView;
+			sourceTree = "<group>";
+		};
 		8FBFACB228123DBF00689F5A /* Localization */ = {
 			isa = PBXGroup;
 			children = (
@@ -951,7 +965,9 @@
 				8F959FEF2848B08100B44C3A /* WeeklyCollectionItemV2ViewModel.swift in Sources */,
 				8F959FB22847472A00B44C3A /* NeedToKnowInfo.swift in Sources */,
 				8F959FAB284726B900B44C3A /* NeedToKnowViewModel.swift in Sources */,
+				8FBC9FB328499B8B009E068C /* ArticleCollectionViewModel.swift in Sources */,
 				8F959FA9284726AF00B44C3A /* NeedToKnowView.swift in Sources */,
+				8FBC9FB028499B77009E068C /* ArticleCollectionView.swift in Sources */,
 				8FB620032824B06C0087BB3F /* LoginPageWelcomeView.swift in Sources */,
 				8F678CB0282B556300608B98 /* FTUEShowcaseView.swift in Sources */,
 				8F959FE92848AD8F00B44C3A /* WeeklyCollectionItemV3View.swift in Sources */,
