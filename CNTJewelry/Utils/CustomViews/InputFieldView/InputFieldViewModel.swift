@@ -10,18 +10,18 @@ import Foundation
 import SwiftUI
 
 extension InputFieldViewModel {
-  enum EventAction {
-    case onChange(_ id: Int, text: String)
+  enum TitleType {
+    case `default`
+    case alwaysShow
   }
 }
 
-class InputFieldViewModel: ObservableObject, Identifiable {
-  let id: Int
+struct InputFieldViewModel: Identifiable {
+  let id: UUID
   let title: String
   let titleColor: Color
   let titleFont: Font
-  @Published var inputText: String
-  @Published var showTitle: Bool
+  let titleType: TitleType
   let placeholder: String
   let placeholderTextColor: Color
   let textColor: Color
@@ -32,15 +32,11 @@ class InputFieldViewModel: ObservableObject, Identifiable {
   let icon: Image?
   var activeIcon: Image?
 
-  let publisher = PassthroughSubject<EventAction, Never>()
-
-  init(id: Int,
-       title: String = "Search CNT",
+  init(title: String = L10n.SearchPage.Content.inputTitle,
        titleColor: Color = ColorCollection.white,
        titleFont: Font = FontCollection.BrilliantCutProB7.regular(size: 15).font,
-       inputText: String = "",
-       showTitle: Bool = false,
-       placeholder: String = "Search CNT",
+       titleType: TitleType = .default,
+       placeholder: String = L10n.SearchPage.Content.inputTitle,
        placeholderTextColor: Color = ColorCollection.gray,
        textColor: Color = ColorCollection.green,
 
@@ -50,12 +46,11 @@ class InputFieldViewModel: ObservableObject, Identifiable {
        icon: Image? = nil,
        activeIcon: Image? = nil) {
 
-    self.id = id
+    self.id = UUID()
     self.title = title
     self.titleColor = titleColor
     self.titleFont = titleFont
-    self.inputText = inputText
-    self.showTitle = showTitle
+    self.titleType = titleType
     self.placeholder = placeholder
     self.placeholderTextColor = placeholderTextColor
     self.textColor = textColor
@@ -65,13 +60,5 @@ class InputFieldViewModel: ObservableObject, Identifiable {
     self.showButton = showButton
     self.icon = icon
     self.activeIcon = activeIcon
-  }
-
-  func triggerAction() {
-
-  }
-
-  func onChange(text: String) {
-    publisher.send(.onChange(id, text: text))
   }
 }

@@ -14,51 +14,51 @@ extension InputFieldView {
 }
 
 struct InputFieldView: View {
-  @ObservedObject private var model: InputFieldViewModel
+  @Binding private var inputText: String
+  @State private var model: InputFieldViewModel
   @FocusState private var focusedField: InputFieldView.FocusedField?
+  @State private var showTitle: Bool = false
 
-  init(model: InputFieldViewModel) {
-    self.model = model
+  init(inputText: Binding<String>, model: InputFieldViewModel) {
+    _inputText = inputText
+    _model = .init(initialValue: model)
   }
 
   var body: some View {
-    let maxFieldHeight: CGFloat = model.inputText.isEmpty ? 49 : 77
+    let maxFieldHeight: CGFloat = inputText.isEmpty ? 49 : 77
     GeometryReader { geometry in
       VStack(spacing: 8) {
-        if model.showTitle {
-          Text(model.title)
-            .accessibilityLabel(model.title)
-            .foregroundColor(model.titleColor)
-            .font(model.titleFont)
-            .frame(width: geometry.size.width, height: 20, alignment: .leading)
-            .transition(.move(edge: .bottom))
+        switch model.titleType {
+        case .alwaysShow:
+          buildTitleViewStack(geometry: geometry)
+        default:
+          if showTitle || !inputText.isEmpty {
+            buildTitleViewStack(geometry: geometry)
+          }
         }
 
         HStack(alignment: .center, spacing: 10) {
           ZStack(alignment: .leading) {
-            if model.inputText.isEmpty {
+            if inputText.isEmpty {
               Text(model.placeholder)
                 .accessibilityLabel(model.placeholder)
                 .foregroundColor(model.placeholderTextColor)
             }
-            TextField("", text: $model.inputText)
+            TextField("", text: $inputText)
               .frame(height: 40, alignment: .leading)
               .foregroundColor(model.textColor)
-              .onChange(of: model.inputText) { newValue in
-                model.onChange(text: newValue)
-              }
               .focused($focusedField, equals: .textField)
           }
 
           if model.showButton, let icon = model.icon, let activeIcon = model.activeIcon {
             Button {
-              if model.inputText.isEmpty {
+              if inputText.isEmpty {
                 focusedField = .textField
               } else {
-                model.inputText = ""
+                inputText = ""
               }
             } label: {
-              if !model.inputText.isEmpty {
+              if !inputText.isEmpty {
                 activeIcon
                   .resizable()
                   .aspectRatio(contentMode: .fit)
@@ -81,13 +81,24 @@ struct InputFieldView: View {
         }
       }
       .frame(width: geometry.size.width, height: maxFieldHeight, alignment: .center)
-      .onChange(of: model.inputText) { newValue in
+      .onChange(of: inputText) { newValue in
         withAnimation {
-          model.showTitle = !newValue.isEmpty
+          if model.titleType == .default {
+            showTitle = !newValue.isEmpty
+          }
         }
       }
     }
     .frame(height: maxFieldHeight, alignment: .center)
+  }
+
+  private func buildTitleViewStack(geometry: GeometryProxy) -> some View {
+    Text(model.title)
+      .accessibilityLabel(model.title)
+      .foregroundColor(model.titleColor)
+      .font(model.titleFont)
+      .frame(width: geometry.size.width, height: 20, alignment: .leading)
+      .transition(.move(edge: .bottom))
   }
 }
 
@@ -95,22 +106,19 @@ struct InputFieldView_Previews: PreviewProvider {
   @State static var text: String = ""
   static var previews: some View {
     VStack {
-      let config = InputFieldViewModel(id: 0,
-                                       showButton: true,
+      let config = InputFieldViewModel(showButton: true,
                                        icon: Image("ic_search_white"))
 
-      let config2 = InputFieldViewModel(id: 1,
-                                        separatorColor: .yellow,
+      let config2 = InputFieldViewModel(separatorColor: .yellow,
                                         showButton: true,
                                         icon: Image("ic_search"))
 
-      let config3 = InputFieldViewModel(id: 3,
-                                        showSeparator: false,
+      let config3 = InputFieldViewModel(showSeparator: false,
                                         showButton: true,
                                         icon: Image("ic_eye_white"))
 
       ForEach([config, config2, config3], id: \.id) { config in
-        InputFieldView(model: config)
+        InputFieldView(inputText: $text, model: config)
       }
 
       Spacer()
