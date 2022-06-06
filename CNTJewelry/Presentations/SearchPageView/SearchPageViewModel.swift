@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-class SearchPageViewModel: ObservableObject {
+extension SearchPageViewModel {
   struct Searched: Identifiable, Hashable {
     let id: Int
     let title: String
@@ -29,21 +29,47 @@ class SearchPageViewModel: ObservableObject {
       self.date = date
     }
   }
+}
 
-  @Published var popularSearches: [Searched] = SearchMockData.popularSearches
-  @Published var searchResults: [Searched] = []
-  @Published var searchedText: String = "asdfadfaf"
+class SearchPageViewModel: ObservableObject {
+  @Published var popularSearches: [Searched]
+  @Published var searchResults: [Searched]
+  @Published var searchedText: String
   @Published var selectedItem: Searched?
 
   var toSearchItems: [SearchPageViewModel.Searched] = SearchMockData.toSearchItems
 
   private var subscriptions = Set<AnyCancellable>()
-  private var textChange = PassthroughSubject<(id: Int, text: String), Never>()
+  private var textChange = PassthroughSubject<String, Never>()
 
-  init() {
+  init(popularSearches: [Searched] = SearchMockData.popularSearches,
+       searchResults: [Searched] = [],
+       searchedText: String = "",
+       selectedItem: Searched? = nil) {
+    self.popularSearches = popularSearches
+    self.searchResults = searchResults
+    self.searchedText = searchedText
+    self.selectedItem = selectedItem
+
+    setBindings()
+  }
+
+  private func setBindings() {
+    $searchedText
+      .sink(receiveValue: { [weak self] text in
+        guard let self = self else { return }
+        if text.isEmpty {
+          self.searchResults = []
+          self.textChange.send("")
+        } else {
+          self.textChange.send(text)
+        }
+      })
+      .store(in: &subscriptions)
+    
     textChange
       .debounce(for: .seconds(1), scheduler: DispatchQueue.global(qos: .background))
-      .map { [weak self] (id, text) -> AnyPublisher<[SearchPageViewModel.Searched], Never> in
+      .map { [weak self] text -> AnyPublisher<[SearchPageViewModel.Searched], Never> in
         guard let self = self else { return PassthroughSubject<[SearchPageViewModel.Searched], Never>().eraseToAnyPublisher() }
         return self.performFilter(for: text)
       }
@@ -58,19 +84,6 @@ class SearchPageViewModel: ObservableObject {
 }
 
 extension SearchPageViewModel {
-  func triggerInputFieldOnChangeAction(id: Int, text: String) {
-    if text.isEmpty {
-      searchResults = []
-    } else {
-      textChange.send((id, text))
-    }
-  }
-
-  func triggerInputFieldAction(id: Int, text: String) {
-    searchedText = ""
-    searchResults = []
-  }
-
   private func performFilter(for query: String) -> AnyPublisher<[SearchPageViewModel.Searched], Never> {
     if query.isEmpty {
       return CurrentValueSubject([]).eraseToAnyPublisher()
