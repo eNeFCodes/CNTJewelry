@@ -28,3 +28,10 @@
 
 "ftue.intro.welcome" = "HELLO, %@\nWELCOME TO\nCNT!";
 "ftue.intro.welcomeMessage" = "This is CNT's new Retail Publishing Platform where you can find the latest news and updates around the world at CNT.";
+
+"searchPage.content.title" = "SEARCH";
+"searchPage.content.inputTitle" = "Search CNT";
+"searchPage.result.notFound" = "NO RESULTS FOUND";
+"searchPage.result.noResultMessage" = "Please try searching for\nsomething else.";
+"searchPage.result.resultCount" = "%@ RESULTS";
+"searchPage.result.popularSearches" = "POPULAR SEARCHES";
