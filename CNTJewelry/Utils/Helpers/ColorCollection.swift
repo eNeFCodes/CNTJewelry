@@ -20,6 +20,8 @@ struct ColorCollection {
   static let goldResources = Color("goldResources")
   static let goldSeparator = Color("goldSeparator")
   static let loader = Color("loader")
+  static let beige = Color("DCD7CA")
+  static let lightBeige = Color("lightBeige")
   static let orange = Color("orange")
   static let red = Color("red")
   static let white = Color("white")
