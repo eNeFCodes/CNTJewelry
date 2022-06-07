@@ -8,13 +8,27 @@
 import SwiftUI
 
 struct ArticlePageView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+  @StateObject private var model: ArticlePageViewModel
+
+  init(model: ArticlePageViewModel) {
+    _model = .init(wrappedValue: model)
+  }
+
+  var body: some View {
+    GeometryReader { geometry in
+      ScrollViewReader { proxy in
+        ScrollView(.vertical, showsIndicators: false) {
+          LazyVStack {
+            ArticleTakeAwayView(model: model.takeAway, geometry: geometry)
+          }
+        }
+      }
     }
+  }
 }
 
 struct ArticlePageView_Previews: PreviewProvider {
-    static var previews: some View {
-        ArticlePageView()
-    }
+  static var previews: some View {
+    ArticlePageView(model: .init(takeAway: ArticleTakeAwayViewModel.mockImageData()))
+  }
 }

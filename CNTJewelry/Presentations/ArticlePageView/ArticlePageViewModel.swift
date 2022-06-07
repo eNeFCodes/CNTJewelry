@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+class ArticlePageViewModel: ObservableObject {
+  let takeAway: ArticleTakeAwayViewModel
+
+  init(takeAway: ArticleTakeAwayViewModel) {
+    self.takeAway = takeAway
+  }
+}

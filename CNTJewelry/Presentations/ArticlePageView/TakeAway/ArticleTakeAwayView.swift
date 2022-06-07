@@ -22,6 +22,7 @@ struct ArticleTakeAwayView: View {
     VStack(spacing: 24) {
       buildHeaderViewStack()
       buildInfoDetailViewStack()
+      buildKeyTakeAwayViewStack()
     }
     .ignoresSafeArea()
   }
@@ -74,49 +75,87 @@ struct ArticleTakeAwayView: View {
       VStack(spacing: 4) {
         let infoDateFont = FontCollection.FancyCutProB7.bold(size: 14).font
         Text(model.infoDate)
-            .accessibilityLabel(model.infoDate)
-            .font(infoDateFont)
-            .foregroundColor(ColorCollection.black)
-            .frame(width: textContentWidth, alignment: .leading)
+          .accessibilityLabel(model.infoDate)
+          .font(infoDateFont)
+          .foregroundColor(ColorCollection.black)
+          .frame(width: textContentWidth, alignment: .leading)
 
         let infoAuthorFont = FontCollection.FancyCutProB7.regular(size: 14).font
         Text(model.infoAuthor)
-            .accessibilityLabel(model.infoAuthor)
-            .font(infoAuthorFont)
-            .foregroundColor(ColorCollection.black)
-            .frame(width: textContentWidth, alignment: .leading)
+          .accessibilityLabel(model.infoAuthor)
+          .font(infoAuthorFont)
+          .foregroundColor(ColorCollection.black)
+          .frame(width: textContentWidth, alignment: .leading)
 
         let infoLocationFont = FontCollection.FancyCutProB7.bold(size: 14).font
         Text(model.infoLocation)
-            .accessibilityLabel(model.infoLocation)
-            .font(infoLocationFont)
-            .foregroundColor(ColorCollection.black)
-            .frame(width: textContentWidth, alignment: .leading)
+          .accessibilityLabel(model.infoLocation)
+          .font(infoLocationFont)
+          .foregroundColor(ColorCollection.black)
+          .frame(width: textContentWidth, alignment: .leading)
       }
 
       let infoDetailFont = FontCollection.FancyCutProB7.light(size: 29).font
       Text(model.infoDetail)
-          .accessibilityLabel(model.infoDetail)
-          .font(infoDetailFont)
-          .foregroundColor(ColorCollection.black)
-          .frame(width: textContentWidth, alignment: .leading)
+        .accessibilityLabel(model.infoDetail)
+        .font(infoDetailFont)
+        .foregroundColor(ColorCollection.black)
+        .frame(width: textContentWidth, alignment: .leading)
     }
     .padding(.horizontal, padding)
     .padding(.leading, extraContentPadding)
     .frame(width: geometry.size.width, alignment: .leading)
     .background {
       GeometryReader { geometry in
-          let p1 = CGPoint(x: padding, y: 0)
-          let p2 = CGPoint(x: padding, y: geometry.size.height)
-          ShapeView(withCoordinates: [p1, p2])
-              .stroke(style: StrokeStyle(lineWidth: 1, dash: [2]))
-              .foregroundColor(ColorCollection.gold)
-              .frame(width: 1, height: geometry.size.height, alignment: .leading)
+        let p1 = CGPoint(x: padding, y: 0)
+        let p2 = CGPoint(x: padding, y: geometry.size.height)
+        ShapeView(withCoordinates: [p1, p2])
+          .stroke(style: StrokeStyle(lineWidth: 1, dash: [2]))
+          .foregroundColor(ColorCollection.gold)
+          .frame(width: 1, height: geometry.size.height, alignment: .leading)
       }
     }
   }
 
-  
+  private func buildKeyTakeAwayViewStack() -> some View {
+    VStack(spacing: 16) {
+      let textContentWidth = abs(geometry.size.width - (padding * 2))
+
+      let titleFont = FontCollection.BrilliantCutProB7.bold(size: 11).font
+      Text(model.takeAwayTitle)
+        .accessibilityLabel(model.takeAwayTitle)
+        .font(titleFont)
+        .foregroundColor(ColorCollection.black)
+        .frame(width: textContentWidth, alignment: .leading)
+
+      LazyVStack(spacing: 24) {
+        let numberFont = FontCollection.FancyCutCondProB7.bold(size: 44).font
+        let detailsFont = FontCollection.FancyCutCondProB7.medium(size: 18).font
+        let numberContentWidth: CGFloat = 50
+        let estimatedContentWidth = abs(textContentWidth - numberContentWidth - 8)
+
+        ForEach(model.takeAways, id: \.id) { takeAway in
+          HStack(spacing: 8) {
+            Text(takeAway.number)
+              .accessibilityLabel(takeAway.number)
+              .foregroundColor(ColorCollection.red)
+              .font(numberFont)
+              .frame(width: 50, alignment: .center)
+
+            Text(takeAway.detail)
+              .accessibilityLabel(takeAway.detail)
+              .foregroundColor(.black)
+              .font(detailsFont)
+              .frame(width: estimatedContentWidth, alignment: .leading)
+          }
+        }
+      }
+      .frame(width: textContentWidth, alignment: .leading)
+    }
+    .padding(.top, 24)
+    .padding(.horizontal, padding)
+    .frame(width: geometry.size.width, alignment: .leading)
+  }
 }
 
 struct ArticleTakeAwayView_Previews: PreviewProvider {
