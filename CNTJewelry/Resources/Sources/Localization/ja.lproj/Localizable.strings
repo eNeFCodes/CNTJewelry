@@ -35,3 +35,5 @@
 "searchPage.result.noResultMessage" = "Please try searching for\nsomething else.";
 "searchPage.result.resultCount" = "%@ RESULTS";
 "searchPage.result.popularSearches" = "POPULAR SEARCHES";
+
+"article.takeAway.title" = "KEY TAKEAWAYS";
