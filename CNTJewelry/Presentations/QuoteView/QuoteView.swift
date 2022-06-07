@@ -40,7 +40,9 @@ struct QuoteView: View {
       VStack(spacing: 8) { // secondary view - content view
         buildScrollableQuotesViewStack(contentWidth: coloredViewBGWidth)
       }
-      .frame(width: coloredViewBGWidth, alignment: .center)
+      .padding(.top, 72)
+      .padding(.bottom, 45)
+      .frame(width: coloredViewBGWidth, alignment: .top)
       .background(ColorCollection.beige)
     }
     .frame(width: contentWidth, alignment: .trailing)
@@ -61,7 +63,7 @@ struct QuoteView: View {
   private func buildScrollableQuotesViewStack(contentWidth: CGFloat) -> some View {
     ScrollViewReader { proxy in
       ScrollView(.horizontal, showsIndicators: false) {
-        LazyHStack {
+        LazyHStack(alignment: .top) {
           ForEach(model.quotes, id: \.id) { item in
             buildQuoteTextViewStack(contentWidth: contentWidth, item: item)
           }
