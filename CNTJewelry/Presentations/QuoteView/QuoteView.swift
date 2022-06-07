@@ -39,6 +39,14 @@ struct QuoteView: View {
       let coloredViewBGWidth = contentWidth - 40
       VStack(spacing: 8) { // secondary view - content view
         buildScrollableQuotesViewStack(contentWidth: coloredViewBGWidth)
+
+        let maxIndex = model.quotes.count - 1
+        DotOnlyView(model: .init(range: Range(0...maxIndex),
+                                 activeIndex: model.$currentIndex,
+                                 dotColor: ColorCollection.black,
+                                 dotStrokeColor: ColorCollection.black,
+                                 dotInactiveStrokeColor: ColorCollection.black),
+                    contentWidth: coloredViewBGWidth)
       }
       .padding(.top, 72)
       .padding(.bottom, 45)
@@ -64,7 +72,9 @@ struct QuoteView: View {
     ScrollViewReader { proxy in
       ScrollView(.horizontal, showsIndicators: false) {
         LazyHStack(alignment: .top) {
-          ForEach(model.quotes, id: \.id) { item in
+          let maxIndex = model.quotes.count - 1
+          ForEach(0...maxIndex, id: \.self) { i in
+            let item = model.quotes[i]
             buildQuoteTextViewStack(contentWidth: contentWidth, item: item)
           }
         }

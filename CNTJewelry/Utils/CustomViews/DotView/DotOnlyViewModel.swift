@@ -8,7 +8,6 @@
 import SwiftUI
 
 class DotOnlyViewModel: ObservableObject {
-
     let range: Range<Int>
     @Binding var activeIndex: Int
 

@@ -43,9 +43,11 @@ struct FTUEView: View {
 
         VStack {
           Spacer()
-          DotView(model: .init(range: 0..<model.items.count, activeIndex: $model.activeIndex, action: {
+          DotView(model: .init(range: 0..<model.items.count,
+                               activeIndex: $model.activeIndex,
+                               action: {
             isBriefingActive = true
-          }), geometry: geometry)
+          }), contentWidth: geometry.size.width)
         }
         .padding(.bottom, 30)
 
