@@ -82,6 +82,11 @@ struct QuoteView: View {
           }
         }
       }
+      .onChange(of: model.currentIndex) { newValue in
+        withAnimation {
+          proxy.scrollTo(newValue, anchor: .center)
+        }
+      }
     }
   }
 
