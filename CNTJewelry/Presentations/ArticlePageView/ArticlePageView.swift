@@ -20,6 +20,8 @@ struct ArticlePageView: View {
         ScrollView(.vertical, showsIndicators: false) {
           LazyVStack {
             ArticleTakeAwayView(model: model.takeAway, geometry: geometry)
+
+            QuoteView(model: model.quote, geometry: geometry)
           }
         }
       }
@@ -29,6 +31,7 @@ struct ArticlePageView: View {
 
 struct ArticlePageView_Previews: PreviewProvider {
   static var previews: some View {
-    ArticlePageView(model: .init(takeAway: ArticleTakeAwayViewModel.mockImageData()))
+    ArticlePageView(model: .init(takeAway: ArticleTakeAwayViewModel.mockImageData(),
+                                 quote: .init(quotes: QuoteViewModel.mockItems())))
   }
 }

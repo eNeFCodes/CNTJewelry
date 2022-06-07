@@ -8,6 +8,15 @@
 import Foundation
 
 extension QuoteViewModel {
+  static func mockItem() -> [Quote] {
+    [
+      .init(id: 0,
+            detail: "Iconic? Perennial? Ubiquitous? None of these seems strong enough to describe the Panthére within the design oeuvre of Cartier.",
+            copyrightAuthor: "Jane Doe",
+            copyrightDetails: "Lorem Ispum Role")
+    ]
+  }
+
   static func mockItems() -> [Quote] {
     [
       .init(id: 0,
