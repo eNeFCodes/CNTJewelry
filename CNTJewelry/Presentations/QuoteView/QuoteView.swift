@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct QuoteView: View {
-  private let model: QuoteViewModel
+  @StateObject private var model: QuoteViewModel
   private let geometry: GeometryProxy
   private let padding: CGFloat
 
   init(model: QuoteViewModel, geometry: GeometryProxy, padding: CGFloat = 32) {
-    self.model = model
+    _model = .init(wrappedValue: model)
     self.geometry = geometry
     self.padding = padding
   }
@@ -44,7 +44,7 @@ struct QuoteView: View {
 
         if maxIndex > 0 {
           DotOnlyView(model: .init(range: itemRange,
-                                   activeIndex: model.$currentIndex,
+                                   activeIndex: $model.currentIndex,
                                    dotColor: ColorCollection.black,
                                    dotStrokeColor: ColorCollection.black,
                                    dotInactiveStrokeColor: ColorCollection.black),

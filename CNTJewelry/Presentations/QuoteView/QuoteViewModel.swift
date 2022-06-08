@@ -8,9 +8,9 @@
 import Foundation
 import SwiftUI
 
-struct QuoteViewModel {
+class QuoteViewModel: ObservableObject {
   let quotes: [Quote]
-  @State var currentIndex: Int
+  @Published var currentIndex: Int
 
   init(quotes: [Quote], currentIndex: Int = 0) {
     self.quotes = quotes
