@@ -12,6 +12,7 @@ class BriefingBottomNavigationViewModel: ObservableObject {
   @Published var buttons: [NavigationButtonItemModel]
 
   private var subscriptions = Set<AnyCancellable>()
+  let publisher = PassthroughSubject<NavigationButtonItemModel, Never>()
 
   init(buttons: [NavigationButtonItemModel]) {
     self.buttons = buttons
@@ -36,6 +37,7 @@ class BriefingBottomNavigationViewModel: ObservableObject {
     buttons.forEach({ item in
       item.isActive = item.id == btnItem.id
     })
+    publisher.send(btnItem)
   }
 }
 
@@ -46,20 +48,20 @@ extension BriefingBottomNavigationViewModel {
       NavigationButtonItemModel(id: 0,
                                 icon: Image("ic_star_white"),
                                 activeIcon: Image("ic_star"),
-                                title: "A LA UNE",
+                                title: L10n.Briefing.Navigation.btnTitleALaUne,
                                 isActive: true),
       NavigationButtonItemModel(id: 1,
                                 icon: Image("ic_eye_white"),
                                 activeIcon: Image("ic_eye"),
-                                title: "LIVE"),
+                                title: L10n.Briefing.Navigation.btnTitleLive),
       NavigationButtonItemModel(id: 2,
                                 icon: Image("ic_resource_white"),
                                 activeIcon: Image("ic_resource"),
-                                title: "RESOURCES"),
+                                title: L10n.Briefing.Navigation.btnTitleResources),
       NavigationButtonItemModel(id: 3,
                                 icon: Image("ic_plus"),
                                 activeIcon: Image("ic_plus"),
-                                title: "ADD",
+                                title: L10n.Briefing.Navigation.btnTitleAdd,
                                 bgColor: .orange)
     ]
   }

@@ -88,6 +88,16 @@ struct BriefingView: View {
         isProfilePageActive = true
       }
     }
+    .onReceive(botNavigationModel.publisher) { btn in
+      switch btn.id {
+      case 0: break
+      case 1: break
+      case 2:
+        isResourcePageActive = true
+      case 3: break
+      default: break
+      }
+    }
   }
 
   @ViewBuilder
@@ -127,7 +137,8 @@ struct BriefingView: View {
     }
 
     NavigationLink("", isActive: $isResourcePageActive) {
-        // TODO: add content here
+      ArticlePageView(model: .init(takeAway: ArticleTakeAwayViewModel.mockImageData(),
+                                   quote: .init(quotes: QuoteViewModel.mockItem())))
     }
 
     NavigationLink("", isActive: $isAddPageActive) {

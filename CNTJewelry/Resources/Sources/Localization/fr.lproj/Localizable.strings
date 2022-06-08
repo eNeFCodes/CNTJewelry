@@ -37,3 +37,8 @@
 "searchPage.result.popularSearches" = "POPULAR SEARCHES";
 
 "article.takeAway.title" = "KEY TAKEAWAYS";
+
+"briefing.navigation.btnTitleALaUne" = "A LA UNE";
+"briefing.navigation.btnTitleLive" = "LIVE";
+"briefing.navigation.btnTitleResources" = "RESOURCES";
+"briefing.navigation.btnTitleAdd" = "ADD";
