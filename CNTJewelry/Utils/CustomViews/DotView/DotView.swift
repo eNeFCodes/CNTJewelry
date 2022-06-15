@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct DotView: View {
-  let model: DotViewModel
-  let contentWidth: CGFloat
+  private let model: DotViewModel
+  private let contentWidth: CGFloat
+  private let contentHeight: CGFloat
+  private let alignment: Alignment
 
-  init(model: DotViewModel, contentWidth: CGFloat) {
+  init(model: DotViewModel, contentWidth: CGFloat, contentHeight: CGFloat = 56, alignment: Alignment = .center) {
     self.model = model
     self.contentWidth = contentWidth
+    self.contentHeight = contentHeight
+    self.alignment = alignment
   }
 
   var body: some View {
@@ -27,7 +31,7 @@ struct DotView: View {
             .accessibilityLabel(model.actionTitle)
             .font(titleFont)
             .foregroundColor(model.actionTitleColor)
-            .frame(width: frameWidth, height: 56, alignment: .center)
+            .frame(width: frameWidth, height: contentHeight, alignment: .center)
             .background(model.actionBGColor)
             .clipped()
         })
@@ -41,7 +45,7 @@ struct DotView: View {
         }
       }
     }
-    .frame(width: contentWidth, height: 56, alignment: .center)
+    .frame(width: contentWidth, height: contentHeight, alignment: alignment)
   }
 
   private func dotIndicator(index: Int) -> some View {

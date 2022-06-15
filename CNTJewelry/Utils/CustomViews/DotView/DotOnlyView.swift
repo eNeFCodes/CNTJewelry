@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct DotOnlyView: View {
-  let model: DotOnlyViewModel
-  let contentWidth: CGFloat
+  private let model: DotOnlyViewModel
+  private let contentWidth: CGFloat
+  private let contentHeight: CGFloat
+  private let alignment: Alignment
 
-  init(model: DotOnlyViewModel, contentWidth: CGFloat) {
+  init(model: DotOnlyViewModel, contentWidth: CGFloat, contentHeight: CGFloat = 56, alignment: Alignment = .center) {
     self.model = model
     self.contentWidth = contentWidth
+    self.contentHeight = contentHeight
+    self.alignment = alignment
   }
 
   var body: some View {
@@ -26,7 +30,7 @@ struct DotOnlyView: View {
         }
       }
     }
-    .frame(width: contentWidth, height: 56, alignment: .center)
+    .frame(width: contentWidth, height: contentHeight, alignment: alignment)
   }
 
   private func dotIndicator(index: Int) -> some View {
@@ -70,7 +74,7 @@ struct DotOnlyView_Previews: PreviewProvider {
   static var previews: some View {
     GeometryReader { geometry in
       let model = DotOnlyViewModel(range: .init(0...3), activeIndex: $activeIndex)
-      DotOnlyView(model: model, contentWidth: geometry.size.width)
+      DotOnlyView(model: model, contentWidth: geometry.size.width, alignment: .leading)
         .background(ColorCollection.black)
     }
   }
