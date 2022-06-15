@@ -51,7 +51,7 @@ struct TextView: UIViewRepresentable {
   init(text: String,
        font: UIFont? = .systemFont(ofSize: 10),
        textColor: UIColor? = .black,
-       textAlignment: NSTextAlignment = .left,
+       textAlignment: NSTextAlignment = .justified,
        exclusionPaths: [UIBezierPath],
 
        isEditable: Bool = false,
@@ -91,7 +91,49 @@ struct TextView: UIViewRepresentable {
   }
 
   func updateUIView(_ uiView: UITextView, context: Context) {
-    uiView.text = text
-    uiView.font = font
+
+  }
+}
+
+struct TextView_Previews: PreviewProvider {
+  struct ArticleText {
+    let fullText: String
+
+    var initialText: String {
+      String(fullText[...fullText.startIndex])
+    }
+
+    var bodyText: String {
+      String(fullText[fullText.index(after: fullText.startIndex)...])
+    }
+  }
+
+  static let padding: CGFloat = 32
+  static let article: ArticleText = .init(fullText: "The Mainson’s registers from 1924 make the first mention of a ring consisting of three inseparably interlaced bands, each made of a different metal: platinum, pink gold and yellow. A bracelet with han identical concept was also created the same year. The clean-lined design appealed to Elsie de Wolfe, famouse American interior designer, who would be the first to purchase one.\n\nNews combinations of colors were introduced over the years. While the most emblematic joined yellow, pinka nd white gold, Cartier also dared to introduce audacious hues, such as green gold.")
+  
+  static var previews: some View {
+    GeometryReader { geometry in
+      let initialFont = FontCollection.FancyCutProB7.regular(size: 140).font
+      let bodyFont = FontCollection.FancyCutProB7.regular(size: 18).uiFont
+      let path = UIBezierPath(rect: CGRect(x: 0, y: 0, width: 93, height: 100))
+      TextView(text: article.bodyText,
+               font: bodyFont,
+               exclusionPaths: [path])
+      .padding(.horizontal, padding)
+      //.frame(maxWidth: geometry.size.width, minHeight: 150, alignment: .center)
+      .background(.orange)
+      .overlay {
+        GeometryReader { geometry in
+          HStack {
+            Text(article.initialText)
+              .font(initialFont)
+              .foregroundColor(.green)
+              .frame(width: 93, height: 120, alignment: .center)
+          }
+          .padding(.horizontal, padding)
+          .frame(width: geometry.size.width, height: geometry.size.height, alignment: .topLeading)
+        }
+      }
+    }
   }
 }
