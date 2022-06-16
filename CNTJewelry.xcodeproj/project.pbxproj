@@ -71,6 +71,7 @@
 		8F883EED285AC8E50025BE19 /* ArticleTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F883EEC285AC8E50025BE19 /* ArticleTextView.swift */; };
 		8F883EEF285AC9B00025BE19 /* ArticleTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F883EEE285AC9B00025BE19 /* ArticleTextViewModel.swift */; };
 		8F883EF3285ACBE70025BE19 /* ArticlePageViewModel+MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F883EF2285ACBE70025BE19 /* ArticlePageViewModel+MockData.swift */; };
+		8F883EF5285AE29F0025BE19 /* ArticleTextViewModel+MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F883EF4285AE29F0025BE19 /* ArticleTextViewModel+MockData.swift */; };
 		8F959F9D2846147500B44C3A /* BriefingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F959F9C2846147500B44C3A /* BriefingView.swift */; };
 		8F959F9F2846147D00B44C3A /* BriefingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F959F9E2846147D00B44C3A /* BriefingViewModel.swift */; };
 		8F959FA1284615BF00B44C3A /* BriefingBottomNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F959FA0284615BF00B44C3A /* BriefingBottomNavigationView.swift */; };
@@ -231,6 +232,7 @@
 		8F883EEC285AC8E50025BE19 /* ArticleTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTextView.swift; sourceTree = "<group>"; };
 		8F883EEE285AC9B00025BE19 /* ArticleTextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTextViewModel.swift; sourceTree = "<group>"; };
 		8F883EF2285ACBE70025BE19 /* ArticlePageViewModel+MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticlePageViewModel+MockData.swift"; sourceTree = "<group>"; };
+		8F883EF4285AE29F0025BE19 /* ArticleTextViewModel+MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticleTextViewModel+MockData.swift"; sourceTree = "<group>"; };
 		8F959F9C2846147500B44C3A /* BriefingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefingView.swift; sourceTree = "<group>"; };
 		8F959F9E2846147D00B44C3A /* BriefingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefingViewModel.swift; sourceTree = "<group>"; };
 		8F959FA0284615BF00B44C3A /* BriefingBottomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefingBottomNavigationView.swift; sourceTree = "<group>"; };
@@ -523,6 +525,7 @@
 				8FBC9FDE284F44B7009E068C /* QuoteViewModel+MockData.swift */,
 				8FB556222859A758005040B1 /* ProductDetailsView+MockData.swift */,
 				8F883EF2285ACBE70025BE19 /* ArticlePageViewModel+MockData.swift */,
+				8F883EF4285AE29F0025BE19 /* ArticleTextViewModel+MockData.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -1087,6 +1090,7 @@
 				8F959FEB2848AD9A00B44C3A /* WeeklyCollectionItemV3ViewModel.swift in Sources */,
 				8FBFACBB281245B300689F5A /* LocalizedStrings.swift in Sources */,
 				8F7772EE280FB44200FF09AA /* Router.swift in Sources */,
+				8F883EF5285AE29F0025BE19 /* ArticleTextViewModel+MockData.swift in Sources */,
 				8FBFACD328193B9100689F5A /* AppEnvironment.swift in Sources */,
 				8F678CA9282B46DB00608B98 /* FTUEViewModel.swift in Sources */,
 				8F678CB2282B556A00608B98 /* FTUEShowcaseViewModel.swift in Sources */,
