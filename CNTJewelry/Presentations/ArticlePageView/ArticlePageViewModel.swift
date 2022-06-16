@@ -30,6 +30,7 @@ class ArticlePageViewModel: ObservableObject {
   let articleText3: ArticleTextViewModel
   let productItem: ProductItemViewModel
   let articleText4: ArticleTextViewModel
+  let playCard: PlayCardViewModel
 
   init(takeAway: ArticleTakeAwayViewModel,
        quote: QuoteViewModel,
@@ -38,7 +39,8 @@ class ArticlePageViewModel: ObservableObject {
        articleText2: ArticleTextViewModel,
        articleText3: ArticleTextViewModel,
        productItem: ProductItemViewModel,
-       articleText4: ArticleTextViewModel) {
+       articleText4: ArticleTextViewModel,
+       playCard: PlayCardViewModel) {
 
     self.takeAway = takeAway
     self.quote = quote
@@ -48,5 +50,6 @@ class ArticlePageViewModel: ObservableObject {
     self.articleText3 = articleText3
     self.productItem = productItem
     self.articleText4 = articleText4
+    self.playCard = playCard
   }
 }
