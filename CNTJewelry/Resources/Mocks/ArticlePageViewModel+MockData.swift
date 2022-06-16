@@ -15,6 +15,11 @@ extension ArticlePageViewModel {
           productDetails: ProductDetailsViewModel.mockData2(),
           articleText2: .init(title: "A favorite amongst artists".uppercased(),
                               details: "Cartier Stockholm was first international jeweler to open its doors in the city—and represents our first step into the Scandinavian market. Here’s everything you need to know about the boutique and its importance to the Maison."),
-          articleText3: ArticleTextViewModel.mockData2())
+          articleText3: ArticleTextViewModel.mockData2(),
+          productItem: .init(title: "eyebrow".uppercased(),
+                             subTitle: "Princess Diana,\na Trinity ring\nambassador".uppercased(),
+                             imageName: "img_result9",
+                             date: "MAR. 1, 2020",
+                             showSeparator: false))
   }
 }

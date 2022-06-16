@@ -26,6 +26,7 @@ struct ArticlePageView: View {
             ArticleTextView(model: model.articleText2, geometry: geometry)
             ProductDetailsView(model: model.productDetails, geometry: geometry)
             ArticleTextView(model: model.articleText3, geometry: geometry)
+            ProductItemView(model: model.productItem, geometry: geometry)
           }
         }
       }
