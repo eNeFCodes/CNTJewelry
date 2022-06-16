@@ -1,5 +1,5 @@
 //
-//  WeeklyCollectionItemV2View.swift
+//  ProductItemV2View.swift
 //  CNTJewelry
 //
 //  Created by Neil Francis Hipona on 6/2/22.
@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct WeeklyCollectionItemV2View: View {
-  @ObservedObject private var model: WeeklyCollectionItemV2ViewModel
+struct ProductItemV2View: View {
+  @ObservedObject private var model: ProductItemV2ViewModel
 
   private let geometry: GeometryProxy
   private let padding: CGFloat
   private let borderPadding: CGFloat
 
-  init(model: WeeklyCollectionItemV2ViewModel,
+  init(model: ProductItemV2ViewModel,
        geometry: GeometryProxy,
        borderPadding: CGFloat = 32,
        padding: CGFloat = 24) {
@@ -164,7 +164,7 @@ struct WeeklyCollectionItemV2View: View {
 struct WeeklyCollectionItemV2View_Previews: PreviewProvider {
   static var previews: some View {
     GeometryReader { geometry in
-      WeeklyCollectionItemV2View(model: .init(imageName: "img_ring",
+      ProductItemV2View(model: .init(imageName: "img_ring",
                                               title: "TAKEAWAY",
                                               subTitle: "Congratulate\nMaria".uppercased(),
                                               details: "Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before. Its five-year mission: to explore strange new worlds again.",

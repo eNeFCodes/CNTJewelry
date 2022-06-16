@@ -1,5 +1,5 @@
 //
-//  WeeklyCollectionItemV3View.swift
+//  ProductItemV3View.swift
 //  CNTJewelry
 //
 //  Created by Neil Francis Hipona on 6/2/22.
@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct WeeklyCollectionItemV3View: View {
-  @ObservedObject private var model: WeeklyCollectionItemV3ViewModel
+struct ProductItemV3View: View {
+  @ObservedObject private var model: ProductItemV3ViewModel
 
   private let geometry: GeometryProxy
   private let padding: CGFloat
 
-  init(model: WeeklyCollectionItemV3ViewModel, geometry: GeometryProxy, padding: CGFloat = 20) {
+  init(model: ProductItemV3ViewModel, geometry: GeometryProxy, padding: CGFloat = 20) {
     self.model = model
     self.geometry = geometry
     self.padding = padding
@@ -84,7 +84,7 @@ struct WeeklyCollectionItemV3View: View {
 struct WeeklyCollectionItemV3View_Previews: PreviewProvider {
   static var previews: some View {
     GeometryReader { geometry in
-      WeeklyCollectionItemV3View(model: .init(title: "EYEBROW",
+      ProductItemV3View(model: .init(title: "EYEBROW",
                                               subTitle: "Biasas fsa Vehicula Etiam Egestas lorem ipsum".uppercased(),
                                               details: "Nam ultrices dictum nunc at tempus. Praesent bibendum tellus tellus, quis fringilla quam convallis sed lorem ipsum longer sentence bla bla something else.",
                                               date: "MAR 1, 2020"),

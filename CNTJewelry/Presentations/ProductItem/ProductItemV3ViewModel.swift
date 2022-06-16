@@ -1,5 +1,5 @@
 //
-//  WeeklyCollectionItemV2ViewModel.swift
+//  ProductItemV3ViewModel.swift
 //  CNTJewelry
 //
 //  Created by Neil Francis Hipona on 6/2/22.
@@ -7,46 +7,32 @@
 
 import Foundation
 
-// WeeklyCollectionViewModel.ContentType.variant2
-class WeeklyCollectionItemV2ViewModel: ObservableObject, WeeklyCollectionItemModelProtocol {
+// WeeklyCollectionViewModel.ContentType.variant3
+class ProductItemV3ViewModel: ObservableObject, WeeklyCollectionItemModelProtocol {
   let viewId: UUID
   let type: WeeklyCollectionViewModel.ContentType
 
-  let imageName: String
   let title: String
   let subTitle: String
   let details: String
-  let time: String
-  let author: String
-  let authorDetails: String
-  let location: String
-
+  let date: String
   @Published var isFavorite: Bool
   let showSeparator: Bool
 
-  init(imageName: String,
-       title: String,
+  init(title: String,
        subTitle: String,
        details: String,
-       time: String,
-       author: String,
-       authorDetails: String,
-       location: String,
+       date: String,
        isFavorite: Bool = false,
        showSeparator: Bool = true) {
 
     self.viewId = UUID()
-    self.type = .variant2
+    self.type = .variant3
 
-    self.imageName = imageName
     self.title = title
     self.subTitle = subTitle
     self.details = details
-    self.time = time
-    self.author = author
-    self.authorDetails = authorDetails
-    self.location = location
-
+    self.date = date
     self.isFavorite = isFavorite
     self.showSeparator = showSeparator
   }

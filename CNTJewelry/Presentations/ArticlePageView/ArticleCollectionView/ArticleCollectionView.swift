@@ -112,12 +112,12 @@ struct ArticleCollectionView: View {
 
   @ViewBuilder
   private func viewForContentType(item: WeeklyCollectionItemModelProtocol, geometry: GeometryProxy) -> some View {
-    if item.type == .variant1, let model = item as? WeeklyCollectionItemViewModel {
-      WeeklyCollectionItemView(model: model, geometry: geometry)
-    } else if item.type == .variant2, let model = item as? WeeklyCollectionItemV2ViewModel  {
-      WeeklyCollectionItemV2View(model: model, geometry: geometry)
-    } else if item.type == .variant3, let model = item as? WeeklyCollectionItemV3ViewModel {
-      WeeklyCollectionItemV3View(model: model, geometry: geometry)
+    if item.type == .variant1, let model = item as? ProductItemViewModel {
+      ProductItemView(model: model, geometry: geometry)
+    } else if item.type == .variant2, let model = item as? ProductItemV2ViewModel  {
+      ProductItemV2View(model: model, geometry: geometry)
+    } else if item.type == .variant3, let model = item as? ProductItemV3ViewModel {
+      ProductItemV3View(model: model, geometry: geometry)
     }
   }
 }

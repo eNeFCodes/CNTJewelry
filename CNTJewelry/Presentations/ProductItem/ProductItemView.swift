@@ -1,5 +1,5 @@
 //
-//  WeeklyCollectionItemView.swift
+//  ProductItemView.swift
 //  CNTJewelry
 //
 //  Created by Neil Francis Hipona on 6/2/22.
@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct WeeklyCollectionItemView: View {
-  @ObservedObject private var model: WeeklyCollectionItemViewModel
+struct ProductItemView: View {
+  @ObservedObject private var model: ProductItemViewModel
 
   private let geometry: GeometryProxy
   private let padding: CGFloat
 
-  init(model: WeeklyCollectionItemViewModel, geometry: GeometryProxy, padding: CGFloat = 20) {
+  init(model: ProductItemViewModel, geometry: GeometryProxy, padding: CGFloat = 20) {
     self.model = model
     self.geometry = geometry
     self.padding = padding
@@ -84,7 +84,7 @@ struct WeeklyCollectionItemView: View {
 struct WeeklyCollectionItemView_Previews: PreviewProvider {
   static var previews: some View {
     GeometryReader { geometry in
-      WeeklyCollectionItemView(model: .init(title: "EVENT",
+      ProductItemView(model: .init(title: "EVENT",
                                             subTitle: "NEW BAIGNOIRE COLLECTION",
                                             imageName: "img_result1",
                                             date: "MAR 1, 2020"),

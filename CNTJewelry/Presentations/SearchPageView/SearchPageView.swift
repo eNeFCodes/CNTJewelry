@@ -154,11 +154,11 @@ struct SearchPageView: View {
         LazyVStack {
           if !model.searchResults.isEmpty {
             ForEach(model.searchResults) { result in
-              let model = WeeklyCollectionItemViewModel(title: result.title,
+              let model = ProductItemViewModel(title: result.title,
                                                         subTitle: result.subTitle,
                                                         imageName: result.imageName,
                                                         date: result.date)
-              WeeklyCollectionItemView(model: model, geometry: geometry)
+              ProductItemView(model: model, geometry: geometry)
                 .padding(.vertical, 20)
             }
           } else {
