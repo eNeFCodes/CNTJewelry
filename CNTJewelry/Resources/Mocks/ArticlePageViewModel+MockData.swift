@@ -20,6 +20,8 @@ extension ArticlePageViewModel {
                              subTitle: "Princess Diana,\na Trinity ring\nambassador".uppercased(),
                              imageName: "img_result9",
                              date: "MAR. 1, 2020",
-                             showSeparator: false))
+                             showSeparator: false),
+          articleText4: .init(title: "",
+                              details: "In 1981, Maison Cartier relaunched the ring inder the name Trinity. The collection has gone on to add an exquisite variety of models, from lons sautiors to pendant earrings, always evoking the refined simplicity that made the original so successful. In continual evolution, jewelery items featureing the pave-set diamonds or colorful gemstones were joined by new materials such as ceramic. Today, many renowned Cartier clients are delighted to wear Trinity in all its expressions, from the Duchess of Cambridge to actresses Anne Hathaway and Cameron Diaz."))
   }
 }

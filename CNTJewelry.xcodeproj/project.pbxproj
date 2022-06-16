@@ -72,6 +72,9 @@
 		8F883EEF285AC9B00025BE19 /* ArticleTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F883EEE285AC9B00025BE19 /* ArticleTextViewModel.swift */; };
 		8F883EF3285ACBE70025BE19 /* ArticlePageViewModel+MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F883EF2285ACBE70025BE19 /* ArticlePageViewModel+MockData.swift */; };
 		8F883EF5285AE29F0025BE19 /* ArticleTextViewModel+MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F883EF4285AE29F0025BE19 /* ArticleTextViewModel+MockData.swift */; };
+		8F883EF8285AFCF50025BE19 /* PlayCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F883EF7285AFCF50025BE19 /* PlayCardView.swift */; };
+		8F883EFA285AFCFB0025BE19 /* PlayCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F883EF9285AFCFB0025BE19 /* PlayCardViewModel.swift */; };
+		8F883EFC285B1A070025BE19 /* TimeInterval+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F883EFB285B1A070025BE19 /* TimeInterval+Ext.swift */; };
 		8F959F9D2846147500B44C3A /* BriefingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F959F9C2846147500B44C3A /* BriefingView.swift */; };
 		8F959F9F2846147D00B44C3A /* BriefingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F959F9E2846147D00B44C3A /* BriefingViewModel.swift */; };
 		8F959FA1284615BF00B44C3A /* BriefingBottomNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F959FA0284615BF00B44C3A /* BriefingBottomNavigationView.swift */; };
@@ -233,6 +236,9 @@
 		8F883EEE285AC9B00025BE19 /* ArticleTextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTextViewModel.swift; sourceTree = "<group>"; };
 		8F883EF2285ACBE70025BE19 /* ArticlePageViewModel+MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticlePageViewModel+MockData.swift"; sourceTree = "<group>"; };
 		8F883EF4285AE29F0025BE19 /* ArticleTextViewModel+MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticleTextViewModel+MockData.swift"; sourceTree = "<group>"; };
+		8F883EF7285AFCF50025BE19 /* PlayCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayCardView.swift; sourceTree = "<group>"; };
+		8F883EF9285AFCFB0025BE19 /* PlayCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayCardViewModel.swift; sourceTree = "<group>"; };
+		8F883EFB285B1A070025BE19 /* TimeInterval+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Ext.swift"; sourceTree = "<group>"; };
 		8F959F9C2846147500B44C3A /* BriefingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefingView.swift; sourceTree = "<group>"; };
 		8F959F9E2846147D00B44C3A /* BriefingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefingViewModel.swift; sourceTree = "<group>"; };
 		8F959FA0284615BF00B44C3A /* BriefingBottomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefingBottomNavigationView.swift; sourceTree = "<group>"; };
@@ -423,6 +429,8 @@
 				8FBC9FCD284F2473009E068C /* ArticlePageView */,
 				8FBC9FDB284F4154009E068C /* QuoteView */,
 				8FB556212859A5E7005040B1 /* ProductDetailsView */,
+				8F883EF7285AFCF50025BE19 /* PlayCardView.swift */,
+				8F883EF9285AFCFB0025BE19 /* PlayCardViewModel.swift */,
 			);
 			path = Presentations;
 			sourceTree = "<group>";
@@ -577,6 +585,7 @@
 				8F7772E7280FAE2400FF09AA /* Optional+Ext.swift */,
 				8F678CB3282B967C00608B98 /* ScrollView+Ext.swift */,
 				8FB5561B2859858D005040B1 /* String+Ext.swift */,
+				8F883EFB285B1A070025BE19 /* TimeInterval+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1159,10 +1168,13 @@
 				8FB6200D2824D3BC0087BB3F /* LoginPageAtlasViewModel.swift in Sources */,
 				8FB6200F2824D4750087BB3F /* LoginPageInputView.swift in Sources */,
 				8FBC9FD8284F40C2009E068C /* QuoteView.swift in Sources */,
+				8F883EF8285AFCF50025BE19 /* PlayCardView.swift in Sources */,
 				8FBB378C280E47F400DB7476 /* APIRequestProtocol.swift in Sources */,
 				8FBC9FD1284F253F009E068C /* ArticleTakeAwayView.swift in Sources */,
+				8F883EFC285B1A070025BE19 /* TimeInterval+Ext.swift in Sources */,
 				8F2A2028280D5A690008DB86 /* ContentView.swift in Sources */,
 				8FBC9FC6284F2068009E068C /* WeeklyCollectionViewModel+MockData.swift in Sources */,
+				8F883EFA285AFCFB0025BE19 /* PlayCardViewModel.swift in Sources */,
 				8FBC9FDD284F427B009E068C /* Quote.swift in Sources */,
 				8FBC9FDF284F44B7009E068C /* QuoteViewModel+MockData.swift in Sources */,
 				8FBB3795280E567900DB7476 /* APIRepositoryProtocol.swift in Sources */,

@@ -6,6 +6,8 @@
   
 */
 
+"shared.Content.play" = "PLAY";
+
 "app.Content.welcomeMessage" = "Bonjour!";
 "app.Content.getStarted" = "GET STARTED";
 "app.Content.title" = "CNT";

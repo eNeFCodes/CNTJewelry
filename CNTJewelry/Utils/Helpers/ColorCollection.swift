@@ -24,6 +24,7 @@ struct ColorCollection {
   static let lightBeige = Color("lightBeige")
   static let orange = Color("orange")
   static let red = Color("red")
+  static let red2 = Color("red2")
   static let white = Color("white")
   static let whiteInactiveDotColor = Color("whiteInactiveDotColor")
   static let yellow = Color("yellow")

@@ -20,13 +20,22 @@ struct ArticlePageView: View {
       ScrollViewReader { proxy in
         ScrollView(.vertical, showsIndicators: false) {
           LazyVStack(spacing: 48) {
-            ArticleTakeAwayView(model: model.takeAway, geometry: geometry)
+            ArticleTakeAwayView(model: model.takeAway,
+                                geometry: geometry)
             createArticleTextViewStack(geometry: geometry)
-            QuoteView(model: model.quote, geometry: geometry)
-            ArticleTextView(model: model.articleText2, geometry: geometry)
-            ProductDetailsView(model: model.productDetails, geometry: geometry)
-            ArticleTextView(model: model.articleText3, geometry: geometry)
-            ProductItemView(model: model.productItem, geometry: geometry)
+            QuoteView(model: model.quote,
+                      geometry: geometry)
+            ArticleTextView(model: model.articleText2,
+                            geometry: geometry)
+            ProductDetailsView(model: model.productDetails,
+                               geometry: geometry)
+            ArticleTextView(model: model.articleText3,
+                            geometry: geometry)
+            ProductItemView(model: model.productItem,
+                            geometry: geometry,
+                            padding: padding)
+            ArticleTextView(model: model.articleText4,
+                            geometry: geometry)
           }
         }
       }
