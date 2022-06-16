@@ -25,10 +25,19 @@ class ArticlePageViewModel: ObservableObject {
   let takeAway: ArticleTakeAwayViewModel
   let quote: QuoteViewModel
   let articleText: ArticleText
+  let productDetails: ProductDetailsViewModel
+  let articleText2: ArticleTextViewModel
 
-  init(takeAway: ArticleTakeAwayViewModel, quote: QuoteViewModel, articleText: ArticleText) {
+  init(takeAway: ArticleTakeAwayViewModel,
+       quote: QuoteViewModel,
+       articleText: ArticleText,
+       productDetails: ProductDetailsViewModel,
+       articleText2: ArticleTextViewModel) {
+
     self.takeAway = takeAway
     self.quote = quote
     self.articleText = articleText
+    self.productDetails = productDetails
+    self.articleText2 = articleText2
   }
 }
