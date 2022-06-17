@@ -38,6 +38,8 @@ struct ArticlePageView: View {
                             geometry: geometry)
             PlayCardView(model: model.playCard,
                          geometry: geometry)
+            ArticleTextView(model: model.articleText5,
+                            geometry: geometry)
           }
         }
       }

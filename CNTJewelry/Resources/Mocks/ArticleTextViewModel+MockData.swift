@@ -24,8 +24,8 @@ extension ArticleTextViewModel {
   }
 
   static func mockData3() -> ArticleTextViewModel {
-    .init(title: "A favorite amongst artists".uppercased(),
-          details: "Cartier Stockholm was first international jeweler to open its doors in the city—and represents our first step into the Scandinavian market. Here’s everything you need to know about the boutique and its importance to the Maison.",
+    .init(title: "Beyond Timeless".uppercased(),
+          details: "A timeless piece, it’s essential design is at the same time femenine and masculine, symbolic and playful. The harmonious interplay between the three bands provides an unprecedented expression of attachment.",
           bullet: .init(title: "The trio of gold holds a powerful metaphor:",
                         bulletedText: [.init(page: 1, text: "Pink for love"),
                                        .init(page: 2, text: "White for friendship"),

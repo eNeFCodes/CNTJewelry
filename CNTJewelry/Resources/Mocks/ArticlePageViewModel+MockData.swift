@@ -25,6 +25,7 @@ extension ArticlePageViewModel {
                               details: "In 1981, Maison Cartier relaunched the ring inder the name Trinity. The collection has gone on to add an exquisite variety of models, from lons sautiors to pendant earrings, always evoking the refined simplicity that made the original so successful. In continual evolution, jewelery items featureing the pave-set diamonds or colorful gemstones were joined by new materials such as ceramic. Today, many renowned Cartier clients are delighted to wear Trinity in all its expressions, from the Duchess of Cambridge to actresses Anne Hathaway and Cameron Diaz."),
           playCard: .init(imageName: "img_result10",
                           details: "Jean Cocteau and the story behind Cartier Trinity ring.",
-                          duration: 223))
+                          duration: 223),
+          articleText5: ArticleTextViewModel.mockData3())
   }
 }
