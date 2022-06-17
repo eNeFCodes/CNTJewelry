@@ -52,6 +52,8 @@ struct ArticlePageView: View {
                     geometry: geometry)
     CollectionShowcaseView(model: model.collectionShowcase,
                            geometry: geometry)
+    ArticleCollectionView(model: model.articleCollection,
+                          geometry: geometry)
   }
 
   private func createArticleTextViewStack(geometry: GeometryProxy) -> some View {

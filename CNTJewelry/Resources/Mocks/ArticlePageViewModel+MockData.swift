@@ -27,6 +27,9 @@ extension ArticlePageViewModel {
                           details: "Jean Cocteau and the story behind Cartier Trinity ring.",
                           duration: 223),
           articleText5: ArticleTextViewModel.mockData3(),
-          collectionShowcase: CollectionShowcaseViewModel.mockData())
+          collectionShowcase: CollectionShowcaseViewModel.mockData(),
+          articleCollection: .init(title: "DISCOVER the collection".uppercased(),
+                                   details: "Here's a selection of articles about Trinity Collection.",
+                                   items: ArticleCollectionViewModel.mockItems2()))
   }
 }
