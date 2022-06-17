@@ -31,19 +31,27 @@ struct ArticlePageView: View {
                                geometry: geometry)
             ArticleTextView(model: model.articleText3,
                             geometry: geometry)
-            ProductItemView(model: model.productItem,
-                            geometry: geometry,
-                            padding: padding)
-            ArticleTextView(model: model.articleText4,
-                            geometry: geometry)
-            PlayCardView(model: model.playCard,
-                         geometry: geometry)
-            ArticleTextView(model: model.articleText5,
-                            geometry: geometry)
+
+            buildContentViews(geometry: geometry)
           }
         }
       }
     }
+  }
+
+  @ViewBuilder
+  private func buildContentViews(geometry: GeometryProxy) -> some View {
+    ProductItemView(model: model.productItem,
+                    geometry: geometry,
+                    padding: padding)
+    ArticleTextView(model: model.articleText4,
+                    geometry: geometry)
+    PlayCardView(model: model.playCard,
+                 geometry: geometry)
+    ArticleTextView(model: model.articleText5,
+                    geometry: geometry)
+    CollectionShowcaseView(model: model.collectionShowcase,
+                           geometry: geometry)
   }
 
   private func createArticleTextViewStack(geometry: GeometryProxy) -> some View {

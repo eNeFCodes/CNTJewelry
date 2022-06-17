@@ -12,7 +12,10 @@ struct CollectionShowcaseView: View {
   private let geometry: GeometryProxy
   private let padding: CGFloat
 
-  init(model: CollectionShowcaseViewModel, geometry: GeometryProxy, padding: CGFloat = 32) {
+  init(model: CollectionShowcaseViewModel,
+       geometry: GeometryProxy,
+       padding: CGFloat = 32) {
+    
     self.model = model
     self.geometry = geometry
     self.padding = padding

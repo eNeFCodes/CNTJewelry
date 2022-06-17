@@ -26,6 +26,7 @@ extension ArticlePageViewModel {
           playCard: .init(imageName: "img_result10",
                           details: "Jean Cocteau and the story behind Cartier Trinity ring.",
                           duration: 223),
-          articleText5: ArticleTextViewModel.mockData3())
+          articleText5: ArticleTextViewModel.mockData3(),
+          collectionShowcase: CollectionShowcaseViewModel.mockData())
   }
 }
