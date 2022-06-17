@@ -7,6 +7,7 @@
 */
 
 "shared.Content.play" = "PLAY";
+"shared.Content.viewCollection" = "VIEW COLLECTION";
 
 "app.Content.welcomeMessage" = "ようこそ";
 "app.Content.getStarted" = "GET STARTED";
