@@ -56,23 +56,32 @@ struct ArticleTextView: View {
         .foregroundColor(ColorCollection.black)
         .frame(width: contentWidth, alignment: .leading)
 
-      ForEach(bullet.bulletedText, id: \.self) { text in
+      let bulletNumberFont = FontCollection.FancyCutProB7.bold(size: 18).font
+      let bulletSize = bullet.addNumberToBullets ? CGSize(width: 3, height: 3) : CGSize(width: 6, height: 6)
+      ForEach(bullet.bulletedText, id: \.id) { item in
         HStack {
+          if bullet.addNumberToBullets {
+            Text(item.page.description)
+              .accessibilityLabel(item.page.description)
+              .font(bulletNumberFont)
+              .foregroundColor(ColorCollection.gold)
+          }
+
           Circle()
-            .frame(width: 6, height: 6, alignment: .center)
+            .frame(width: bulletSize.width, height: bulletSize.height, alignment: .center)
             .foregroundColor(ColorCollection.gold)
 
-          Text(text)
-            .accessibilityLabel(text)
+          Text(item.text)
+            .accessibilityLabel(item.text)
             .font(textFont)
             .foregroundColor(ColorCollection.black)
         }
         .frame(width: contentWidth, alignment: .leading)
       }
 
-      if !bullet.details.isEmpty {
-        Text(bullet.details)
-          .accessibilityLabel(bullet.details)
+      if let details = bullet.details {
+        Text(details)
+          .accessibilityLabel(details)
           .font(textFont)
           .foregroundColor(ColorCollection.black)
           .frame(width: contentWidth, alignment: .leading)
@@ -84,7 +93,7 @@ struct ArticleTextView: View {
 struct ArticleTextView_Previews: PreviewProvider {
   static var previews: some View {
     GeometryReader { geometry in
-      ArticleTextView(model: ArticleTextViewModel.mockData2(),
+      ArticleTextView(model: ArticleTextViewModel.mockData3(),
                       geometry: geometry)
     }
   }
