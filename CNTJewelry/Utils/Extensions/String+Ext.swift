@@ -25,7 +25,3 @@ extension String {
     return rectSize.height
   }
 }
-
-extension String {
-  
-}
