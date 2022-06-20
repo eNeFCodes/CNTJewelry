@@ -39,6 +39,7 @@ struct ResourceNavigationView: View {
     }
     .padding(.horizontal, padding)
     .frame(width: geometry.size.width, height: maxNavHeight, alignment: .center)
+    .background(ColorCollection.lightBeige100)
   }
 
   private func buildTitleStack(estimatedWidth: CGFloat) -> some View {

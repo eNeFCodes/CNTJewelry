@@ -23,6 +23,7 @@ struct ColorCollection {
   static let loader = Color("loader")
   static let beige = Color("DCD7CA")
   static let lightBeige = Color("lightBeige")
+  static let lightBeige100 = Color("lightBeige_100")
   static let orange = Color("orange")
   static let red = Color("red")
   static let red2 = Color("red2")
