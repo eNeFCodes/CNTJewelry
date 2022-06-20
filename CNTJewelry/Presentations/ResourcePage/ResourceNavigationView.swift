@@ -51,14 +51,14 @@ struct ResourceNavigationView: View {
             .aspectRatio(contentMode: .fit)
             .frame(width: 100, height: 42, alignment: .topLeading)
         } else {
-          let titleFont = FontCollection.font(for: FontCollection.BrilliantCutProB7.bold(size: 28))
+          let titleFont = FontCollection.BrilliantCutProB7.bold(size: 28).font
           Text(model.title)
             .accessibilityLabel(model.title)
             .font(titleFont)
             .foregroundColor(ColorCollection.black)
             .frame(width: textContentWidth, height: 30, alignment: .leading)
 
-          let subTitleFont = FontCollection.font(for: FontCollection.BrilliantCutProB7.regular(size: 11))
+          let subTitleFont = FontCollection.BrilliantCutProB7.regular(size: 11).font
           Text(model.subTitle)
             .accessibilityLabel(model.subTitle)
             .font(subTitleFont)
