@@ -8,8 +8,8 @@
 import Foundation
 
 //extension ResourcePageViewModel {
-//  static func mockData() -> ResourceLandingPageModel {
-//    .init(titleModel: ResourceLandingTitleView.mockData(),
+//  static func mockData() -> ResourcePageViewModel {
+//    .init(titleModel: ResourcePageTitleViewModel.mockData(),
 //          tagsModel: TagView.mockData(),
 //          reportsModel: [
 //            .init(id: 0,

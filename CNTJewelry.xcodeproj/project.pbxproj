@@ -87,6 +87,12 @@
 		8F883F13286008A50025BE19 /* ResourcePageTitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F883F12286008A50025BE19 /* ResourcePageTitleViewModel.swift */; };
 		8F883F15286011800025BE19 /* ResourceReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F883F14286011800025BE19 /* ResourceReportView.swift */; };
 		8F883F17286011860025BE19 /* ResourceReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F883F16286011860025BE19 /* ResourceReportViewModel.swift */; };
+		8F883F19286028EC0025BE19 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F883F18286028EC0025BE19 /* TagView.swift */; };
+		8F883F1B286028F40025BE19 /* TagViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F883F1A286028F40025BE19 /* TagViewModel.swift */; };
+		8F883F1E286029320025BE19 /* TagItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F883F1D286029320025BE19 /* TagItem.swift */; };
+		8F883F20286043EC0025BE19 /* TagViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F883F1F286043EC0025BE19 /* TagViewSection.swift */; };
+		8F883F222860441F0025BE19 /* TagViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F883F212860441F0025BE19 /* TagViewRow.swift */; };
+		8F883F24286045430025BE19 /* TagViewModel+MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F883F23286045430025BE19 /* TagViewModel+MockData.swift */; };
 		8F959F9D2846147500B44C3A /* BriefingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F959F9C2846147500B44C3A /* BriefingView.swift */; };
 		8F959F9F2846147D00B44C3A /* BriefingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F959F9E2846147D00B44C3A /* BriefingViewModel.swift */; };
 		8F959FA1284615BF00B44C3A /* BriefingBottomNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F959FA0284615BF00B44C3A /* BriefingBottomNavigationView.swift */; };
@@ -263,6 +269,12 @@
 		8F883F12286008A50025BE19 /* ResourcePageTitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcePageTitleViewModel.swift; sourceTree = "<group>"; };
 		8F883F14286011800025BE19 /* ResourceReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceReportView.swift; sourceTree = "<group>"; };
 		8F883F16286011860025BE19 /* ResourceReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceReportViewModel.swift; sourceTree = "<group>"; };
+		8F883F18286028EC0025BE19 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
+		8F883F1A286028F40025BE19 /* TagViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewModel.swift; sourceTree = "<group>"; };
+		8F883F1D286029320025BE19 /* TagItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagItem.swift; sourceTree = "<group>"; };
+		8F883F1F286043EC0025BE19 /* TagViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewSection.swift; sourceTree = "<group>"; };
+		8F883F212860441F0025BE19 /* TagViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewRow.swift; sourceTree = "<group>"; };
+		8F883F23286045430025BE19 /* TagViewModel+MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TagViewModel+MockData.swift"; sourceTree = "<group>"; };
 		8F959F9C2846147500B44C3A /* BriefingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefingView.swift; sourceTree = "<group>"; };
 		8F959F9E2846147D00B44C3A /* BriefingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefingViewModel.swift; sourceTree = "<group>"; };
 		8F959FA0284615BF00B44C3A /* BriefingBottomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefingBottomNavigationView.swift; sourceTree = "<group>"; };
@@ -564,6 +576,7 @@
 				8F883EF4285AE29F0025BE19 /* ArticleTextViewModel+MockData.swift */,
 				8F883F01285C58F50025BE19 /* CollectionShowcaseViewModel+MockData.swift */,
 				8F883F0E286008540025BE19 /* ResourcePageViewModel+MockData.swift */,
+				8F883F23286045430025BE19 /* TagViewModel+MockData.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -628,6 +641,7 @@
 				8FBC9FBD2849EC41009E068C /* NavigationButtonItem */,
 				8FBC9FC02849EC4F009E068C /* InputFieldView */,
 				8FB555E928507995005040B1 /* TextView.swift */,
+				8F883F1C286028F90025BE19 /* TagView */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -748,6 +762,18 @@
 				8F883F16286011860025BE19 /* ResourceReportViewModel.swift */,
 			);
 			path = ResourcePage;
+			sourceTree = "<group>";
+		};
+		8F883F1C286028F90025BE19 /* TagView */ = {
+			isa = PBXGroup;
+			children = (
+				8F883F18286028EC0025BE19 /* TagView.swift */,
+				8F883F1A286028F40025BE19 /* TagViewModel.swift */,
+				8F883F1D286029320025BE19 /* TagItem.swift */,
+				8F883F1F286043EC0025BE19 /* TagViewSection.swift */,
+				8F883F212860441F0025BE19 /* TagViewRow.swift */,
+			);
+			path = TagView;
 			sourceTree = "<group>";
 		};
 		8F959F9B2846126A00B44C3A /* Briefing */ = {
@@ -1147,6 +1173,7 @@
 				8FBB378E280E4A3D00DB7476 /* APIResponseProtocol.swift in Sources */,
 				8FBC9FBA2849EBB0009E068C /* SearchMockData.swift in Sources */,
 				8F959F9D2846147500B44C3A /* BriefingView.swift in Sources */,
+				8F883F24286045430025BE19 /* TagViewModel+MockData.swift in Sources */,
 				8FBC9FDA284F40CC009E068C /* QuoteViewModel.swift in Sources */,
 				8F678CA7282B46D500608B98 /* FTUEView.swift in Sources */,
 				8FB6200B2824D33E0087BB3F /* LoginPageAtlasView.swift in Sources */,
@@ -1157,6 +1184,7 @@
 				8FBFACD328193B9100689F5A /* AppEnvironment.swift in Sources */,
 				8F678CA9282B46DB00608B98 /* FTUEViewModel.swift in Sources */,
 				8F678CB2282B556A00608B98 /* FTUEShowcaseViewModel.swift in Sources */,
+				8F883F1B286028F40025BE19 /* TagViewModel.swift in Sources */,
 				8FBC9FC4284F2045009E068C /* ArticleCollectionViewModel+MockData.swift in Sources */,
 				8FB61FE92823AB7B0087BB3F /* WelcomeViewModel.swift in Sources */,
 				8FB555E528503E01005040B1 /* ArticleDetailsView.swift in Sources */,
@@ -1177,6 +1205,7 @@
 				8F883F0F286008540025BE19 /* ResourcePageViewModel+MockData.swift in Sources */,
 				8F43CA12280E97DA0011552D /* RandomImageAPIService.swift in Sources */,
 				8F43CA14280E97F80011552D /* RandomImage.swift in Sources */,
+				8F883F222860441F0025BE19 /* TagViewRow.swift in Sources */,
 				8FB61FE028239B840087BB3F /* LoginView.swift in Sources */,
 				8F883EEF285AC9B00025BE19 /* ArticleTextViewModel.swift in Sources */,
 				8F959FDE2848661900B44C3A /* WeeklyCollectionViewModel.swift in Sources */,
@@ -1195,6 +1224,7 @@
 				8F883EFE285C51ED0025BE19 /* CollectionShowcaseView.swift in Sources */,
 				8FBC9FBF2849EC4C009E068C /* InputFieldViewModel.swift in Sources */,
 				8F959FA1284615BF00B44C3A /* BriefingBottomNavigationView.swift in Sources */,
+				8F883F1E286029320025BE19 /* TagItem.swift in Sources */,
 				8FB61FEC2823AEB30087BB3F /* DotView.swift in Sources */,
 				8F959FA52846160300B44C3A /* NavigationButtonItemModel.swift in Sources */,
 				8F7772F3280FBA2700FF09AA /* FontCollection.swift in Sources */,
@@ -1224,6 +1254,7 @@
 				8FBB378C280E47F400DB7476 /* APIRequestProtocol.swift in Sources */,
 				8F883F17286011860025BE19 /* ResourceReportViewModel.swift in Sources */,
 				8FBC9FD1284F253F009E068C /* ArticleTakeAwayView.swift in Sources */,
+				8F883F20286043EC0025BE19 /* TagViewSection.swift in Sources */,
 				8F883EFC285B1A070025BE19 /* TimeInterval+Ext.swift in Sources */,
 				8F2A2028280D5A690008DB86 /* ContentView.swift in Sources */,
 				8FBC9FC6284F2068009E068C /* WeeklyCollectionViewModel+MockData.swift in Sources */,
@@ -1240,6 +1271,7 @@
 				8FBC9FD6284F2719009E068C /* ArticleTakeAwayViewModel+MockData.swift in Sources */,
 				8F7772F0280FB5CF00FF09AA /* ConfigEnvironment.swift in Sources */,
 				8FB61FF02823AF340087BB3F /* ShapeView.swift in Sources */,
+				8F883F19286028EC0025BE19 /* TagView.swift in Sources */,
 				8FB61FFF28249BE60087BB3F /* LoginPageHeaderViewModel.swift in Sources */,
 				8FB6200128249FB00087BB3F /* LoginPageHeaderView.swift in Sources */,
 				8FBC9FC2284F1FF9009E068C /* FTUEViewModel+MockData.swift in Sources */,
