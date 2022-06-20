@@ -85,6 +85,8 @@
 		8F883F0F286008540025BE19 /* ResourcePageViewModel+MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F883F0E286008540025BE19 /* ResourcePageViewModel+MockData.swift */; };
 		8F883F112860089E0025BE19 /* ResourcePageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F883F102860089E0025BE19 /* ResourcePageTitleView.swift */; };
 		8F883F13286008A50025BE19 /* ResourcePageTitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F883F12286008A50025BE19 /* ResourcePageTitleViewModel.swift */; };
+		8F883F15286011800025BE19 /* ResourceReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F883F14286011800025BE19 /* ResourceReportView.swift */; };
+		8F883F17286011860025BE19 /* ResourceReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F883F16286011860025BE19 /* ResourceReportViewModel.swift */; };
 		8F959F9D2846147500B44C3A /* BriefingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F959F9C2846147500B44C3A /* BriefingView.swift */; };
 		8F959F9F2846147D00B44C3A /* BriefingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F959F9E2846147D00B44C3A /* BriefingViewModel.swift */; };
 		8F959FA1284615BF00B44C3A /* BriefingBottomNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F959FA0284615BF00B44C3A /* BriefingBottomNavigationView.swift */; };
@@ -259,6 +261,8 @@
 		8F883F0E286008540025BE19 /* ResourcePageViewModel+MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResourcePageViewModel+MockData.swift"; sourceTree = "<group>"; };
 		8F883F102860089E0025BE19 /* ResourcePageTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcePageTitleView.swift; sourceTree = "<group>"; };
 		8F883F12286008A50025BE19 /* ResourcePageTitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcePageTitleViewModel.swift; sourceTree = "<group>"; };
+		8F883F14286011800025BE19 /* ResourceReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceReportView.swift; sourceTree = "<group>"; };
+		8F883F16286011860025BE19 /* ResourceReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceReportViewModel.swift; sourceTree = "<group>"; };
 		8F959F9C2846147500B44C3A /* BriefingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefingView.swift; sourceTree = "<group>"; };
 		8F959F9E2846147D00B44C3A /* BriefingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefingViewModel.swift; sourceTree = "<group>"; };
 		8F959FA0284615BF00B44C3A /* BriefingBottomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefingBottomNavigationView.swift; sourceTree = "<group>"; };
@@ -740,6 +744,8 @@
 				8F883F0C286008280025BE19 /* ResourcePageViewModel.swift */,
 				8F883F102860089E0025BE19 /* ResourcePageTitleView.swift */,
 				8F883F12286008A50025BE19 /* ResourcePageTitleViewModel.swift */,
+				8F883F14286011800025BE19 /* ResourceReportView.swift */,
+				8F883F16286011860025BE19 /* ResourceReportViewModel.swift */,
 			);
 			path = ResourcePage;
 			sourceTree = "<group>";
@@ -1216,6 +1222,7 @@
 				8FBC9FD8284F40C2009E068C /* QuoteView.swift in Sources */,
 				8F883EF8285AFCF50025BE19 /* PlayCardView.swift in Sources */,
 				8FBB378C280E47F400DB7476 /* APIRequestProtocol.swift in Sources */,
+				8F883F17286011860025BE19 /* ResourceReportViewModel.swift in Sources */,
 				8FBC9FD1284F253F009E068C /* ArticleTakeAwayView.swift in Sources */,
 				8F883EFC285B1A070025BE19 /* TimeInterval+Ext.swift in Sources */,
 				8F2A2028280D5A690008DB86 /* ContentView.swift in Sources */,
@@ -1240,6 +1247,7 @@
 				8F959FA72846271900B44C3A /* NavigationButtonItem.swift in Sources */,
 				8F7772EB280FB20B00FF09AA /* CustomAPIRequest.swift in Sources */,
 				8FBFACC42812536800689F5A /* SampleModel.swift in Sources */,
+				8F883F15286011800025BE19 /* ResourceReportView.swift in Sources */,
 				8FBB3793280E4D1800DB7476 /* APIService.swift in Sources */,
 				8F959FE7284873A900B44C3A /* ProductItemViewModel.swift in Sources */,
 				8FBFACD628193D3E00689F5A /* LoaderView.swift in Sources */,

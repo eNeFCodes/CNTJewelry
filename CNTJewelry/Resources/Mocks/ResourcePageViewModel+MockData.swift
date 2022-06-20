@@ -37,3 +37,13 @@ extension ResourcePageTitleViewModel {
           message: "Discover best practices, guides, how-to’s, and other resources")
   }
 }
+
+extension ResourceReportViewModel {
+  static func mockData() -> ResourceReportViewModel {
+    .init(id: 0,
+          shortTitle: "RESOURCE TYPE",
+          longTitle: "Repair Creation and Follow-up".uppercased(),
+          message: "Nam ultrices dictum nunc at tempus. Praesent bibendum tellus tellus, quis fringilla quam convallis sed lorem ipsum longer sentence bla bla something else.",
+          attachment: "PDF / 3.83 MB")
+  }
+}
