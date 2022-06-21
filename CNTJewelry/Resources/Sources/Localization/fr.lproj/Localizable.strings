@@ -45,3 +45,10 @@
 "briefing.navigation.btnTitleLive" = "LIVE";
 "briefing.navigation.btnTitleResources" = "RESOURCES";
 "briefing.navigation.btnTitleAdd" = "ADD";
+
+"product.collection.viewCatalog" = "VIEW IN PRODUCT CATALOG";
+"product.collection.keySellingPoint" = "KEY SELLING POINTS";
+"product.collection.materials" = "MATERIALS";
+"product.collection.worldWidePrice" = "WORLDWIDE PRICE";
+"product.collection.reference" = "REFERENCE";
+"product.collection.launchDate" = "LAUNCH DATE";
