@@ -50,8 +50,8 @@ struct ProductCollectionView: View {
       .padding(.top, 40)
       .padding(.bottom, 48)
     }
-    .background(ColorCollection.lightBeige)
     .padding(.top, 91)
+    .background(ColorCollection.lightBeige)
   }
 
   private func buildHeaderCarouselStack(geometry: GeometryProxy) -> some View { // 295pt

@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+class ProductPageViewModel: ObservableObject {
+  let productCollection: ProductCollectionViewModel
+
+  init(productCollection: ProductCollectionViewModel) {
+    self.productCollection = productCollection
+  }
+}
