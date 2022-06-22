@@ -37,7 +37,7 @@ extension ProductDetailsViewModel {
   static func mockData2() -> ProductDetailsViewModel {
     .init(aboutIntro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec augue tempus erat luctus consequat. In venenatis varius imperdiet. Donec non massa eu enim dapibus ullamcorper.",
           aboutTitle: "Around the Panthère BRACELET".uppercased(),
-          productImage: "img_product_showcase1",
+          productImage: "img_product_showcase2",
           aboutDetails: [
             .init(id: 0,
                   title: "CELEBRITY Sightings".uppercased(),

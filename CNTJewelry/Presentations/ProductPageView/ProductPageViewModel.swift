@@ -9,8 +9,11 @@ import Foundation
 
 class ProductPageViewModel: ObservableObject {
   let productCollection: ProductCollectionViewModel
+  let productDetails: ProductDetailsViewModel
 
-  init(productCollection: ProductCollectionViewModel) {
+  init(productCollection: ProductCollectionViewModel,
+       productDetails: ProductDetailsViewModel) {
     self.productCollection = productCollection
+    self.productDetails = productDetails
   }
 }

@@ -20,6 +20,8 @@ struct ProductPageView: View {
         LazyVStack {
           ProductCollectionView(model: model.productCollection,
                                 geometry: geometry)
+          ProductDetailsView(model: model.productDetails,
+                             geometry: geometry)
         }
       }
     }

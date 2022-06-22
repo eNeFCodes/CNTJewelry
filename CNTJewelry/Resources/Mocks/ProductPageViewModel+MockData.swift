@@ -9,6 +9,7 @@ import Foundation
 
 extension ProductPageViewModel {
   class func mockData() -> ProductPageViewModel {
-    .init(productCollection: ProductCollectionViewModel.mockData())
+    .init(productCollection: ProductCollectionViewModel.mockData(),
+          productDetails: ProductDetailsViewModel.mockData2())
   }
 }
