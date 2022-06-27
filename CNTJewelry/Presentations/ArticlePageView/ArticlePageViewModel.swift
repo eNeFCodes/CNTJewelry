@@ -24,7 +24,7 @@ extension ArticlePageViewModel {
 class ArticlePageViewModel: ObservableObject {
   let takeAway: ArticleTakeAwayViewModel
   let quote: QuoteViewModel
-  let articleText: ArticleText
+  var articleText: ArticleText
   let productDetails: ProductDetailsViewModel
   let articleText2: ArticleTextViewModel
   let articleText3: ArticleTextViewModel

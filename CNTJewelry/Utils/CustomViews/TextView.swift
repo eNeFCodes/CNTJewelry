@@ -5,6 +5,7 @@
 //  Created by Neil Francis Hipona on 6/8/22.
 //
 
+import Combine
 import Foundation
 import SwiftUI
 import UIKit
@@ -13,85 +14,46 @@ struct TextView: UIViewRepresentable {
   typealias UIViewType = UITextView
 
   @Binding private var text: String
+  private var cancellable: AnyCancellable?
+  @StateObject private var model: TextViewModel
 
-  private let font: UIFont?
-  private let textColor: UIColor?
-  private let textAlignment: NSTextAlignment
-  private let exclusionPaths: [UIBezierPath]
-
-  private let isEditable: Bool
-  private let isSelectable: Bool
-  private let autocorrectionType: UITextAutocorrectionType
-  private let autocapitalizationType: UITextAutocapitalizationType
-
-  init(text: Binding<String>,
-       font: UIFont? = .systemFont(ofSize: 10),
-       textColor: UIColor? = .black,
-       textAlignment: NSTextAlignment = .left,
-       exclusionPaths: [UIBezierPath],
-
-       isEditable: Bool = false,
-       isSelectable: Bool = false,
-       autocorrectionType: UITextAutocorrectionType = .default,
-       autocapitalizationType: UITextAutocapitalizationType = .sentences) {
-
+  init(text: Binding<String> = .constant(""),
+       model: TextViewModel) {
     _text = text
-    self.font = font
-    self.textColor = textColor
-    self.textAlignment = textAlignment
-    self.exclusionPaths = exclusionPaths
-
-    self.isEditable = isEditable
-    self.isSelectable = isSelectable
-
-    self.autocorrectionType = autocorrectionType
-    self.autocapitalizationType = autocapitalizationType
+    _model = .init(wrappedValue: model)
   }
 
-  init(text: String,
-       font: UIFont? = .systemFont(ofSize: 10),
-       textColor: UIColor? = .black,
-       textAlignment: NSTextAlignment = .justified,
-       exclusionPaths: [UIBezierPath],
-
-       isEditable: Bool = false,
-       isSelectable: Bool = false,
-       autocorrectionType: UITextAutocorrectionType = .default,
-       autocapitalizationType: UITextAutocapitalizationType = .sentences) {
-
+  init(text: String = "",
+       model: TextViewModel) {
     _text = .constant(text)
-    self.font = font
-    self.textColor = textColor
-    self.textAlignment = textAlignment
-    self.exclusionPaths = exclusionPaths
-
-    self.isEditable = isEditable
-    self.isSelectable = isSelectable
-
-    self.autocorrectionType = autocorrectionType
-    self.autocapitalizationType = autocapitalizationType
+    _model = .init(wrappedValue: model)
   }
-
+  
   func makeUIView(context: Context) -> UITextView {
     let textView = UITextView()
     textView.backgroundColor = .clear
 
     textView.text = text
-    textView.font = font
-    textView.textColor = textColor
-    textView.textAlignment = textAlignment
-    textView.isSelectable = isSelectable
-    textView.isEditable = isEditable
-    textView.textContainer.exclusionPaths = exclusionPaths
+    textView.font = model.font
+    textView.textColor = model.textColor
+    textView.textAlignment = model.textAlignment
+    textView.isSelectable = model.isSelectable
+    textView.isEditable = model.isEditable
+    textView.textContainer.exclusionPaths = model.exclusionPaths
+    textView.delegate = context.coordinator
 
-    textView.autocorrectionType = autocorrectionType
-    textView.autocapitalizationType = autocapitalizationType
+    textView.autocorrectionType = model.autocorrectionType
+    textView.autocapitalizationType = model.autocapitalizationType
 
     return textView
   }
 
   func updateUIView(_ uiView: UITextView, context: Context) {
 
+  }
+
+  func makeCoordinator() -> TextViewCoordinator {
+    TextViewCoordinator(text: $text, model: model)
   }
 }
 
@@ -117,10 +79,9 @@ struct TextView_Previews: PreviewProvider {
       let bodyFont = FontCollection.FancyCutProB7.regular(size: 18).uiFont
       let path = UIBezierPath(rect: CGRect(x: 0, y: 0, width: 93, height: 100))
       TextView(text: article.bodyText,
-               font: bodyFont,
-               exclusionPaths: [path])
+               model: .init(font: bodyFont,
+                            exclusionPaths: [path]))
       .padding(.horizontal, padding)
-      //.frame(maxWidth: geometry.size.width, minHeight: 150, alignment: .center)
       .background(.orange)
       .overlay {
         GeometryReader { geometry in

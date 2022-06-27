@@ -67,8 +67,8 @@ struct ArticlePageView: View {
 
       let path = UIBezierPath(rect: CGRect(x: 0, y: 0, width: 93, height: 100))
       TextView(text: model.articleText.bodyText,
-               font: bodyFont,
-               exclusionPaths: [path])
+               model: .init(font: bodyFont,
+                            exclusionPaths: [path]))
       .padding(.horizontal, padding)
       .frame(maxWidth: geometry.size.width, minHeight: fullTextFrameHeight, maxHeight: .infinity, alignment: .center)
       .overlay {

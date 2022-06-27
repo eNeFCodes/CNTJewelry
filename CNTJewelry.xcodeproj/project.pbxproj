@@ -185,6 +185,11 @@
 		8FBFACCF2819377500689F5A /* ColorCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBFACCE2819377500689F5A /* ColorCollection.swift */; };
 		8FBFACD328193B9100689F5A /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBFACD228193B9100689F5A /* AppEnvironment.swift */; };
 		8FBFACD628193D3E00689F5A /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBFACD528193D3E00689F5A /* LoaderView.swift */; };
+		8FC241DE2869962200923E6C /* AddTakeAwayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC241DD2869962200923E6C /* AddTakeAwayView.swift */; };
+		8FC241E02869964300923E6C /* AddTakeAwayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC241DF2869964300923E6C /* AddTakeAwayViewModel.swift */; };
+		8FC241E22869981900923E6C /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC241E12869981900923E6C /* View+Ext.swift */; };
+		8FC241E42869B5FD00923E6C /* TextViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC241E32869B5FD00923E6C /* TextViewCoordinator.swift */; };
+		8FC241E62869B6B700923E6C /* TextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC241E52869B6B700923E6C /* TextViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -380,6 +385,11 @@
 		8FBFACCE2819377500689F5A /* ColorCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollection.swift; sourceTree = "<group>"; };
 		8FBFACD228193B9100689F5A /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		8FBFACD528193D3E00689F5A /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		8FC241DD2869962200923E6C /* AddTakeAwayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTakeAwayView.swift; sourceTree = "<group>"; };
+		8FC241DF2869964300923E6C /* AddTakeAwayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTakeAwayViewModel.swift; sourceTree = "<group>"; };
+		8FC241E12869981900923E6C /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
+		8FC241E32869B5FD00923E6C /* TextViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewCoordinator.swift; sourceTree = "<group>"; };
+		8FC241E52869B6B700923E6C /* TextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewModel.swift; sourceTree = "<group>"; };
 		92A605BEF9EFD722332A0324 /* Pods-iOSBoilerplate.debug (qa).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSBoilerplate.debug (qa).xcconfig"; path = "Target Support Files/Pods-iOSBoilerplate/Pods-iOSBoilerplate.debug (qa).xcconfig"; sourceTree = "<group>"; };
 		AB76B813D4B93CDB25ED6AC5 /* Pods-CNTJewelry.release (production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNTJewelry.release (production).xcconfig"; path = "Target Support Files/Pods-CNTJewelry/Pods-CNTJewelry.release (production).xcconfig"; sourceTree = "<group>"; };
 		C77105EBC81F4430C0566355 /* Pods-iOSBoilerplate.release (staging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSBoilerplate.release (staging).xcconfig"; path = "Target Support Files/Pods-iOSBoilerplate/Pods-iOSBoilerplate.release (staging).xcconfig"; sourceTree = "<group>"; };
@@ -467,11 +477,11 @@
 		8F2A2029280D5A710008DB86 /* Presentations */ = {
 			isa = PBXGroup;
 			children = (
+				8FBFACBC281246F600689F5A /* ContentView */,
 				8F959FB028473F7200B44C3A /* NeedToKnowView */,
 				8F883EF6285AF9E90025BE19 /* ProductItem */,
 				8F959FDF2848661D00B44C3A /* WeeklyUpdateView */,
 				8F959F9B2846126A00B44C3A /* Briefing */,
-				8FBFACBC281246F600689F5A /* ContentView */,
 				8FB61FEA2823AB7F0087BB3F /* Welcome */,
 				8FB61FE328239E160087BB3F /* LoginView */,
 				8F678CAA282B46E000608B98 /* FTUEView */,
@@ -479,10 +489,11 @@
 				8FBC9FCD284F2473009E068C /* ArticlePageView */,
 				8FBC9FDB284F4154009E068C /* QuoteView */,
 				8F8EC5C82861BE3A007E2927 /* PlayCardView */,
-				8F883EFD285C51ED0025BE19 /* CollectionShowcaseView.swift */,
-				8F883EFF285C51F30025BE19 /* CollectionShowcaseViewModel.swift */,
+				8FC241DC2869960500923E6C /* CollectionShowcase */,
 				8F883F07286005A00025BE19 /* ResourcePage */,
 				8F8EC5CD2861C16F007E2927 /* ProductPageView */,
+				8FC241DD2869962200923E6C /* AddTakeAwayView.swift */,
+				8FC241DF2869964300923E6C /* AddTakeAwayViewModel.swift */,
 			);
 			path = Presentations;
 			sourceTree = "<group>";
@@ -643,6 +654,7 @@
 				8F678CB3282B967C00608B98 /* ScrollView+Ext.swift */,
 				8FB5561B2859858D005040B1 /* String+Ext.swift */,
 				8F883EFB285B1A070025BE19 /* TimeInterval+Ext.swift */,
+				8FC241E12869981900923E6C /* View+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -656,6 +668,8 @@
 				8FBC9FBD2849EC41009E068C /* NavigationButtonItem */,
 				8FBC9FC02849EC4F009E068C /* InputFieldView */,
 				8FB555E928507995005040B1 /* TextView.swift */,
+				8FC241E52869B6B700923E6C /* TextViewModel.swift */,
+				8FC241E32869B5FD00923E6C /* TextViewCoordinator.swift */,
 				8F883F1C286028F90025BE19 /* TagView */,
 			);
 			path = CustomViews;
@@ -1045,6 +1059,15 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
+		8FC241DC2869960500923E6C /* CollectionShowcase */ = {
+			isa = PBXGroup;
+			children = (
+				8F883EFD285C51ED0025BE19 /* CollectionShowcaseView.swift */,
+				8F883EFF285C51F30025BE19 /* CollectionShowcaseViewModel.swift */,
+			);
+			path = CollectionShowcase;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1222,6 +1245,7 @@
 				8FBC9FDA284F40CC009E068C /* QuoteViewModel.swift in Sources */,
 				8F678CA7282B46D500608B98 /* FTUEView.swift in Sources */,
 				8FB6200B2824D33E0087BB3F /* LoginPageAtlasView.swift in Sources */,
+				8FC241E62869B6B700923E6C /* TextViewModel.swift in Sources */,
 				8F959FEB2848AD9A00B44C3A /* ProductItemV3ViewModel.swift in Sources */,
 				8FBFACBB281245B300689F5A /* LocalizedStrings.swift in Sources */,
 				8F8EC5CC2861C16A007E2927 /* ProductPageViewModel.swift in Sources */,
@@ -1239,6 +1263,7 @@
 				8F883F04286005940025BE19 /* ResourceNavigationView.swift in Sources */,
 				8F8EC5D12861C1CB007E2927 /* ProductCollectionViewModel.swift in Sources */,
 				8F7772D3280F90B900FF09AA /* MockTest.swift in Sources */,
+				8FC241E42869B5FD00923E6C /* TextViewCoordinator.swift in Sources */,
 				8FB62013282A11650087BB3F /* Biometrics.swift in Sources */,
 				8F883F02285C58F50025BE19 /* CollectionShowcaseViewModel+MockData.swift in Sources */,
 				8FBC9FD3284F2572009E068C /* ArticleTakeAwayViewModel.swift in Sources */,
@@ -1284,6 +1309,7 @@
 				8FBC9FB52849EB0C009E068C /* SearchPageView.swift in Sources */,
 				8F883F062860059C0025BE19 /* ResourceNavigationViewModel.swift in Sources */,
 				8F959FAB284726B900B44C3A /* NeedToKnowViewModel.swift in Sources */,
+				8FC241DE2869962200923E6C /* AddTakeAwayView.swift in Sources */,
 				8F883F112860089E0025BE19 /* ResourcePageTitleView.swift in Sources */,
 				8FBC9FB328499B8B009E068C /* ArticleCollectionViewModel.swift in Sources */,
 				8F959FA9284726AF00B44C3A /* NeedToKnowView.swift in Sources */,
@@ -1296,6 +1322,7 @@
 				8FBB3798280E57FC00DB7476 /* APIResponseError.swift in Sources */,
 				8FBB3791280E4A9600DB7476 /* APIServiceError.swift in Sources */,
 				8FBC9FB82849EB25009E068C /* SearchPageViewModel.swift in Sources */,
+				8FC241E02869964300923E6C /* AddTakeAwayViewModel.swift in Sources */,
 				8FB6200D2824D3BC0087BB3F /* LoginPageAtlasViewModel.swift in Sources */,
 				8FB6200F2824D4750087BB3F /* LoginPageInputView.swift in Sources */,
 				8FBC9FD8284F40C2009E068C /* QuoteView.swift in Sources */,
@@ -1315,6 +1342,7 @@
 				8FB61FF52823B74E0087BB3F /* DotViewModel.swift in Sources */,
 				8F959F9F2846147D00B44C3A /* BriefingViewModel.swift in Sources */,
 				8FB5561E2859A5DB005040B1 /* ProductDetailsView.swift in Sources */,
+				8FC241E22869981900923E6C /* View+Ext.swift in Sources */,
 				8F8EC5D62861D000007E2927 /* ScrollViewOffsetKey.swift in Sources */,
 				8FB61FF72823B75D0087BB3F /* DotOnlyViewModel.swift in Sources */,
 				8FBC9FCC284F246F009E068C /* ArticlePageViewModel.swift in Sources */,

@@ -38,11 +38,12 @@ struct InputFieldView: View {
         }
 
         HStack(alignment: .center, spacing: 10) {
-          ZStack(alignment: .leading) {
+          ZStack(alignment: inputText.isEmpty ? .topLeading : .leading) {
             if inputText.isEmpty {
               Text(model.placeholder)
                 .accessibilityLabel(model.placeholder)
                 .foregroundColor(model.placeholderTextColor)
+                .font(model.placeholderFont)
             }
             TextField("", text: $inputText)
               .frame(height: 40, alignment: .leading)

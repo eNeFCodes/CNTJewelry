@@ -24,6 +24,8 @@ struct InputFieldViewModel: Identifiable {
   let titleType: TitleType
   let placeholder: String
   let placeholderTextColor: Color
+  let placeholderFont: Font
+
   let textColor: Color
 
   let showSeparator: Bool
@@ -38,6 +40,7 @@ struct InputFieldViewModel: Identifiable {
        titleType: TitleType = .default,
        placeholder: String = L10n.SearchPage.Content.inputTitle,
        placeholderTextColor: Color = ColorCollection.gray,
+       placeholderFont: Font = FontCollection.BrilliantCutProB7.regular(size: 15).font,
        textColor: Color = ColorCollection.green,
 
        showSeparator: Bool = true,
@@ -53,6 +56,8 @@ struct InputFieldViewModel: Identifiable {
     self.titleType = titleType
     self.placeholder = placeholder
     self.placeholderTextColor = placeholderTextColor
+    self.placeholderFont = placeholderFont
+    
     self.textColor = textColor
 
     self.showSeparator = showSeparator

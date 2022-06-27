@@ -28,8 +28,8 @@ struct ArticleDetailsView: View {
       ZStack {
         let boxPath = UIBezierPath(rect: .init(x: 0, y: 0, width: 90, height: 110))
         TextView(text: model.bodyText,
-                 font: detailsBodyFont,
-                 exclusionPaths: [boxPath])
+                 model: .init(font: detailsBodyFont,
+                              exclusionPaths: [boxPath]))
         .accessibilityLabel(model.bodyText)
         .foregroundColor(ColorCollection.black)
         .frame(width: textContentWidth, alignment: .leading)

@@ -16,9 +16,9 @@ struct ContentView: View {
         LoaderView(isLoading: $appEnv.isLoading) {
             NavigationView {
                 //WelcomeView(model: model.welcome)
-                LoginView(model: .init())
+//                LoginView(model: .init())
 
-                //TestContentPreviewView()
+              AddTakeAwayView(model: .init())
             }
         }
     }

@@ -52,3 +52,6 @@
 "product.collection.worldWidePrice" = "WORLDWIDE PRICE";
 "product.collection.reference" = "REFERENCE";
 "product.collection.launchDate" = "LAUNCH DATE";
+
+"takeAway.navigation.addTakeAwayTitle" = "ADD TAKEAWAY";
+"takeAway.content.requiredTitle" = "%@ (REQUIRED)";
