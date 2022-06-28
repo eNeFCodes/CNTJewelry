@@ -11,6 +11,7 @@ struct AddTakeAwayView: View {
   @Environment(\.presentationMode) private var presentationMode
   @StateObject private var model: AddTakeAwayViewModel
   private let padding: CGFloat = 32
+  @State private var isAlertActive: Bool = false
 
   init(model: AddTakeAwayViewModel) {
     _model = .init(wrappedValue: model)
@@ -24,6 +25,13 @@ struct AddTakeAwayView: View {
       }
       .frame(width: geometry.size.width, height: geometry.size.height, alignment: .top)
       .background(ColorCollection.black)
+      .alert(isActive: $isAlertActive) {
+        VStack {
+
+        }
+        .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
+        .background(ColorCollection.black.opacity(0.7))
+      }
     }
     .ignoresSafeArea()
     .navigationBarHidden(true)
@@ -268,7 +276,8 @@ struct AddTakeAwayView: View {
 
       CTAButton(isEnabled: model.canSubmit, size: .init(width: contentWidth, height: CTAButton.DefaultHeight)) {
         print("SUBMIT...")
-        model.canSubmit.toggle() // TODO: test
+        
+        isAlertActive.toggle() // TODO: test
       }
     }
     .padding(.top, 24)

@@ -17,17 +17,14 @@ struct AlertView<AlertContent: View>: ViewModifier {
   }
 
   func body(content: Content) -> some View {
-    buildContentBody(content: content)
+    content
+      .overlay(content: buildContentBody)
   }
 
   @ViewBuilder
-  private func buildContentBody(content: Content) -> some View {
-    if isActive {
-      content
-        .overlay(content: alertContent)
-    } else {
-      content
-    }
+  private func buildContentBody() -> some View {
+    alertContent()
+      .opacity(isActive ? 1 : 0)
   }
 }
 
