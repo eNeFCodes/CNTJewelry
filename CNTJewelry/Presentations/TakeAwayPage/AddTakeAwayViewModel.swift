@@ -11,16 +11,19 @@ import Combine
 class AddTakeAwayViewModel: ObservableObject {
   @Published var title: String
   @Published var text: String
+  @Published var isChecked: Bool
   let maxTextCount: Int
 
   var cancellables = Set<AnyCancellable>()
 
   init(title: String = "",
        text: String = "",
-       maxTextCount: Int = 280) {
+       maxTextCount: Int = 280,
+       isChecked: Bool = false) {
     self.title = title
     self.text = text
     self.maxTextCount = maxTextCount
+    self.isChecked = isChecked
 
     text.publisher
       .sink { chnge in

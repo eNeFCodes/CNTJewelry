@@ -191,6 +191,7 @@
 		8FC241E42869B5FD00923E6C /* TextViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC241E32869B5FD00923E6C /* TextViewCoordinator.swift */; };
 		8FC241E62869B6B700923E6C /* TextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC241E52869B6B700923E6C /* TextViewModel.swift */; };
 		8FC241EA286A98E500923E6C /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC241E9286A98E500923E6C /* CheckBoxView.swift */; };
+		8FC241EC286AAABE00923E6C /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC241EB286AAABE00923E6C /* AddButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -392,6 +393,7 @@
 		8FC241E32869B5FD00923E6C /* TextViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewCoordinator.swift; sourceTree = "<group>"; };
 		8FC241E52869B6B700923E6C /* TextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewModel.swift; sourceTree = "<group>"; };
 		8FC241E9286A98E500923E6C /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
+		8FC241EB286AAABE00923E6C /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
 		92A605BEF9EFD722332A0324 /* Pods-iOSBoilerplate.debug (qa).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSBoilerplate.debug (qa).xcconfig"; path = "Target Support Files/Pods-iOSBoilerplate/Pods-iOSBoilerplate.debug (qa).xcconfig"; sourceTree = "<group>"; };
 		AB76B813D4B93CDB25ED6AC5 /* Pods-CNTJewelry.release (production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNTJewelry.release (production).xcconfig"; path = "Target Support Files/Pods-CNTJewelry/Pods-CNTJewelry.release (production).xcconfig"; sourceTree = "<group>"; };
 		C77105EBC81F4430C0566355 /* Pods-iOSBoilerplate.release (staging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSBoilerplate.release (staging).xcconfig"; path = "Target Support Files/Pods-iOSBoilerplate/Pods-iOSBoilerplate.release (staging).xcconfig"; sourceTree = "<group>"; };
@@ -671,6 +673,7 @@
 				8FC241E8286A98D700923E6C /* TextView */,
 				8F883F1C286028F90025BE19 /* TagView */,
 				8FC241E9286A98E500923E6C /* CheckBoxView.swift */,
+				8FC241EB286AAABE00923E6C /* AddButton.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -1358,6 +1361,7 @@
 				8FBC9FDD284F427B009E068C /* Quote.swift in Sources */,
 				8FBC9FDF284F44B7009E068C /* QuoteViewModel+MockData.swift in Sources */,
 				8FBB3795280E567900DB7476 /* APIRepositoryProtocol.swift in Sources */,
+				8FC241EC286AAABE00923E6C /* AddButton.swift in Sources */,
 				8FB61FFB2823BECD0087BB3F /* User.swift in Sources */,
 				8FB61FF52823B74E0087BB3F /* DotViewModel.swift in Sources */,
 				8F959F9F2846147D00B44C3A /* BriefingViewModel.swift in Sources */,

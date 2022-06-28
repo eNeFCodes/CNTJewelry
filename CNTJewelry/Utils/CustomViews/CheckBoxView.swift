@@ -26,7 +26,7 @@ struct CheckBoxView: View {
        labelColor: Color = ColorCollection.white,
        labelAlignment: TextAlignment = .leading,
        iconLocation: IconAlignment = .left,
-       contentAlignment: VerticalAlignment = .top,
+       contentAlignment: VerticalAlignment = .center,
        isChecked: Binding<Bool>) {
     self.label = label
     self.labelFont = labelFont

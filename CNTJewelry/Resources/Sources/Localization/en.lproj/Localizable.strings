@@ -8,6 +8,8 @@
 
 "shared.Content.play" = "PLAY";
 "shared.Content.viewCollection" = "VIEW COLLECTION";
+"shared.Content.addImage" = "ADD IMAGE";
+"shared.Content.add" = "ADD";
 
 "app.Content.welcomeMessage" = "Welcome!";
 "app.Content.getStarted" = "GET STARTED";
@@ -55,3 +57,4 @@
 
 "takeAway.navigation.addTakeAwayTitle" = "ADD TAKEAWAY";
 "takeAway.content.requiredTitle" = "%@ (REQUIRED)";
+"takeAway.content.imageCheckBoxLabel" = "THIS IMAGE HAS TRANSPARENT BACKGROUND";

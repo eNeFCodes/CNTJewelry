@@ -8,6 +8,8 @@
 
 "shared.Content.play" = "PLAY";
 "shared.Content.viewCollection" = "VIEW COLLECTION";
+"shared.Content.addImage" = "ADD IMAGE";
+"shared.Content.add" = "ADD";
 
 "app.Content.welcomeMessage" = "ようこそ";
 "app.Content.getStarted" = "GET STARTED";
@@ -54,3 +56,4 @@
 "product.collection.launchDate" = "LAUNCH DATE";
 
 "takeAway.content.addTakeAwayTitle" = "ADD TAKEAWAY";
+"takeAway.content.imageCheckBoxLabel" = "THIS IMAGE HAS TRANSPARENT BACKGROUND";

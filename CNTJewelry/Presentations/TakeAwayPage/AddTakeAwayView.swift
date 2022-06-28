@@ -65,7 +65,7 @@ struct AddTakeAwayView: View {
   }
 
   private func buildContentViewStack(geometry: GeometryProxy) -> some View {
-    VStack(spacing: 0) {
+    VStack(spacing: 16) {
       let titleFont = FontCollection.BrilliantCutProB7.bold(size: 11).font
       let titleStr = L10n.TakeAway.Content.requiredTitle("TITLE")
       InputFieldView(inputText: $model.title,
@@ -80,6 +80,10 @@ struct AddTakeAwayView: View {
                                   activeIcon: Image("ic_close")))
 
       buildTextBoxViewStack(geometry: geometry)
+      buildAddImageButtonViewStack(geometry: geometry)
+      buildTypeViewStack(geometry: geometry)
+      buildPrimaryTopicViewStack(geometry: geometry)
+      buildOtherTopicsViewStack(geometry: geometry)
     }
     .padding(.top, 48)
     .padding(.horizontal, padding)
@@ -89,7 +93,7 @@ struct AddTakeAwayView: View {
   @ViewBuilder
   private func buildTextBoxViewStack(geometry: GeometryProxy) -> some View {
     let contentWidth = abs(geometry.size.width - (padding * 2))
-    VStack(spacing: 8) {
+    VStack(alignment: .leading, spacing: 8) {
       let titleFont = FontCollection.BrilliantCutProB7.bold(size: 11).font
       let textTitleStr = L10n.TakeAway.Content.requiredTitle("TEXT")
       Text(textTitleStr)
@@ -103,10 +107,10 @@ struct AddTakeAwayView: View {
                               textColor: UIColor(ColorCollection.white),
                               textLimit: model.maxTextCount,
                               isEditable: true))
-          .accessibilityLabel(model.text)
-          .foregroundColor(ColorCollection.white)
-          .padding(8)
-          .frame(width: contentWidth, height: 214, alignment: .topLeading)
+        .accessibilityLabel(model.text)
+        .foregroundColor(ColorCollection.white)
+        .padding(8)
+        .frame(width: contentWidth, height: 214, alignment: .topLeading)
 
         let textCountFont = FontCollection.BrilliantCutProB7.light(size: 10).font
         Text(model.remainingTextCount.description)
@@ -118,24 +122,95 @@ struct AddTakeAwayView: View {
       .frame(width: contentWidth, height: 214, alignment: .bottomTrailing)
       .border(ColorCollection.white, width: 1)
     }
-    .padding(.top, 40)
+    .padding(.top, 24)
     .frame(width: contentWidth, alignment: .topLeading)
   }
 
   @ViewBuilder
   private func buildAddImageButtonViewStack(geometry: GeometryProxy) -> some View {
     let contentWidth = abs(geometry.size.width - (padding * 2))
-    VStack(spacing: 16) {
+    VStack(alignment: .leading, spacing: 16) {
       Button {
 
       } label: {
-        Image("ic_thumbnail")
-          .resizable()
-          .aspectRatio(contentMode: .fit)
-          .frame(width: 24, height: 24, alignment: .center)
+        HStack(spacing: 8) {
+          Text(L10n.Shared.Content.addImage)
+            .accessibilityLabel(L10n.Shared.Content.addImage)
+            .foregroundColor(ColorCollection.white)
+            .font(FontCollection.BrilliantCutProB7.bold(size: 10).font)
+
+          Image("ic_thumbnail")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 24, height: 24, alignment: .center)
+        }
+        .frame(width: 132, height: 32, alignment: .center)
+        .border(ColorCollection.white, width: 1)
+      }
+
+      CheckBoxView(label: L10n.TakeAway.Content.imageCheckBoxLabel,
+                   labelFont: FontCollection.BrilliantCutProB7.bold(size: 11).font,
+                   labelColor: ColorCollection.white,
+                   isChecked: $model.isChecked)
+    }
+    .frame(width: contentWidth, alignment: .leading)
+  }
+
+  @ViewBuilder
+  private func buildTypeViewStack(geometry: GeometryProxy) -> some View {
+    let contentWidth = abs(geometry.size.width - (padding * 2))
+    VStack(alignment: .leading, spacing: 16) {
+      let titleFont = FontCollection.BrilliantCutProB7.bold(size: 11).font
+      let titleStr = L10n.TakeAway.Content.requiredTitle("TAKEAWAY TYPE")
+      Text(titleStr)
+        .accessibilityLabel(titleStr)
+        .foregroundColor(ColorCollection.white)
+        .font(titleFont)
+
+      AddButton {
+        print("action:", titleStr)
       }
     }
-    .frame(width: contentWidth, alignment: .center)
+    .padding(.top, 24)
+    .frame(width: contentWidth, alignment: .leading)
+  }
+
+  @ViewBuilder
+  private func buildPrimaryTopicViewStack(geometry: GeometryProxy) -> some View {
+    let contentWidth = abs(geometry.size.width - (padding * 2))
+    VStack(alignment: .leading, spacing: 16) {
+      let titleFont = FontCollection.BrilliantCutProB7.bold(size: 11).font
+      let titleStr = L10n.TakeAway.Content.requiredTitle("PRIMARY TOPIC")
+      Text(titleStr)
+        .accessibilityLabel(titleStr)
+        .foregroundColor(ColorCollection.white)
+        .font(titleFont)
+
+      AddButton {
+        print("action:", titleStr)
+      }
+    }
+    .padding(.top, 24)
+    .frame(width: contentWidth, alignment: .leading)
+  }
+
+  @ViewBuilder
+  private func buildOtherTopicsViewStack(geometry: GeometryProxy) -> some View {
+    let contentWidth = abs(geometry.size.width - (padding * 2))
+    VStack(alignment: .leading, spacing: 16) {
+      let titleFont = FontCollection.BrilliantCutProB7.bold(size: 11).font
+      let titleStr = L10n.TakeAway.Content.requiredTitle("OTHER TOPICS")
+      Text(titleStr)
+        .accessibilityLabel(titleStr)
+        .foregroundColor(ColorCollection.white)
+        .font(titleFont)
+
+      AddButton {
+        print("action:", titleStr)
+      }
+    }
+    .padding(.top, 24)
+    .frame(width: contentWidth, alignment: .leading)
   }
 }
 
