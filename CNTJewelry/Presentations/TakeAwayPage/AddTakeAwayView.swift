@@ -121,6 +121,22 @@ struct AddTakeAwayView: View {
     .padding(.top, 40)
     .frame(width: contentWidth, alignment: .topLeading)
   }
+
+  @ViewBuilder
+  private func buildAddImageButtonViewStack(geometry: GeometryProxy) -> some View {
+    let contentWidth = abs(geometry.size.width - (padding * 2))
+    VStack(spacing: 16) {
+      Button {
+
+      } label: {
+        Image("ic_thumbnail")
+          .resizable()
+          .aspectRatio(contentMode: .fit)
+          .frame(width: 24, height: 24, alignment: .center)
+      }
+    }
+    .frame(width: contentWidth, alignment: .center)
+  }
 }
 
 struct AddTakeAwayView_Previews: PreviewProvider {
