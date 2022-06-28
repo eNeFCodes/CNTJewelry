@@ -28,9 +28,10 @@ struct AddButton: View {
       action()
     } label: {
       HStack(spacing: 4) {
-        Text(L10n.Shared.Content.add)
-          .accessibilityLabel(L10n.Shared.Content.add)
+        Text(label)
+          .accessibilityLabel(label)
           .foregroundColor(labelColor)
+          .font(labelFont)
 
         Image("ic_plus_white")
           .resizable()

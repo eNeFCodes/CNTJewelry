@@ -11,19 +11,32 @@ import Combine
 class AddTakeAwayViewModel: ObservableObject {
   @Published var title: String
   @Published var text: String
-  @Published var isChecked: Bool
   let maxTextCount: Int
+  @Published var isTransparentImage: Bool
+  @Published var showTimestamp: Bool
+  @Published var sendToCentralQueue: Bool
+  let submitTitleLabel: String
+  @Published var canSubmit: Bool
 
   var cancellables = Set<AnyCancellable>()
 
   init(title: String = "",
        text: String = "",
        maxTextCount: Int = 280,
-       isChecked: Bool = false) {
+       isTransparentImage: Bool = false,
+       showTimestamp: Bool = false,
+       sendToCentralQueue: Bool = false,
+       submitTitleLabel: String = "You are publishing to 5th Avenue Mansion",
+       canSubmit: Bool = false) {
     self.title = title
     self.text = text
     self.maxTextCount = maxTextCount
-    self.isChecked = isChecked
+
+    self.isTransparentImage = isTransparentImage
+    self.showTimestamp = showTimestamp
+    self.sendToCentralQueue = sendToCentralQueue
+    self.submitTitleLabel = submitTitleLabel
+    self.canSubmit = canSubmit
 
     text.publisher
       .sink { chnge in

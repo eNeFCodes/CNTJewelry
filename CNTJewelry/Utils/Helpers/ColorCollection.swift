@@ -30,4 +30,5 @@ struct ColorCollection {
   static let white = Color("white")
   static let whiteInactiveDotColor = Color("whiteInactiveDotColor")
   static let yellow = Color("yellow")
+  static let textInActive = Color("F8F7F4")
 }

@@ -26,6 +26,7 @@ struct AddTakeAwayView: View {
       .background(ColorCollection.black)
     }
     .ignoresSafeArea()
+    .navigationBarHidden(true)
   }
 
   private func buildTopNavigationViewStack(geometry: GeometryProxy) -> some View {
@@ -65,29 +66,36 @@ struct AddTakeAwayView: View {
   }
 
   private func buildContentViewStack(geometry: GeometryProxy) -> some View {
-    VStack(spacing: 16) {
-      let titleFont = FontCollection.BrilliantCutProB7.bold(size: 11).font
-      let titleStr = L10n.TakeAway.Content.requiredTitle("TITLE")
-      InputFieldView(inputText: $model.title,
-                     model: .init(title: titleStr,
-                                  titleColor: ColorCollection.white,
-                                  titleFont: titleFont,
-                                  placeholder: titleStr,
-                                  placeholderTextColor: ColorCollection.white,
-                                  placeholderFont: titleFont,
-                                  textColor: ColorCollection.green,
-                                  separatorColor: ColorCollection.white,
-                                  activeIcon: Image("ic_close")))
+    ScrollView(.vertical, showsIndicators: false) {
+      LazyVStack(spacing: 16) {
+        let titleFont = FontCollection.BrilliantCutProB7.bold(size: 11).font
+        let titleStr = L10n.TakeAway.Content.requiredTitle("TITLE")
+        InputFieldView(inputText: $model.title,
+                       model: .init(title: titleStr,
+                                    titleColor: ColorCollection.white,
+                                    titleFont: titleFont,
+                                    placeholder: titleStr,
+                                    placeholderTextColor: ColorCollection.white,
+                                    placeholderFont: titleFont,
+                                    textColor: ColorCollection.green,
+                                    separatorColor: ColorCollection.white,
+                                    activeIcon: Image("ic_close")))
 
-      buildTextBoxViewStack(geometry: geometry)
-      buildAddImageButtonViewStack(geometry: geometry)
-      buildTypeViewStack(geometry: geometry)
-      buildPrimaryTopicViewStack(geometry: geometry)
-      buildOtherTopicsViewStack(geometry: geometry)
+        buildTextBoxViewStack(geometry: geometry)
+        buildAddImageButtonViewStack(geometry: geometry)
+        buildTypeViewStack(geometry: geometry)
+        buildPrimaryTopicViewStack(geometry: geometry)
+        buildOtherTopicsViewStack(geometry: geometry)
+        buildShowTimestampViewStack(geometry: geometry)
+        buildSendCentralQueueViewStack(geometry: geometry)
+
+        buildSubmitViewStack(geometry: geometry)
+      }
+      .padding(.top, 48)
+      .padding(.horizontal, padding)
+      .padding(.bottom, 32)
+      .frame(width: geometry.size.width, alignment: .top)
     }
-    .padding(.top, 48)
-    .padding(.horizontal, padding)
-    .frame(width: geometry.size.width, alignment: .top)
   }
 
   @ViewBuilder
@@ -151,7 +159,7 @@ struct AddTakeAwayView: View {
       CheckBoxView(label: L10n.TakeAway.Content.imageCheckBoxLabel,
                    labelFont: FontCollection.BrilliantCutProB7.bold(size: 11).font,
                    labelColor: ColorCollection.white,
-                   isChecked: $model.isChecked)
+                   isChecked: $model.isTransparentImage)
     }
     .frame(width: contentWidth, alignment: .leading)
   }
@@ -188,6 +196,8 @@ struct AddTakeAwayView: View {
 
       AddButton {
         print("action:", titleStr)
+
+        model.canSubmit.toggle() // TODO: test
       }
     }
     .padding(.top, 24)
@@ -207,10 +217,62 @@ struct AddTakeAwayView: View {
 
       AddButton {
         print("action:", titleStr)
+
+        model.canSubmit.toggle() // TODO: test
       }
     }
     .padding(.top, 24)
     .frame(width: contentWidth, alignment: .leading)
+  }
+
+  @ViewBuilder
+  private func buildShowTimestampViewStack(geometry: GeometryProxy) -> some View {
+    let contentWidth = abs(geometry.size.width - (padding * 2))
+    VStack(alignment: .leading, spacing: 0) {
+      CheckBoxView(label: L10n.TakeAway.Content.timestampLabel,
+                   labelFont: FontCollection.BrilliantCutProB7.bold(size: 11).font,
+                   labelColor: ColorCollection.white,
+                   isChecked: $model.showTimestamp)
+    }
+    .padding(.top, 24)
+    .frame(width: contentWidth, alignment: .leading)
+  }
+
+  @ViewBuilder
+  private func buildSendCentralQueueViewStack(geometry: GeometryProxy) -> some View {
+    let contentWidth = abs(geometry.size.width - (padding * 2))
+    VStack(alignment: .leading, spacing: 0) {
+      CheckBoxView(label: L10n.TakeAway.Content.sendToCentralQueueLabel,
+                   labelFont: FontCollection.BrilliantCutProB7.bold(size: 11).font,
+                   labelColor: ColorCollection.white,
+                   isChecked: $model.sendToCentralQueue)
+    }
+    .padding(.top, 8)
+    .frame(width: contentWidth, alignment: .leading)
+  }
+
+  @ViewBuilder
+  private func buildSubmitViewStack(geometry: GeometryProxy) -> some View {
+    let contentWidth = abs(geometry.size.width - (padding * 2))
+    VStack(alignment: .center, spacing: 16) {
+      Rectangle()
+        .stroke(ColorCollection.darkBeige, style: StrokeStyle(lineWidth: 2, lineCap: .butt, dash: [2]))
+        .frame(width: abs(geometry.size.width - (padding * 2)), height: 1, alignment: .center)
+
+      Text(model.submitTitleLabel)
+        .accessibilityLabel(model.submitTitleLabel)
+        .foregroundColor(ColorCollection.textInActive)
+        .font(FontCollection.FancyCutProB7.regular(size: 16).font)
+        .padding(.top, 32)
+        .frame(minHeight: 21, alignment: .center)
+
+      CTAButton(isEnabled: model.canSubmit, size: .init(width: contentWidth, height: CTAButton.DefaultHeight)) {
+        print("SUBMIT...")
+        model.canSubmit.toggle() // TODO: test
+      }
+    }
+    .padding(.top, 24)
+    .frame(width: contentWidth, alignment: .top)
   }
 }
 

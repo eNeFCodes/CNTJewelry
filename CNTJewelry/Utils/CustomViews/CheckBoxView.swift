@@ -19,6 +19,7 @@ struct CheckBoxView: View {
   private let labelAlignment: TextAlignment
   private let iconLocation: IconAlignment
   private let contentAlignment: VerticalAlignment
+  private let isWholeViewTappable: Bool
   @Binding private var isChecked: Bool
 
   init(label: String,
@@ -27,6 +28,7 @@ struct CheckBoxView: View {
        labelAlignment: TextAlignment = .leading,
        iconLocation: IconAlignment = .left,
        contentAlignment: VerticalAlignment = .center,
+       isWholeViewTappable: Bool = true,
        isChecked: Binding<Bool>) {
     self.label = label
     self.labelFont = labelFont
@@ -34,16 +36,57 @@ struct CheckBoxView: View {
     self.labelAlignment = labelAlignment
     self.iconLocation = iconLocation
     self.contentAlignment = contentAlignment
+    self.isWholeViewTappable = isWholeViewTappable
     _isChecked = isChecked
   }
 
   var body: some View {
+    if isWholeViewTappable {
+      isWholeViewTappableViewStack()
+    } else {
+      isCheckBoxOnlyTappableViewStack()
+    }
+  }
+
+  private func isWholeViewTappableViewStack() -> some View {
+    Button {
+      isChecked.toggle()
+    } label: {
+      HStack(alignment: contentAlignment, spacing: 16) {
+        if iconLocation == .left {
+          Image(isChecked ? "ic_checkbox_selected" : "ic_checkbox_unselected")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 20, height: 20, alignment: .center)
+        }
+
+        Text(label)
+          .accessibilityLabel(label)
+          .font(labelFont)
+          .foregroundColor(labelColor)
+          .multilineTextAlignment(labelAlignment)
+
+        if iconLocation == .right {
+          Image(isChecked ? "ic_checkbox_selected" : "ic_checkbox_unselected")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 20, height: 20, alignment: .center)
+        }
+      }
+    }
+  }
+
+  private func isCheckBoxOnlyTappableViewStack() -> some View {
     HStack(alignment: contentAlignment, spacing: 16) {
       if iconLocation == .left {
-        Image(isChecked ? "ic_checkbox_selected" : "ic_checkbox_unselected")
-          .resizable()
-          .aspectRatio(contentMode: .fit)
-          .frame(width: 20, height: 20, alignment: .center)
+        Button {
+          isChecked.toggle()
+        } label: {
+          Image(isChecked ? "ic_checkbox_selected" : "ic_checkbox_unselected")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 20, height: 20, alignment: .center)
+        }
       }
 
       Text(label)
@@ -53,10 +96,14 @@ struct CheckBoxView: View {
         .multilineTextAlignment(labelAlignment)
 
       if iconLocation == .right {
-        Image(isChecked ? "ic_checkbox_selected" : "ic_checkbox_unselected")
-          .resizable()
-          .aspectRatio(contentMode: .fit)
-          .frame(width: 20, height: 20, alignment: .center)
+        Button {
+          isChecked.toggle()
+        } label: {
+          Image(isChecked ? "ic_checkbox_selected" : "ic_checkbox_unselected")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 20, height: 20, alignment: .center)
+        }
       }
     }
   }
