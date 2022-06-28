@@ -9,5 +9,9 @@ import Foundation
 import SwiftUI
 
 extension View {
-
+  func alert<AlertContent: View>(isActive: Binding<Bool>,
+                                 alertContent: @escaping () -> AlertContent) -> some View {
+    modifier(AlertView(isActive: isActive,
+                       alertContent: alertContent))
+  }
 }
