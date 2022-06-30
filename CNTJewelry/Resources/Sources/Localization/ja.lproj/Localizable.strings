@@ -11,6 +11,8 @@
 "shared.Content.addImage" = "ADD IMAGE";
 "shared.Content.add" = "ADD";
 "shared.Content.submit" = "SUBMIT";
+"shared.Content.cancel" = "CANCEL";
+"shared.Content.continue" = "CONTINUE";
 
 "app.Content.welcomeMessage" = "ようこそ";
 "app.Content.getStarted" = "GET STARTED";

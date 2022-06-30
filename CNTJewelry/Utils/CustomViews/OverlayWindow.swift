@@ -1,5 +1,5 @@
 //
-//  AlertView.swift
+//  OverlayWindow.swift
 //  CNTJewelry
 //
 //  Created by Neil Francis Hipona on 6/28/22.
@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct AlertView<AlertContent: View>: ViewModifier {
+struct OverlayWindow<WindowContent: View>: ViewModifier {
   @Binding private var isActive: Bool
-  private let alertContent: () -> AlertContent
+  private let windowContent: () -> WindowContent
 
-  init(isActive: Binding<Bool>, alertContent: @escaping () -> AlertContent) {
+  init(isActive: Binding<Bool>, windowContent: @escaping () -> WindowContent) {
     _isActive = isActive
-    self.alertContent = alertContent
+    self.windowContent = windowContent
   }
 
   func body(content: Content) -> some View {
@@ -23,12 +23,12 @@ struct AlertView<AlertContent: View>: ViewModifier {
 
   @ViewBuilder
   private func buildContentBody() -> some View {
-    alertContent()
+    windowContent()
       .opacity(isActive ? 1 : 0)
   }
 }
 
-struct AlertView_Previews: PreviewProvider {
+struct OverlayWindow_Previews: PreviewProvider {
   static var previews: some View {
     VStack {
 

@@ -9,9 +9,9 @@ import Foundation
 import SwiftUI
 
 extension View {
-  func alert<AlertContent: View>(isActive: Binding<Bool>,
-                                 alertContent: @escaping () -> AlertContent) -> some View {
-    modifier(AlertView(isActive: isActive,
-                       alertContent: alertContent))
+  func alert<WindowContent: View>(isActive: Binding<Bool>,
+                                  windowContent: @escaping () -> WindowContent) -> some View {
+    modifier(OverlayWindow(isActive: isActive,
+                           windowContent: windowContent))
   }
 }
