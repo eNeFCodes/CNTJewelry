@@ -9,6 +9,7 @@ import SwiftUI
 
 extension TakeAwayAlertView {
   enum Action {
+    case close
     case cancel
     case `continue`
   }
@@ -38,7 +39,7 @@ struct TakeAwayAlertView: View {
         .opacity(0.7)
 
       VStack {
-        Spacer()
+        Spacer(minLength: 0)
 
         let contentWidth = abs(geometry.size.width - (padding * 2))
         VStack(spacing: 16) {
@@ -54,7 +55,7 @@ struct TakeAwayAlertView: View {
         .frame(width: contentWidth, alignment: .center)
         .background(ColorCollection.white)
 
-        Spacer()
+        Spacer(minLength: 0)
       }
       .frame(width: geometry.size.width, alignment: .center)
     }
@@ -66,9 +67,9 @@ struct TakeAwayAlertView: View {
     let padding = (padding * 2) + 32
     let contentWidth = abs(geometry.size.width - padding)
     HStack {
-      Spacer()
+      Spacer(minLength: 0)
       Button {
-
+        action(.close)
       } label: {
         Image("ic_close")
           .resizable()
@@ -99,7 +100,7 @@ struct TakeAwayAlertView: View {
       let contentWidth = abs(geometry.size.width - padding)
       let textFont = FontCollection.BrilliantCutProB7.bold(size: 12).font
       Button {
-        
+        action(.cancel)
       } label: {
         HStack {
           Text(L10n.Shared.Content.cancel)
@@ -112,7 +113,7 @@ struct TakeAwayAlertView: View {
       }
 
       Button {
-
+        action(.continue)
       } label: {
         HStack {
           Text(L10n.Shared.Content.continue)

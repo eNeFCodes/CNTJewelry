@@ -31,7 +31,10 @@ struct OverlayWindow<WindowContent: View>: ViewModifier {
 struct OverlayWindow_Previews: PreviewProvider {
   static var previews: some View {
     VStack {
+      TakeAwayAlertView(title: "DELETE TAKEAWAY",
+                        message: "When closing this window, the unpublished takeaway will be lost.") { _ in
 
+      }
     }
   }
 }

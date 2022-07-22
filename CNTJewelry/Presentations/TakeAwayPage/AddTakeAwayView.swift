@@ -25,12 +25,16 @@ struct AddTakeAwayView: View {
       }
       .frame(width: geometry.size.width, height: geometry.size.height, alignment: .top)
       .background(ColorCollection.black)
-      .alert(isActive: $isAlertActive) {
-        VStack {
-
+      .overlayWindow(isActive: $isAlertActive) {
+        TakeAwayAlertView(title: "DELETE TAKEAWAY",
+                          message: "When closing this window, the unpublished takeaway will be lost.") { action in
+          switch action {
+          case .continue:
+            presentationMode.wrappedValue.dismiss()
+          default:
+            isAlertActive = false
+          }
         }
-        .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
-        .background(ColorCollection.black.opacity(0.7))
       }
     }
     .ignoresSafeArea()
@@ -42,7 +46,7 @@ struct AddTakeAwayView: View {
       let contentWidth = abs(geometry.size.width - 96)
       VStack(alignment: .leading, spacing: 22) {
         Button {
-          presentationMode.wrappedValue.dismiss()
+          isAlertActive = true
         } label: {
           Image("ic_arrow_left_black")
             .resizable()
