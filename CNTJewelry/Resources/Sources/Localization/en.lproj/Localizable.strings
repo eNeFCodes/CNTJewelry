@@ -13,6 +13,7 @@
 "shared.Content.submit" = "SUBMIT";
 "shared.Content.cancel" = "CANCEL";
 "shared.Content.continue" = "CONTINUE";
+"shared.Content.done" = "DONE";
 
 "app.Content.welcomeMessage" = "Welcome!";
 "app.Content.getStarted" = "GET STARTED";
@@ -63,3 +64,5 @@
 "takeAway.content.imageCheckBoxLabel" = "THIS IMAGE HAS TRANSPARENT BACKGROUND";
 "takeAway.content.timestampLabel" = "SHOW TIMESTAMP ON TAKEAWAY";
 "takeAway.content.sendToCentralQueueLabel" = "SEND TO CENTRAL QUEUE";
+"takeAway.item.takeAwayTypeTitle" = "SELECT TAKEAWAY TYPE";
+"takeAway.item.takeAwayTopicTitle" = "ADD PRIMARY TOPICS (CHOOSE 1)";

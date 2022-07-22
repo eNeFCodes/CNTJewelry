@@ -627,6 +627,17 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		8F58A3B1288A7767005E507B /* TakeAwayTypeView */ = {
+			isa = PBXGroup;
+			children = (
+				8F58A3A9288A549F005E507B /* TakeAwayTypeView.swift */,
+				8F58A3A7288A5494005E507B /* TakeAwayTypeViewModel.swift */,
+				8F58A3AD288A7540005E507B /* TakeAwayTypeItemView.swift */,
+				8F58A3AF288A75AC005E507B /* TakeAwayTypeItemViewModel.swift */,
+			);
+			path = TakeAwayTypeView;
+			sourceTree = "<group>";
+		};
 		8F678CAA282B46E000608B98 /* FTUEView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1096,10 +1107,7 @@
 			children = (
 				8FC241DD2869962200923E6C /* AddTakeAwayView.swift */,
 				8FC241DF2869964300923E6C /* AddTakeAwayViewModel.swift */,
-				8F58A3A9288A549F005E507B /* TakeAwayTypeView.swift */,
-				8F58A3A7288A5494005E507B /* TakeAwayTypeViewModel.swift */,
-				8F58A3AD288A7540005E507B /* TakeAwayTypeItemView.swift */,
-				8F58A3AF288A75AC005E507B /* TakeAwayTypeItemViewModel.swift */,
+				8F58A3B1288A7767005E507B /* TakeAwayTypeView */,
 			);
 			path = TakeAwayPage;
 			sourceTree = "<group>";

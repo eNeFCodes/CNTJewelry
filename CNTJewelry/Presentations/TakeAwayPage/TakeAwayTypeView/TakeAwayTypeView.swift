@@ -5,16 +5,19 @@
 //  Created by Neil Francis Hipona on 7/22/22.
 //
 
+import Combine
 import SwiftUI
 
 struct TakeAwayTypeView: View {
   @Environment(\.presentationMode) private var presentationMode
   @StateObject private var model: TakeAwayTypeViewModel
   private let padding: CGFloat = 32
-  @State private var isAlertActive: Bool = false
+  private let action: (_ items: [TakeAwayTypeItemViewModel]) -> Void
 
-  init(model: TakeAwayTypeViewModel) {
+  init(model: TakeAwayTypeViewModel,
+       action: @escaping (_ items: [TakeAwayTypeItemViewModel]) -> Void) {
     _model = .init(wrappedValue: model)
+    self.action = action
   }
 
   var body: some View {
@@ -22,6 +25,7 @@ struct TakeAwayTypeView: View {
       VStack(spacing: 0) {
         buildTopNavigationViewStack(geometry: geometry)
         buildContentViewStack(geometry: geometry)
+        buildDoneButtonViewStack(geometry: geometry)
       }
       .frame(width: geometry.size.width, height: geometry.size.height, alignment: .top)
       .background(ColorCollection.black)
@@ -35,7 +39,7 @@ struct TakeAwayTypeView: View {
       let contentWidth = abs(geometry.size.width - 96)
       VStack(alignment: .leading, spacing: 22) {
         Button {
-          isAlertActive = true
+          presentationMode.wrappedValue.dismiss()
         } label: {
           Image("ic_arrow_left_black")
             .resizable()
@@ -43,13 +47,14 @@ struct TakeAwayTypeView: View {
             .frame(width: 44, height: 21, alignment: .leading)
         }
 
-        Text(L10n.TakeAway.Navigation.addTakeAwayTitle)
-          .accessibilityLabel(L10n.TakeAway.Navigation.addTakeAwayTitle)
+        Text(model.title)
+          .accessibilityLabel(model.title)
           .foregroundColor(ColorCollection.black)
           .font(FontCollection.BrilliantCutProB7.medium(size: 18).font)
       }
       .padding(padding)
-      .frame(width: contentWidth, height: 138, alignment: .topLeading)
+      .padding(.top, 10)
+      .frame(minWidth: contentWidth, maxWidth: contentWidth, minHeight: 138, alignment: .topLeading)
       .background(ColorCollection.white)
       .mask {
         GeometryReader { geometry in
@@ -63,7 +68,7 @@ struct TakeAwayTypeView: View {
         }
       }
     }
-    .frame(width: geometry.size.width, height: 138, alignment: .leading)
+    .frame(width: geometry.size.width, alignment: .leading)
   }
 
   private func buildContentViewStack(geometry: GeometryProxy) -> some View {
@@ -75,16 +80,39 @@ struct TakeAwayTypeView: View {
           let showBotSeparator = idx == countRange.last.unwrapped
           TakeAwayTypeItemView(model: item,
                                geometry: geometry,
-                               showBotSeparator: showBotSeparator)
+                               showBotSeparator: showBotSeparator) { item in
+            model.toggleItemSelected(item)
+          }
         }
       }
     }
     .padding(.top, 30)
   }
+
+  private func buildDoneButtonViewStack(geometry: GeometryProxy) -> some View {
+    Button {
+      let selectedTypes = model.items.filter { $0.isSelected }
+      if !selectedTypes.isEmpty {
+        action(selectedTypes)
+        presentationMode.wrappedValue.dismiss()
+      }
+    } label: {
+      VStack {
+        Text(L10n.Shared.Content.done)
+          .accessibilityLabel(L10n.Shared.Content.done)
+          .foregroundColor(ColorCollection.white)
+          .font(FontCollection.BrilliantCutProB7.bold(size: 12).font)
+      }
+      .padding(.horizontal, padding)
+      .frame(width: geometry.size.width, height: 56, alignment: .center)
+      .background(ColorCollection.red)
+    }
+  }
 }
 
 struct TakeAwayTypeView_Previews: PreviewProvider {
+  static let publisher = PassthroughSubject<[TakeAwayTypeItemViewModel], Never>()
   static var previews: some View {
-    TakeAwayTypeView(model: .stub)
+    TakeAwayTypeView(model: .stubTakeAway) { _ in }
   }
 }

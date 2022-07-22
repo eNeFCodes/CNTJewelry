@@ -17,6 +17,8 @@ class AddTakeAwayViewModel: ObservableObject {
   @Published var sendToCentralQueue: Bool
   let submitTitleLabel: String
   @Published var canSubmit: Bool
+  @Published var types: [TakeAwayTypeItemViewModel]
+  @Published var topics: [TakeAwayTypeItemViewModel]
 
   var cancellables = Set<AnyCancellable>()
 
@@ -27,7 +29,10 @@ class AddTakeAwayViewModel: ObservableObject {
        showTimestamp: Bool = false,
        sendToCentralQueue: Bool = false,
        submitTitleLabel: String = "You are publishing to 5th Avenue Mansion",
-       canSubmit: Bool = false) {
+       canSubmit: Bool = false,
+       types: [TakeAwayTypeItemViewModel] = [],
+       topics: [TakeAwayTypeItemViewModel] = []) {
+
     self.title = title
     self.text = text
     self.maxTextCount = maxTextCount
@@ -37,6 +42,8 @@ class AddTakeAwayViewModel: ObservableObject {
     self.sendToCentralQueue = sendToCentralQueue
     self.submitTitleLabel = submitTitleLabel
     self.canSubmit = canSubmit
+    self.types = types
+    self.topics = topics
 
     text.publisher
       .sink { chnge in

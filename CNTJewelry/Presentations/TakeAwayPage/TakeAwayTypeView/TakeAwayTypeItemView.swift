@@ -8,33 +8,39 @@
 import SwiftUI
 
 struct TakeAwayTypeItemView: View {
-  @StateObject private var model: TakeAwayTypeItemViewModel
+  @ObservedObject private var model: TakeAwayTypeItemViewModel
   private let geometry: GeometryProxy
   private let padding: CGFloat
   private let showTopSeparator: Bool
   private let showBotSeparator: Bool
+  private let action: (_ model: TakeAwayTypeItemViewModel) -> Void
 
   init(model: TakeAwayTypeItemViewModel,
        geometry: GeometryProxy,
        showTopSeparator: Bool = true,
        showBotSeparator: Bool = true,
-       padding: CGFloat = 32) {
-    _model = .init(wrappedValue: model)
+       padding: CGFloat = 32,
+       action: @escaping (_ model: TakeAwayTypeItemViewModel) -> Void) {
+    self.model = model
     self.geometry = geometry
     self.padding = padding
     self.showTopSeparator = showTopSeparator
     self.showBotSeparator = showBotSeparator
+    self.action = action
   }
 
   var body: some View {
     Button {
-      model.isSelected.toggle()
+      action(model)
     } label: {
       VStack(spacing: 0) {
+        let separatorColor = model.isSelected
+        ? ColorCollection.black.opacity(0.3)
+        : ColorCollection.white.opacity(0.3)
         if showTopSeparator {
           Rectangle()
             .frame(width: geometry.size.width, height: 1, alignment: .center)
-            .foregroundColor(ColorCollection.white.opacity(0.3))
+            .foregroundColor(separatorColor)
         }
         
         HStack {
@@ -56,7 +62,7 @@ struct TakeAwayTypeItemView: View {
         if showBotSeparator {
           Rectangle()
             .frame(width: geometry.size.width, height: 1, alignment: .center)
-            .foregroundColor(ColorCollection.white.opacity(0.3))
+            .foregroundColor(separatorColor)
         }
       }
       .background(model.isSelected ? ColorCollection.white : ColorCollection.black)
@@ -67,8 +73,8 @@ struct TakeAwayTypeItemView: View {
 struct TakeAwayTypeItemView_Previews: PreviewProvider {
   static var previews: some View {
     GeometryReader { geometry in
-      TakeAwayTypeItemView(model: .stub,
-                           geometry: geometry)
+      TakeAwayTypeItemView(model: .stubTakeAway,
+                           geometry: geometry) { _ in }
     }
   }
 }

@@ -5,6 +5,7 @@
 //  Created by Neil Francis Hipona on 6/27/22.
 //
 
+import Combine
 import SwiftUI
 
 struct AddTakeAwayView: View {
@@ -12,6 +13,8 @@ struct AddTakeAwayView: View {
   @StateObject private var model: AddTakeAwayViewModel
   private let padding: CGFloat = 32
   @State private var isAlertActive: Bool = false
+  @State private var showAddTypesView: Bool = false
+  @State private var showAddTopicsView: Bool = false
 
   init(model: AddTakeAwayViewModel) {
     _model = .init(wrappedValue: model)
@@ -36,6 +39,8 @@ struct AddTakeAwayView: View {
           }
         }
       }
+
+      buildNavigationStack()
     }
     .ignoresSafeArea()
     .navigationBarHidden(true)
@@ -60,6 +65,7 @@ struct AddTakeAwayView: View {
           .font(FontCollection.BrilliantCutProB7.medium(size: 18).font)
       }
       .padding(padding)
+      .padding(.top, 10)
       .frame(width: contentWidth, height: 138, alignment: .topLeading)
       .background(ColorCollection.white)
       .mask {
@@ -74,7 +80,7 @@ struct AddTakeAwayView: View {
         }
       }
     }
-    .frame(width: geometry.size.width, height: 138, alignment: .leading)
+    .frame(width: geometry.size.width, alignment: .leading)
   }
 
   private func buildContentViewStack(geometry: GeometryProxy) -> some View {
@@ -188,7 +194,7 @@ struct AddTakeAwayView: View {
         .font(titleFont)
 
       AddButton {
-        print("action:", titleStr)
+        showAddTypesView = true
       }
     }
     .padding(.top, 24)
@@ -207,9 +213,7 @@ struct AddTakeAwayView: View {
         .font(titleFont)
 
       AddButton {
-        print("action:", titleStr)
-
-        model.canSubmit.toggle() // TODO: test
+        showAddTopicsView = true
       }
     }
     .padding(.top, 24)
@@ -286,6 +290,21 @@ struct AddTakeAwayView: View {
     }
     .padding(.top, 24)
     .frame(width: contentWidth, alignment: .top)
+  }
+
+  @ViewBuilder
+  private func buildNavigationStack() -> some View {
+    NavigationLink("", isActive: $showAddTypesView) {
+      TakeAwayTypeView(model: .stubTakeAway) { types in
+        model.types = types
+      }
+    }
+
+    NavigationLink("", isActive: $showAddTopicsView) {
+      TakeAwayTypeView(model: .stubTopics) { types in
+        model.types = types
+      }
+    }
   }
 }
 
