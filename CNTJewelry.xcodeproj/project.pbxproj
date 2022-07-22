@@ -17,6 +17,11 @@
 		8F43CA12280E97DA0011552D /* RandomImageAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F43CA11280E97DA0011552D /* RandomImageAPIService.swift */; };
 		8F43CA14280E97F80011552D /* RandomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F43CA13280E97F80011552D /* RandomImage.swift */; };
 		8F43CA16280E99CA0011552D /* RandomImageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F43CA15280E99CA0011552D /* RandomImageAPI.swift */; };
+		8F58A3A8288A5494005E507B /* TakeAwayTypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F58A3A7288A5494005E507B /* TakeAwayTypeViewModel.swift */; };
+		8F58A3AA288A549F005E507B /* TakeAwayTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F58A3A9288A549F005E507B /* TakeAwayTypeView.swift */; };
+		8F58A3AC288A55B2005E507B /* TakeAway+MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F58A3AB288A55B2005E507B /* TakeAway+MockData.swift */; };
+		8F58A3AE288A7540005E507B /* TakeAwayTypeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F58A3AD288A7540005E507B /* TakeAwayTypeItemView.swift */; };
+		8F58A3B0288A75AC005E507B /* TakeAwayTypeItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F58A3AF288A75AC005E507B /* TakeAwayTypeItemViewModel.swift */; };
 		8F678CA7282B46D500608B98 /* FTUEView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F678CA6282B46D500608B98 /* FTUEView.swift */; };
 		8F678CA9282B46DB00608B98 /* FTUEViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F678CA8282B46DB00608B98 /* FTUEViewModel.swift */; };
 		8F678CAC282B485600608B98 /* FTUEIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F678CAB282B485600608B98 /* FTUEIntroView.swift */; };
@@ -217,6 +222,11 @@
 		8F43CA11280E97DA0011552D /* RandomImageAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomImageAPIService.swift; sourceTree = "<group>"; };
 		8F43CA13280E97F80011552D /* RandomImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomImage.swift; sourceTree = "<group>"; };
 		8F43CA15280E99CA0011552D /* RandomImageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomImageAPI.swift; sourceTree = "<group>"; };
+		8F58A3A7288A5494005E507B /* TakeAwayTypeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeAwayTypeViewModel.swift; sourceTree = "<group>"; };
+		8F58A3A9288A549F005E507B /* TakeAwayTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeAwayTypeView.swift; sourceTree = "<group>"; };
+		8F58A3AB288A55B2005E507B /* TakeAway+MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TakeAway+MockData.swift"; sourceTree = "<group>"; };
+		8F58A3AD288A7540005E507B /* TakeAwayTypeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeAwayTypeItemView.swift; sourceTree = "<group>"; };
+		8F58A3AF288A75AC005E507B /* TakeAwayTypeItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeAwayTypeItemViewModel.swift; sourceTree = "<group>"; };
 		8F678CA6282B46D500608B98 /* FTUEView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTUEView.swift; sourceTree = "<group>"; };
 		8F678CA8282B46DB00608B98 /* FTUEViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTUEViewModel.swift; sourceTree = "<group>"; };
 		8F678CAB282B485600608B98 /* FTUEIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTUEIntroView.swift; sourceTree = "<group>"; };
@@ -612,6 +622,7 @@
 				8F883F23286045430025BE19 /* TagViewModel+MockData.swift */,
 				8F8EC5D728629BA9007E2927 /* ProductPageViewModel+MockData.swift */,
 				8F8EC5D32861C6C7007E2927 /* ProductCollectionViewModel+MockData.swift */,
+				8F58A3AB288A55B2005E507B /* TakeAway+MockData.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -1085,6 +1096,10 @@
 			children = (
 				8FC241DD2869962200923E6C /* AddTakeAwayView.swift */,
 				8FC241DF2869964300923E6C /* AddTakeAwayViewModel.swift */,
+				8F58A3A9288A549F005E507B /* TakeAwayTypeView.swift */,
+				8F58A3A7288A5494005E507B /* TakeAwayTypeViewModel.swift */,
+				8F58A3AD288A7540005E507B /* TakeAwayTypeItemView.swift */,
+				8F58A3AF288A75AC005E507B /* TakeAwayTypeItemViewModel.swift */,
 			);
 			path = TakeAwayPage;
 			sourceTree = "<group>";
@@ -1288,6 +1303,7 @@
 				8F883F1B286028F40025BE19 /* TagViewModel.swift in Sources */,
 				8FC241F0286ACFB100923E6C /* OverlayWindow.swift in Sources */,
 				8FBC9FC4284F2045009E068C /* ArticleCollectionViewModel+MockData.swift in Sources */,
+				8F58A3AE288A7540005E507B /* TakeAwayTypeItemView.swift in Sources */,
 				8FB61FE92823AB7B0087BB3F /* WelcomeViewModel.swift in Sources */,
 				8FB555E528503E01005040B1 /* ArticleDetailsView.swift in Sources */,
 				8F959FAF2847277E00B44C3A /* BriefingTopNavigationViewModel.swift in Sources */,
@@ -1296,6 +1312,7 @@
 				8F8EC5D12861C1CB007E2927 /* ProductCollectionViewModel.swift in Sources */,
 				8F7772D3280F90B900FF09AA /* MockTest.swift in Sources */,
 				8FC241E42869B5FD00923E6C /* TextViewCoordinator.swift in Sources */,
+				8F58A3B0288A75AC005E507B /* TakeAwayTypeItemViewModel.swift in Sources */,
 				8FB62013282A11650087BB3F /* Biometrics.swift in Sources */,
 				8F883F02285C58F50025BE19 /* CollectionShowcaseViewModel+MockData.swift in Sources */,
 				8FBC9FD3284F2572009E068C /* ArticleTakeAwayViewModel.swift in Sources */,
@@ -1306,6 +1323,7 @@
 				8FBC9FCA284F2469009E068C /* ArticlePageView.swift in Sources */,
 				8FC241FA286DA74100923E6C /* TakeAwayAlertView.swift in Sources */,
 				8FB61FE228239C540087BB3F /* LoginViewModel.swift in Sources */,
+				8F58A3A8288A5494005E507B /* TakeAwayTypeViewModel.swift in Sources */,
 				8F678CAC282B485600608B98 /* FTUEIntroView.swift in Sources */,
 				8F883F0F286008540025BE19 /* ResourcePageViewModel+MockData.swift in Sources */,
 				8F43CA12280E97DA0011552D /* RandomImageAPIService.swift in Sources */,
@@ -1352,6 +1370,7 @@
 				8FBC9FB028499B77009E068C /* ArticleCollectionView.swift in Sources */,
 				8FB620032824B06C0087BB3F /* LoginPageWelcomeView.swift in Sources */,
 				8F678CB0282B556300608B98 /* FTUEShowcaseView.swift in Sources */,
+				8F58A3AC288A55B2005E507B /* TakeAway+MockData.swift in Sources */,
 				8F959FE92848AD8F00B44C3A /* ProductItemV3View.swift in Sources */,
 				8FBB3798280E57FC00DB7476 /* APIResponseError.swift in Sources */,
 				8FBB3791280E4A9600DB7476 /* APIServiceError.swift in Sources */,
@@ -1371,6 +1390,7 @@
 				8FBC9FC6284F2068009E068C /* WeeklyCollectionViewModel+MockData.swift in Sources */,
 				8F883EFA285AFCFB0025BE19 /* PlayCardViewModel.swift in Sources */,
 				8FBC9FDD284F427B009E068C /* Quote.swift in Sources */,
+				8F58A3AA288A549F005E507B /* TakeAwayTypeView.swift in Sources */,
 				8FBC9FDF284F44B7009E068C /* QuoteViewModel+MockData.swift in Sources */,
 				8FBB3795280E567900DB7476 /* APIRepositoryProtocol.swift in Sources */,
 				8FC241EC286AAABE00923E6C /* AddButton.swift in Sources */,
