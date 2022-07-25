@@ -14,6 +14,7 @@
 "shared.Content.cancel" = "CANCEL";
 "shared.Content.continue" = "CONTINUE";
 "shared.Content.done" = "DONE";
+"shared.Content.edit" = "EDIT";
 
 "app.Content.welcomeMessage" = "Welcome!";
 "app.Content.getStarted" = "GET STARTED";
@@ -66,3 +67,4 @@
 "takeAway.content.sendToCentralQueueLabel" = "SEND TO CENTRAL QUEUE";
 "takeAway.item.takeAwayTypeTitle" = "SELECT TAKEAWAY TYPE";
 "takeAway.item.takeAwayTopicTitle" = "ADD PRIMARY TOPICS (CHOOSE 1)";
+"takeAway.item.takeAwayOtherTopicTitle" = "OTHER TOPICS (choose UP TO 2)";

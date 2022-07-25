@@ -19,6 +19,7 @@ class AddTakeAwayViewModel: ObservableObject {
   @Published var canSubmit: Bool
   @Published var types: [TakeAwayTypeItemViewModel]
   @Published var topics: [TakeAwayTypeItemViewModel]
+  @Published var otherTopics: [TakeAwayTypeItemViewModel]
 
   var cancellables = Set<AnyCancellable>()
 
@@ -31,7 +32,8 @@ class AddTakeAwayViewModel: ObservableObject {
        submitTitleLabel: String = "You are publishing to 5th Avenue Mansion",
        canSubmit: Bool = false,
        types: [TakeAwayTypeItemViewModel] = [],
-       topics: [TakeAwayTypeItemViewModel] = []) {
+       topics: [TakeAwayTypeItemViewModel] = [],
+       otherTopics: [TakeAwayTypeItemViewModel] = []) {
 
     self.title = title
     self.text = text
@@ -44,6 +46,7 @@ class AddTakeAwayViewModel: ObservableObject {
     self.canSubmit = canSubmit
     self.types = types
     self.topics = topics
+    self.otherTopics = otherTopics
 
     text.publisher
       .sink { chnge in

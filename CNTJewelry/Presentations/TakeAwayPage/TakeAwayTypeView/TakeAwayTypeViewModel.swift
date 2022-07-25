@@ -11,20 +11,36 @@ class TakeAwayTypeViewModel: ObservableObject {
   let title: String
   @Published var items: [TakeAwayTypeItemViewModel]
   let isMultipleSelectionEnabled: Bool
+  let limit: Int
 
   init(title: String,
        items: [TakeAwayTypeItemViewModel],
-       isMultipleSelectionEnabled: Bool = true) {
+       isMultipleSelectionEnabled: Bool = true,
+       limit: Int = 0) {
     self.title = title
     self.items = items
     self.isMultipleSelectionEnabled = isMultipleSelectionEnabled
+    self.limit = limit
   }
 }
 
 extension TakeAwayTypeViewModel {
   func toggleItemSelected(_ selected: TakeAwayTypeItemViewModel) {
     if isMultipleSelectionEnabled {
-      selected.isSelected.toggle()
+      if limit > 0 {
+        var selectedCount: Int = 0
+        for item in items where item.isSelected {
+          selectedCount += 1
+        }
+        if selectedCount < limit {
+          selected.isSelected.toggle()
+        } else {
+          selected.isSelected = false
+        }
+      } else {
+        selected.isSelected.toggle()
+      }
+
     } else {
       for item in items {
         item.isSelected = item.id == selected.id

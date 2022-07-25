@@ -15,6 +15,7 @@ struct AddTakeAwayView: View {
   @State private var isAlertActive: Bool = false
   @State private var showAddTypesView: Bool = false
   @State private var showAddTopicsView: Bool = false
+  @State private var showAddOtherTopicsView: Bool = false
 
   init(model: AddTakeAwayViewModel) {
     _model = .init(wrappedValue: model)
@@ -193,8 +194,14 @@ struct AddTakeAwayView: View {
         .foregroundColor(ColorCollection.white)
         .font(titleFont)
 
-      AddButton {
-        showAddTypesView = true
+      if !model.types.isEmpty {
+        drawTypeView(for: model.types) {
+          showAddTypesView = true
+        }
+      } else {
+        AddButton {
+          showAddTypesView = true
+        }
       }
     }
     .padding(.top, 24)
@@ -212,8 +219,14 @@ struct AddTakeAwayView: View {
         .foregroundColor(ColorCollection.white)
         .font(titleFont)
 
-      AddButton {
-        showAddTopicsView = true
+      if !model.topics.isEmpty {
+        drawTypeView(for: model.topics) {
+          showAddTopicsView = true
+        }
+      } else {
+        AddButton {
+          showAddTopicsView = true
+        }
       }
     }
     .padding(.top, 24)
@@ -231,10 +244,14 @@ struct AddTakeAwayView: View {
         .foregroundColor(ColorCollection.white)
         .font(titleFont)
 
-      AddButton {
-        print("action:", titleStr)
-
-        model.canSubmit.toggle() // TODO: test
+      if !model.otherTopics.isEmpty {
+        drawTypeView(for: model.otherTopics) {
+          showAddOtherTopicsView = true
+        }
+      } else {
+        AddButton {
+          showAddOtherTopicsView = true
+        }
       }
     }
     .padding(.top, 24)
@@ -292,6 +309,41 @@ struct AddTakeAwayView: View {
     .frame(width: contentWidth, alignment: .top)
   }
 
+  private func drawTypeView(for types: [TakeAwayTypeItemViewModel], action: @escaping () -> Void) -> some View {
+    HStack(alignment: .bottom, spacing: 8) {
+      LazyVStack(alignment: .leading, spacing: 8) {
+        ForEach(types, id: \.id) { type in
+          HStack(spacing: 8) {
+            Text(type.title)
+              .accessibilityLabel(type.title)
+              .foregroundColor(ColorCollection.black)
+              .font(FontCollection.BrilliantCutProB7.bold(size: 10).font)
+              .frame(minHeight: 32, alignment: .leading)
+            Image(systemName: "xmark")
+              .renderingMode(.template)
+              .font(FontCollection.BrilliantCutProB7.bold(size: 10).font)
+              .foregroundColor(ColorCollection.black)
+          }
+          .padding(.horizontal, 16)
+          .frame(minHeight: 32, alignment: .center)
+          .background(ColorCollection.white)
+        }
+      }
+      Spacer(minLength: 0)
+      Button {
+        action()
+      } label: {
+        Text(L10n.Shared.Content.edit)
+          .accessibilityLabel(L10n.Shared.Content.edit)
+          .padding(.horizontal, 16)
+          .frame(height: 32, alignment: .center)
+          .border(ColorCollection.white, width: 1)
+      }
+    }
+  }
+}
+
+extension AddTakeAwayView {
   @ViewBuilder
   private func buildNavigationStack() -> some View {
     NavigationLink("", isActive: $showAddTypesView) {
@@ -302,7 +354,13 @@ struct AddTakeAwayView: View {
 
     NavigationLink("", isActive: $showAddTopicsView) {
       TakeAwayTypeView(model: .stubTopics) { types in
-        model.types = types
+        model.topics = types
+      }
+    }
+
+    NavigationLink("", isActive: $showAddOtherTopicsView) {
+      TakeAwayTypeView(model: .stubOtherTopics) { types in
+        model.otherTopics = types
       }
     }
   }

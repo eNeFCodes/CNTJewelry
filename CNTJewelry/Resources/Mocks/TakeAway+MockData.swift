@@ -9,11 +9,21 @@ import Foundation
 
 extension TakeAwayTypeViewModel {
   static var stubTakeAway: TakeAwayTypeViewModel {
-    .init(title: L10n.TakeAway.Item.takeAwayTypeTitle, items: TakeAwayTypeViewModel.stubTakeAwayItems)
+    .init(title: L10n.TakeAway.Item.takeAwayTypeTitle,
+          items: TakeAwayTypeViewModel.stubTakeAwayItems,
+          limit: 1)
   }
 
   static var stubTopics: TakeAwayTypeViewModel {
-    .init(title: L10n.TakeAway.Item.takeAwayTopicTitle, items: TakeAwayTypeViewModel.stubTopicItems)
+    .init(title: L10n.TakeAway.Item.takeAwayTopicTitle,
+          items: TakeAwayTypeViewModel.stubTopicItems,
+          limit: 1)
+  }
+
+  static var stubOtherTopics: TakeAwayTypeViewModel {
+    .init(title: L10n.TakeAway.Item.takeAwayOtherTopicTitle,
+          items: TakeAwayTypeViewModel.stubOtherTopicItems,
+          limit: 2)
   }
 }
 
@@ -38,6 +48,29 @@ extension TakeAwayTypeViewModel {
       .init(title: "Cartier DNA"),
       .init(title: "Celebrities"),
       .init(title: "Client. Experience"),
+      .init(title: "Craftsmanship"),
+      .init(title: "Eyewear"),
+      .init(title: "Fragrance"),
+      .init(title: "Gemology"),
+      .init(title: "High Jewelry"),
+      .init(title: "Jewelry"),
+      .init(title: "Learning & Development"),
+      .init(title: "Leather Goods"),
+      .init(title: "Maison History"),
+      .init(title: "Product Launch"),
+      .init(title: "Retail Operations"),
+      .init(title: "Watchmaking")
+    ]
+  }
+
+  static var stubOtherTopicItems: [TakeAwayTypeItemViewModel] {
+    [
+      .init(title: "Accessories"),
+      .init(title: "Antiques"),
+      .init(title: "Art of Selling"),
+      .init(title: "Boutique Opening"),
+      .init(title: "Cartier DNA"),
+      .init(title: "Celebrities"),
       .init(title: "Craftsmanship"),
       .init(title: "Eyewear"),
       .init(title: "Fragrance"),
