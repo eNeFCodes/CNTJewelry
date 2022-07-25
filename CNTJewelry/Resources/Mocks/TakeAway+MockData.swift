@@ -8,27 +8,27 @@
 import Foundation
 
 extension TakeAwayTypeViewModel {
-  static var stubTakeAway: TakeAwayTypeViewModel {
+  static let stubTakeAway: TakeAwayTypeViewModel = {
     .init(title: L10n.TakeAway.Item.takeAwayTypeTitle,
           items: TakeAwayTypeViewModel.stubTakeAwayItems,
           limit: 1)
-  }
+  }()
 
-  static var stubTopics: TakeAwayTypeViewModel {
+  static let stubTopics: TakeAwayTypeViewModel = {
     .init(title: L10n.TakeAway.Item.takeAwayTopicTitle,
           items: TakeAwayTypeViewModel.stubTopicItems,
           limit: 1)
-  }
+  }()
 
-  static var stubOtherTopics: TakeAwayTypeViewModel {
+  static let stubOtherTopics: TakeAwayTypeViewModel = {
     .init(title: L10n.TakeAway.Item.takeAwayOtherTopicTitle,
           items: TakeAwayTypeViewModel.stubOtherTopicItems,
           limit: 2)
-  }
+  }()
 }
 
 extension TakeAwayTypeViewModel {
-  static var stubTakeAwayItems: [TakeAwayTypeItemViewModel] {
+  static let stubTakeAwayItems: [TakeAwayTypeItemViewModel] = {
     [
       .init(title: "Did You Know"),
       .init(title: "Sales Tip"),
@@ -37,9 +37,9 @@ extension TakeAwayTypeViewModel {
       .init(title: "The Red Carpet"),
       .init(title: "Speak Cartier")
     ]
-  }
+  }()
 
-  static var stubTopicItems: [TakeAwayTypeItemViewModel] {
+  static let stubTopicItems: [TakeAwayTypeItemViewModel] = {
     [
       .init(title: "Accessories"),
       .init(title: "Antiques"),
@@ -61,9 +61,9 @@ extension TakeAwayTypeViewModel {
       .init(title: "Retail Operations"),
       .init(title: "Watchmaking")
     ]
-  }
+  }()
 
-  static var stubOtherTopicItems: [TakeAwayTypeItemViewModel] {
+  static let stubOtherTopicItems: [TakeAwayTypeItemViewModel] = {
     [
       .init(title: "Accessories"),
       .init(title: "Antiques"),
@@ -84,7 +84,7 @@ extension TakeAwayTypeViewModel {
       .init(title: "Retail Operations"),
       .init(title: "Watchmaking")
     ]
-  }
+  }()
 }
 
 extension TakeAwayTypeItemViewModel {

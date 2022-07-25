@@ -13,10 +13,13 @@ struct TakeAwayTypeView: View {
   @StateObject private var model: TakeAwayTypeViewModel
   private let padding: CGFloat = 32
   private let action: (_ items: [TakeAwayTypeItemViewModel]) -> Void
+  private let activeSelections: [TakeAwayTypeItemViewModel]
 
   init(model: TakeAwayTypeViewModel,
+       activeSelections: [TakeAwayTypeItemViewModel] = [],
        action: @escaping (_ items: [TakeAwayTypeItemViewModel]) -> Void) {
     _model = .init(wrappedValue: model)
+    self.activeSelections = activeSelections
     self.action = action
   }
 
@@ -32,6 +35,9 @@ struct TakeAwayTypeView: View {
     }
     .ignoresSafeArea()
     .navigationBarHidden(true)
+    .onAppear {
+      model.updateActiveSelection(with: activeSelections)
+    }
   }
 
   private func buildTopNavigationViewStack(geometry: GeometryProxy) -> some View {

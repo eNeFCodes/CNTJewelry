@@ -16,6 +16,7 @@ struct AddTakeAwayView: View {
   @State private var showAddTypesView: Bool = false
   @State private var showAddTopicsView: Bool = false
   @State private var showAddOtherTopicsView: Bool = false
+  @State private var showAddImage: Bool = false
 
   init(model: AddTakeAwayViewModel) {
     _model = .init(wrappedValue: model)
@@ -32,11 +33,11 @@ struct AddTakeAwayView: View {
       .overlayWindow(isActive: $isAlertActive) {
         TakeAwayAlertView(title: "DELETE TAKEAWAY",
                           message: "When closing this window, the unpublished takeaway will be lost.") { action in
+          isAlertActive = false
           switch action {
           case .continue:
             presentationMode.wrappedValue.dismiss()
-          default:
-            isAlertActive = false
+          default: break
           }
         }
       }
@@ -157,22 +158,28 @@ struct AddTakeAwayView: View {
   private func buildAddImageButtonViewStack(geometry: GeometryProxy) -> some View {
     let contentWidth = abs(geometry.size.width - (padding * 2))
     VStack(alignment: .leading, spacing: 16) {
-      Button {
-
-      } label: {
-        HStack(spacing: 8) {
-          Text(L10n.Shared.Content.addImage)
-            .accessibilityLabel(L10n.Shared.Content.addImage)
-            .foregroundColor(ColorCollection.white)
-            .font(FontCollection.BrilliantCutProB7.bold(size: 10).font)
-
-          Image("ic_thumbnail")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .frame(width: 24, height: 24, alignment: .center)
+      if let media = model.attachment {
+        drawSelectedImageView(for: media) {
+          showAddImage = true
         }
-        .frame(width: 132, height: 32, alignment: .center)
-        .border(ColorCollection.white, width: 1)
+      } else {
+        Button {
+          showAddImage = true
+        } label: {
+          HStack(spacing: 8) {
+            Text(L10n.Shared.Content.addImage)
+              .accessibilityLabel(L10n.Shared.Content.addImage)
+              .foregroundColor(ColorCollection.white)
+              .font(FontCollection.BrilliantCutProB7.bold(size: 10).font)
+
+            Image("ic_thumbnail")
+              .resizable()
+              .aspectRatio(contentMode: .fit)
+              .frame(width: 24, height: 24, alignment: .center)
+          }
+          .frame(width: 132, height: 32, alignment: .center)
+          .border(ColorCollection.white, width: 1)
+        }
       }
 
       CheckBoxView(label: L10n.TakeAway.Content.imageCheckBoxLabel,
@@ -300,13 +307,42 @@ struct AddTakeAwayView: View {
         .frame(minHeight: 21, alignment: .center)
 
       CTAButton(isEnabled: model.canSubmit, size: .init(width: contentWidth, height: CTAButton.DefaultHeight)) {
-        print("SUBMIT...")
-        
-        isAlertActive.toggle() // TODO: test
+        model.submitAction()
       }
     }
     .padding(.top, 24)
     .frame(width: contentWidth, alignment: .top)
+  }
+
+  private func drawSelectedImageView(for media: AddTakeAwayViewModel.Media, action: @escaping () -> Void) -> some View {
+    HStack(alignment: .bottom, spacing: 8) {
+      VStack(alignment: .leading, spacing: 8) {
+        HStack(spacing: 8) {
+          Text(media.name)
+            .accessibilityLabel(media.name)
+            .foregroundColor(ColorCollection.black)
+            .font(FontCollection.BrilliantCutProB7.bold(size: 10).font)
+            .frame(minHeight: 32, alignment: .leading)
+          Image(systemName: "xmark")
+            .renderingMode(.template)
+            .font(FontCollection.BrilliantCutProB7.bold(size: 10).font)
+            .foregroundColor(ColorCollection.black)
+        }
+        .padding(.horizontal, 16)
+        .frame(minHeight: 32, alignment: .center)
+        .background(ColorCollection.white)
+      }
+      Spacer(minLength: 0)
+      Button {
+        action()
+      } label: {
+        Text(L10n.Shared.Content.edit)
+          .accessibilityLabel(L10n.Shared.Content.edit)
+          .padding(.horizontal, 16)
+          .frame(height: 32, alignment: .center)
+          .border(ColorCollection.white, width: 1)
+      }
+    }
   }
 
   private func drawTypeView(for types: [TakeAwayTypeItemViewModel], action: @escaping () -> Void) -> some View {
@@ -347,19 +383,19 @@ extension AddTakeAwayView {
   @ViewBuilder
   private func buildNavigationStack() -> some View {
     NavigationLink("", isActive: $showAddTypesView) {
-      TakeAwayTypeView(model: .stubTakeAway) { types in
+      TakeAwayTypeView(model: .stubTakeAway, activeSelections: model.types) { types in
         model.types = types
       }
     }
 
     NavigationLink("", isActive: $showAddTopicsView) {
-      TakeAwayTypeView(model: .stubTopics) { types in
+      TakeAwayTypeView(model: .stubTopics, activeSelections: model.topics) { types in
         model.topics = types
       }
     }
 
     NavigationLink("", isActive: $showAddOtherTopicsView) {
-      TakeAwayTypeView(model: .stubOtherTopics) { types in
+      TakeAwayTypeView(model: .stubOtherTopics, activeSelections: model.otherTopics) { types in
         model.otherTopics = types
       }
     }
