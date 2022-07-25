@@ -17,7 +17,8 @@ struct AddTakeAwayView: View {
   @State private var showAddTopicsView: Bool = false
   @State private var showAddOtherTopicsView: Bool = false
   @State private var showAddImage: Bool = false
-
+  @State private var showFinishView: Bool = false
+  
   init(model: AddTakeAwayViewModel) {
     _model = .init(wrappedValue: model)
   }
@@ -306,8 +307,13 @@ struct AddTakeAwayView: View {
         .padding(.top, 32)
         .frame(minHeight: 21, alignment: .center)
 
-      CTAButton(isEnabled: model.canSubmit, size: .init(width: contentWidth, height: CTAButton.DefaultHeight)) {
+      CTAButton(backgroundColor: ColorCollection.red,
+                isBorderEnabled: false,
+                isEnabled: model.canSubmit,
+                size: .init(width: contentWidth, height: CTAButton.DefaultHeight)) {
         model.submitAction()
+
+        showFinishView = true
       }
     }
     .padding(.top, 24)
@@ -398,6 +404,10 @@ extension AddTakeAwayView {
       TakeAwayTypeView(model: .stubOtherTopics, activeSelections: model.otherTopics) { types in
         model.otherTopics = types
       }
+    }
+
+    NavigationLink("", isActive: $showFinishView) {
+      AddTakeAwayFinishView()
     }
   }
 }

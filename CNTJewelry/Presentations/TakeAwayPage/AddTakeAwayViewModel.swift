@@ -68,7 +68,7 @@ extension AddTakeAwayViewModel {
       return true
     }
 
-    return false
+    return true // test
   }
 
   var remainingTextCount: Int {

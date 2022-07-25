@@ -22,6 +22,8 @@
 		8F58A3AC288A55B2005E507B /* TakeAway+MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F58A3AB288A55B2005E507B /* TakeAway+MockData.swift */; };
 		8F58A3AE288A7540005E507B /* TakeAwayTypeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F58A3AD288A7540005E507B /* TakeAwayTypeItemView.swift */; };
 		8F58A3B0288A75AC005E507B /* TakeAwayTypeItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F58A3AF288A75AC005E507B /* TakeAwayTypeItemViewModel.swift */; };
+		8F58A3B3288E9768005E507B /* AddTakeAwayFinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F58A3B2288E9768005E507B /* AddTakeAwayFinishView.swift */; };
+		8F58A3B5288E97B5005E507B /* Text+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F58A3B4288E97B5005E507B /* Text+Ext.swift */; };
 		8F678CA7282B46D500608B98 /* FTUEView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F678CA6282B46D500608B98 /* FTUEView.swift */; };
 		8F678CA9282B46DB00608B98 /* FTUEViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F678CA8282B46DB00608B98 /* FTUEViewModel.swift */; };
 		8F678CAC282B485600608B98 /* FTUEIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F678CAB282B485600608B98 /* FTUEIntroView.swift */; };
@@ -227,6 +229,8 @@
 		8F58A3AB288A55B2005E507B /* TakeAway+MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TakeAway+MockData.swift"; sourceTree = "<group>"; };
 		8F58A3AD288A7540005E507B /* TakeAwayTypeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeAwayTypeItemView.swift; sourceTree = "<group>"; };
 		8F58A3AF288A75AC005E507B /* TakeAwayTypeItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeAwayTypeItemViewModel.swift; sourceTree = "<group>"; };
+		8F58A3B2288E9768005E507B /* AddTakeAwayFinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTakeAwayFinishView.swift; sourceTree = "<group>"; };
+		8F58A3B4288E97B5005E507B /* Text+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Ext.swift"; sourceTree = "<group>"; };
 		8F678CA6282B46D500608B98 /* FTUEView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTUEView.swift; sourceTree = "<group>"; };
 		8F678CA8282B46DB00608B98 /* FTUEViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTUEViewModel.swift; sourceTree = "<group>"; };
 		8F678CAB282B485600608B98 /* FTUEIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTUEIntroView.swift; sourceTree = "<group>"; };
@@ -686,6 +690,7 @@
 				8FB5561B2859858D005040B1 /* String+Ext.swift */,
 				8F883EFB285B1A070025BE19 /* TimeInterval+Ext.swift */,
 				8FC241E12869981900923E6C /* View+Ext.swift */,
+				8F58A3B4288E97B5005E507B /* Text+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1108,6 +1113,7 @@
 				8FC241DD2869962200923E6C /* AddTakeAwayView.swift */,
 				8FC241DF2869964300923E6C /* AddTakeAwayViewModel.swift */,
 				8F58A3B1288A7767005E507B /* TakeAwayTypeView */,
+				8F58A3B2288E9768005E507B /* AddTakeAwayFinishView.swift */,
 			);
 			path = TakeAwayPage;
 			sourceTree = "<group>";
@@ -1330,6 +1336,7 @@
 				8F959FED2848B07A00B44C3A /* ProductItemV2View.swift in Sources */,
 				8FBC9FCA284F2469009E068C /* ArticlePageView.swift in Sources */,
 				8FC241FA286DA74100923E6C /* TakeAwayAlertView.swift in Sources */,
+				8F58A3B5288E97B5005E507B /* Text+Ext.swift in Sources */,
 				8FB61FE228239C540087BB3F /* LoginViewModel.swift in Sources */,
 				8F58A3A8288A5494005E507B /* TakeAwayTypeViewModel.swift in Sources */,
 				8F678CAC282B485600608B98 /* FTUEIntroView.swift in Sources */,
@@ -1373,6 +1380,7 @@
 				8F883F112860089E0025BE19 /* ResourcePageTitleView.swift in Sources */,
 				8FBC9FB328499B8B009E068C /* ArticleCollectionViewModel.swift in Sources */,
 				8F959FA9284726AF00B44C3A /* NeedToKnowView.swift in Sources */,
+				8F58A3B3288E9768005E507B /* AddTakeAwayFinishView.swift in Sources */,
 				8F8EC5CA2861C160007E2927 /* ProductPageView.swift in Sources */,
 				8F883EF3285ACBE70025BE19 /* ArticlePageViewModel+MockData.swift in Sources */,
 				8FBC9FB028499B77009E068C /* ArticleCollectionView.swift in Sources */,

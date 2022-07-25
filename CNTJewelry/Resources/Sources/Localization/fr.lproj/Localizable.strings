@@ -67,3 +67,6 @@
 "takeAway.item.takeAwayTypeTitle" = "SELECT TAKEAWAY TYPE";
 "takeAway.item.takeAwayTopicTitle" = "ADD PRIMARY TOPICS (CHOOSE 1)";
 "takeAway.item.takeAwayOtherTopicTitle" = "OTHER TOPICS (choose UP TO 2)";
+"takeAway.endContent.title1" = "ALL SET!\n\n";
+"takeAway.endContent.title2" = "Your takeaway has been\npublished to\n";
+"takeAway.endContent.title3" = "5th Avenue Mansion";
