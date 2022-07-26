@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ArticlePageView: View {
+  @Environment(\.presentationMode) private var presentationMode
   @StateObject private var model: ArticlePageViewModel
   private let padding: CGFloat = 32
 
@@ -17,26 +18,68 @@ struct ArticlePageView: View {
 
   var body: some View {
     GeometryReader { geometry in
-      ScrollViewReader { proxy in
-        ScrollView(.vertical, showsIndicators: false) {
-          LazyVStack(spacing: 48) {
-            ArticleTakeAwayView(model: model.takeAway,
-                                geometry: geometry)
-            createArticleTextViewStack(geometry: geometry)
-            QuoteView(model: model.quote,
-                      geometry: geometry)
-            ArticleTextView(model: model.articleText2,
-                            geometry: geometry)
-            ProductDetailsView(model: model.productDetails,
-                               geometry: geometry)
-            ArticleTextView(model: model.articleText3,
-                            geometry: geometry)
+      VStack {
+        buildTopNavigationViewStack(geometry: geometry)
+        ScrollViewReader { proxy in
+          ScrollView(.vertical, showsIndicators: false) {
+            LazyVStack(spacing: 48) {
+              ArticleTakeAwayView(model: model.takeAway,
+                                  geometry: geometry)
+              createArticleTextViewStack(geometry: geometry)
+              QuoteView(model: model.quote,
+                        geometry: geometry)
+              ArticleTextView(model: model.articleText2,
+                              geometry: geometry)
+              ProductDetailsView(model: model.productDetails,
+                                 geometry: geometry)
+              ArticleTextView(model: model.articleText3,
+                              geometry: geometry)
 
-            buildContentViews(geometry: geometry)
+              buildContentViews(geometry: geometry)
+            }
           }
         }
       }
     }
+    .ignoresSafeArea()
+    .navigationBarHidden(true)
+  }
+
+  private func buildTopNavigationViewStack(geometry: GeometryProxy) -> some View {
+    HStack {
+      let contentWidth = abs(geometry.size.width - 96)
+      VStack(alignment: .leading, spacing: 22) {
+        Button {
+          presentationMode.wrappedValue.dismiss()
+        } label: {
+          Image("ic_arrow_left_black")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 44, height: 21, alignment: .leading)
+        }
+
+        Text(L10n.TakeAway.Navigation.addTakeAwayTitle)
+          .accessibilityLabel(L10n.TakeAway.Navigation.addTakeAwayTitle)
+          .foregroundColor(ColorCollection.black)
+          .font(FontCollection.BrilliantCutProB7.medium(size: 18).font)
+      }
+      .padding(padding)
+      .padding(.top, 10)
+      .frame(width: contentWidth, height: 138, alignment: .topLeading)
+      .background(ColorCollection.white)
+      .mask {
+        GeometryReader { geometry in
+          let curve: CGFloat = 20
+          let p0 = CGPoint(x: 0, y: 0)
+          let p1 = CGPoint(x: geometry.size.width, y: 0)
+          let p2 = CGPoint(x: geometry.size.width, y: geometry.size.height - curve)
+          let p3 = CGPoint(x: geometry.size.width - curve, y: geometry.size.height)
+          let p4 = CGPoint(x: 0, y: geometry.size.height)
+          ShapeView(withCoordinates: [p0, p1, p2, p3, p4], shouldClosePath: true)
+        }
+      }
+    }
+    .frame(width: geometry.size.width, alignment: .leading)
   }
 
   @ViewBuilder
