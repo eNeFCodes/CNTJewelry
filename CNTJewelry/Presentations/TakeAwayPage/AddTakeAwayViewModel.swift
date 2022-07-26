@@ -10,10 +10,7 @@ import Combine
 import SwiftUI
 
 extension AddTakeAwayViewModel {
-  struct Media {
-    let name: String
-    let attachment: Image
-  }
+  typealias Media = ImagePickerViewModel.Media
 }
 
 class AddTakeAwayViewModel: ObservableObject {

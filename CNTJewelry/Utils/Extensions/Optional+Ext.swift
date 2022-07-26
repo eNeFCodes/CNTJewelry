@@ -38,3 +38,7 @@ extension Double: Defaultable {
 extension Bool: Defaultable {
     static var defaultValue: Bool { false }
 }
+
+extension Array: Defaultable {
+  static var defaultValue: Array<Element> { [Element]() }
+}

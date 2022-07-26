@@ -42,6 +42,11 @@ struct AddTakeAwayView: View {
           }
         }
       }
+      .fullScreenCover(isPresented: $showAddImage) {
+        ImagePickerView(model: .init(callback: { media in
+          model.attachment = media
+        }))
+      }
 
       buildNavigationStack()
     }

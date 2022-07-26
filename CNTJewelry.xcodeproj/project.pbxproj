@@ -24,6 +24,9 @@
 		8F58A3B0288A75AC005E507B /* TakeAwayTypeItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F58A3AF288A75AC005E507B /* TakeAwayTypeItemViewModel.swift */; };
 		8F58A3B3288E9768005E507B /* AddTakeAwayFinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F58A3B2288E9768005E507B /* AddTakeAwayFinishView.swift */; };
 		8F58A3B5288E97B5005E507B /* Text+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F58A3B4288E97B5005E507B /* Text+Ext.swift */; };
+		8F58A3B7288FCE96005E507B /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F58A3B6288FCE96005E507B /* ImagePickerView.swift */; };
+		8F58A3BA288FCF22005E507B /* ImagePickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F58A3B9288FCF22005E507B /* ImagePickerViewModel.swift */; };
+		8F58A3BC288FCF97005E507B /* ImagePickerViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F58A3BB288FCF97005E507B /* ImagePickerViewCoordinator.swift */; };
 		8F678CA7282B46D500608B98 /* FTUEView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F678CA6282B46D500608B98 /* FTUEView.swift */; };
 		8F678CA9282B46DB00608B98 /* FTUEViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F678CA8282B46DB00608B98 /* FTUEViewModel.swift */; };
 		8F678CAC282B485600608B98 /* FTUEIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F678CAB282B485600608B98 /* FTUEIntroView.swift */; };
@@ -231,6 +234,9 @@
 		8F58A3AF288A75AC005E507B /* TakeAwayTypeItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeAwayTypeItemViewModel.swift; sourceTree = "<group>"; };
 		8F58A3B2288E9768005E507B /* AddTakeAwayFinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTakeAwayFinishView.swift; sourceTree = "<group>"; };
 		8F58A3B4288E97B5005E507B /* Text+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Ext.swift"; sourceTree = "<group>"; };
+		8F58A3B6288FCE96005E507B /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		8F58A3B9288FCF22005E507B /* ImagePickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewModel.swift; sourceTree = "<group>"; };
+		8F58A3BB288FCF97005E507B /* ImagePickerViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewCoordinator.swift; sourceTree = "<group>"; };
 		8F678CA6282B46D500608B98 /* FTUEView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTUEView.swift; sourceTree = "<group>"; };
 		8F678CA8282B46DB00608B98 /* FTUEViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTUEViewModel.swift; sourceTree = "<group>"; };
 		8F678CAB282B485600608B98 /* FTUEIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTUEIntroView.swift; sourceTree = "<group>"; };
@@ -642,6 +648,16 @@
 			path = TakeAwayTypeView;
 			sourceTree = "<group>";
 		};
+		8F58A3B8288FCEA1005E507B /* ImagePickerView */ = {
+			isa = PBXGroup;
+			children = (
+				8F58A3B6288FCE96005E507B /* ImagePickerView.swift */,
+				8F58A3B9288FCF22005E507B /* ImagePickerViewModel.swift */,
+				8F58A3BB288FCF97005E507B /* ImagePickerViewCoordinator.swift */,
+			);
+			path = ImagePickerView;
+			sourceTree = "<group>";
+		};
 		8F678CAA282B46E000608B98 /* FTUEView */ = {
 			isa = PBXGroup;
 			children = (
@@ -710,6 +726,7 @@
 				8FC241ED286AB74800923E6C /* CTAButton.swift */,
 				8FC241EF286ACFB100923E6C /* OverlayWindow.swift */,
 				8FC241F9286DA74100923E6C /* TakeAwayAlertView.swift */,
+				8F58A3B8288FCEA1005E507B /* ImagePickerView */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -1362,6 +1379,7 @@
 				8FB556232859A758005040B1 /* ProductDetailsView+MockData.swift in Sources */,
 				8F959FDC284865E300B44C3A /* WeeklyCollectionView.swift in Sources */,
 				8F883EFE285C51ED0025BE19 /* CollectionShowcaseView.swift in Sources */,
+				8F58A3BA288FCF22005E507B /* ImagePickerViewModel.swift in Sources */,
 				8FBC9FBF2849EC4C009E068C /* InputFieldViewModel.swift in Sources */,
 				8F959FA1284615BF00B44C3A /* BriefingBottomNavigationView.swift in Sources */,
 				8F883F1E286029320025BE19 /* TagItem.swift in Sources */,
@@ -1375,6 +1393,7 @@
 				8F883EED285AC8E50025BE19 /* ArticleTextView.swift in Sources */,
 				8FBC9FB52849EB0C009E068C /* SearchPageView.swift in Sources */,
 				8F883F062860059C0025BE19 /* ResourceNavigationViewModel.swift in Sources */,
+				8F58A3BC288FCF97005E507B /* ImagePickerViewCoordinator.swift in Sources */,
 				8F959FAB284726B900B44C3A /* NeedToKnowViewModel.swift in Sources */,
 				8FC241DE2869962200923E6C /* AddTakeAwayView.swift in Sources */,
 				8F883F112860089E0025BE19 /* ResourcePageTitleView.swift in Sources */,
@@ -1382,6 +1401,7 @@
 				8F959FA9284726AF00B44C3A /* NeedToKnowView.swift in Sources */,
 				8F58A3B3288E9768005E507B /* AddTakeAwayFinishView.swift in Sources */,
 				8F8EC5CA2861C160007E2927 /* ProductPageView.swift in Sources */,
+				8F58A3B7288FCE96005E507B /* ImagePickerView.swift in Sources */,
 				8F883EF3285ACBE70025BE19 /* ArticlePageViewModel+MockData.swift in Sources */,
 				8FBC9FB028499B77009E068C /* ArticleCollectionView.swift in Sources */,
 				8FB620032824B06C0087BB3F /* LoginPageWelcomeView.swift in Sources */,
