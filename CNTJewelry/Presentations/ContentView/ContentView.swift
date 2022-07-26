@@ -8,31 +8,29 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject private var appEnv: AppEnvironment
+  @EnvironmentObject private var appEnv: AppEnvironment
 
-    let model: ContentViewModel
+  let model: ContentViewModel
 
-    var body: some View {
-        LoaderView(isLoading: $appEnv.isLoading) {
-            NavigationView {
-                //WelcomeView(model: model.welcome)
-//                LoginView(model: .init())
+  var body: some View {
+    NavigationView {
+      // WelcomeView(model: model.welcome)
+      LoginView(model: .init())
 
-              AddTakeAwayView(model: .init())
-            }
-        }
+      // AddTakeAwayView(model: .init())
     }
+  }
 
-    private func TestContentPreviewView() -> some View {
-        FTUEView(model: .init(items: FTUEViewModel.mockItems()))
-    }
+  private func TestContentPreviewView() -> some View {
+    FTUEView(model: .init(items: FTUEViewModel.mockItems()))
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView(model: .init())
-            .environmentObject(AppEnvironment())
-            .environmentObject(AppSettings())
-            .environmentObject(AppRouting())
-    }
+  static var previews: some View {
+    ContentView(model: .init())
+      .environmentObject(AppEnvironment())
+      .environmentObject(AppSettings())
+      .environmentObject(AppRouting())
+  }
 }

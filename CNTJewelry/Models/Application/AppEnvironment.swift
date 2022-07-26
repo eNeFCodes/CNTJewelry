@@ -8,10 +8,9 @@
 import SwiftUI
 
 class AppEnvironment: ObservableObject {
+  @Published var isLoading: Bool
 
-    @Published var isLoading: Bool
-
-    init(isLoading: Bool = false) {
-        self.isLoading = isLoading
-    }
+  init(isLoading: Bool = false) {
+    self.isLoading = isLoading
+  }
 }
