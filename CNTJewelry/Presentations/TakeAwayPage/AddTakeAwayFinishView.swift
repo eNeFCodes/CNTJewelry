@@ -63,6 +63,17 @@ struct AddTakeAwayFinishView: View {
   private func buildContentViewStack(geometry: GeometryProxy) -> some View {
     VStack(spacing: 0) {
       Spacer(minLength: 0)
+
+      let contentWidth = abs(geometry.size.width - (padding * 2))
+      VStack {
+        let p1 = CGPoint(x: 0, y: 0)
+        let p2 = CGPoint(x: contentWidth, y: 0)
+        ShapeView(withCoordinates: [p1, p2])
+          .stroke(style: StrokeStyle(lineWidth: 1, lineCap: .round, dash: [2]))
+          .foregroundColor(ColorCollection.goldSeparator)
+      }
+      .frame(width: contentWidth, height: 1, alignment: .center)
+
       VStack(spacing: 16) {
         Text(L10n.TakeAway.EndContent.title1)
           .font(FontCollection.BrilliantCutProB7.medium(size: 28).font)
@@ -76,6 +87,16 @@ struct AddTakeAwayFinishView: View {
           .multilineTextAlignment(.center)
       }
       .padding(.vertical, 40)
+
+      VStack {
+        let p1 = CGPoint(x: 0, y: 0)
+        let p2 = CGPoint(x: contentWidth, y: 0)
+        ShapeView(withCoordinates: [p1, p2])
+          .stroke(style: StrokeStyle(lineWidth: 1, lineCap: .round, dash: [2]))
+          .foregroundColor(ColorCollection.goldSeparator)
+      }
+      .frame(width: contentWidth, height: 1, alignment: .center)
+
       Spacer(minLength: 0)
     }
     .padding(.horizontal, padding)
