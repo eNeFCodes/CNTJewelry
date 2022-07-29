@@ -15,9 +15,9 @@ struct ContentView: View {
   var body: some View {
     NavigationView {
       // WelcomeView(model: model.welcome)
-      LoginView(model: .init())
-
+//      LoginView(model: .init())
       // AddTakeAwayView(model: .init())
+      ForgotPasswordView(model: .init())
     }
   }
 

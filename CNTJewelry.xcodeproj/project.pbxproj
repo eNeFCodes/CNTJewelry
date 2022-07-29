@@ -205,6 +205,10 @@
 		8FC241EE286AB74800923E6C /* CTAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC241ED286AB74800923E6C /* CTAButton.swift */; };
 		8FC241F0286ACFB100923E6C /* OverlayWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC241EF286ACFB100923E6C /* OverlayWindow.swift */; };
 		8FC241FA286DA74100923E6C /* TakeAwayAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC241F9286DA74100923E6C /* TakeAwayAlertView.swift */; };
+		8FE1195B2893C0A5002C9A1A /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE1195A2893C0A5002C9A1A /* ForgotPasswordView.swift */; };
+		8FE1195D2893C0C5002C9A1A /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE1195C2893C0C5002C9A1A /* ForgotPasswordViewModel.swift */; };
+		8FE119602893C935002C9A1A /* ForgotPasswordInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE1195F2893C935002C9A1A /* ForgotPasswordInputViewModel.swift */; };
+		8FE119622893C952002C9A1A /* ForgotPasswordInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE119612893C952002C9A1A /* ForgotPasswordInputView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -420,6 +424,10 @@
 		8FC241ED286AB74800923E6C /* CTAButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTAButton.swift; sourceTree = "<group>"; };
 		8FC241EF286ACFB100923E6C /* OverlayWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayWindow.swift; sourceTree = "<group>"; };
 		8FC241F9286DA74100923E6C /* TakeAwayAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeAwayAlertView.swift; sourceTree = "<group>"; };
+		8FE1195A2893C0A5002C9A1A /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		8FE1195C2893C0C5002C9A1A /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
+		8FE1195F2893C935002C9A1A /* ForgotPasswordInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordInputViewModel.swift; sourceTree = "<group>"; };
+		8FE119612893C952002C9A1A /* ForgotPasswordInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordInputView.swift; sourceTree = "<group>"; };
 		92A605BEF9EFD722332A0324 /* Pods-iOSBoilerplate.debug (qa).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSBoilerplate.debug (qa).xcconfig"; path = "Target Support Files/Pods-iOSBoilerplate/Pods-iOSBoilerplate.debug (qa).xcconfig"; sourceTree = "<group>"; };
 		AB76B813D4B93CDB25ED6AC5 /* Pods-CNTJewelry.release (production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNTJewelry.release (production).xcconfig"; path = "Target Support Files/Pods-CNTJewelry/Pods-CNTJewelry.release (production).xcconfig"; sourceTree = "<group>"; };
 		C77105EBC81F4430C0566355 /* Pods-iOSBoilerplate.release (staging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSBoilerplate.release (staging).xcconfig"; path = "Target Support Files/Pods-iOSBoilerplate/Pods-iOSBoilerplate.release (staging).xcconfig"; sourceTree = "<group>"; };
@@ -523,6 +531,7 @@
 				8F883F07286005A00025BE19 /* ResourcePage */,
 				8F8EC5CD2861C16F007E2927 /* ProductPageView */,
 				8FC241E7286A974B00923E6C /* TakeAwayPage */,
+				8FE1195E2893C0C9002C9A1A /* ForgotPasswordView */,
 			);
 			path = Presentations;
 			sourceTree = "<group>";
@@ -1145,6 +1154,17 @@
 			path = TextView;
 			sourceTree = "<group>";
 		};
+		8FE1195E2893C0C9002C9A1A /* ForgotPasswordView */ = {
+			isa = PBXGroup;
+			children = (
+				8FE1195A2893C0A5002C9A1A /* ForgotPasswordView.swift */,
+				8FE1195C2893C0C5002C9A1A /* ForgotPasswordViewModel.swift */,
+				8FE119612893C952002C9A1A /* ForgotPasswordInputView.swift */,
+				8FE1195F2893C935002C9A1A /* ForgotPasswordInputViewModel.swift */,
+			);
+			path = ForgotPasswordView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1312,6 +1332,7 @@
 				8F883F0B286008200025BE19 /* ResourcePageView.swift in Sources */,
 				8FB620092824B8900087BB3F /* LoginPageOptionViewModel.swift in Sources */,
 				8FB555EA28507995005040B1 /* TextView.swift in Sources */,
+				8FE119602893C935002C9A1A /* ForgotPasswordInputViewModel.swift in Sources */,
 				8FB620072824B8880087BB3F /* LoginPageOptionView.swift in Sources */,
 				8F678CB6282BA2CA00608B98 /* AppRouting.swift in Sources */,
 				8FB555E728503E0A005040B1 /* ArticleDetailsViewModel.swift in Sources */,
@@ -1371,6 +1392,7 @@
 				8FB556202859A5E3005040B1 /* ProductDetailsViewModel.swift in Sources */,
 				8F2A204C280D71DA0008DB86 /* Font+Ext.swift in Sources */,
 				8FBC9FC8284F2131009E068C /* NeedToKnowViewModel+MockData.swift in Sources */,
+				8FE1195D2893C0C5002C9A1A /* ForgotPasswordViewModel.swift in Sources */,
 				8F959FE128486A9A00B44C3A /* WeeklyCollectionHeaderItemView.swift in Sources */,
 				8FC241EA286A98E500923E6C /* CheckBoxView.swift in Sources */,
 				8F959FE328486AA600B44C3A /* WeeklyCollectionHeaderItemViewModel.swift in Sources */,
@@ -1384,6 +1406,7 @@
 				8F959FA1284615BF00B44C3A /* BriefingBottomNavigationView.swift in Sources */,
 				8F883F1E286029320025BE19 /* TagItem.swift in Sources */,
 				8FB61FEC2823AEB30087BB3F /* DotView.swift in Sources */,
+				8FE119622893C952002C9A1A /* ForgotPasswordInputView.swift in Sources */,
 				8F959FA52846160300B44C3A /* NavigationButtonItemModel.swift in Sources */,
 				8F7772F3280FBA2700FF09AA /* FontCollection.swift in Sources */,
 				8FB5561C2859858D005040B1 /* String+Ext.swift in Sources */,
@@ -1418,6 +1441,7 @@
 				8FBC9FD8284F40C2009E068C /* QuoteView.swift in Sources */,
 				8F883EF8285AFCF50025BE19 /* PlayCardView.swift in Sources */,
 				8FBB378C280E47F400DB7476 /* APIRequestProtocol.swift in Sources */,
+				8FE1195B2893C0A5002C9A1A /* ForgotPasswordView.swift in Sources */,
 				8F883F17286011860025BE19 /* ResourceReportViewModel.swift in Sources */,
 				8FBC9FD1284F253F009E068C /* ArticleTakeAwayView.swift in Sources */,
 				8F883F20286043EC0025BE19 /* TagViewSection.swift in Sources */,

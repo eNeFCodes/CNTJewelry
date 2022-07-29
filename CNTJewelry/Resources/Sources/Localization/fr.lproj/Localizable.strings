@@ -35,6 +35,8 @@
 "login.Biometrics.cancelTitle" = "Use Default Login";
 "login.Biometrics.evaluateReason" = "Log in using Biometrics";
 "login.Biometrics.evaluateError" = "Can't evaluate policy";
+"login.password.forgotTitle" = "WE CAN HELP\nYOU GET YOUR\nPASSWORD BACK.";
+"login.password.forgotMessage" = "Please enter your CNT email address below:";
 
 "ftue.intro.welcome" = "HELLO, %@\nWELCOME TO\nCNT!";
 "ftue.intro.welcomeMessage" = "This is CNT's new Retail Publishing Platform where you can find the latest news and updates around the world at CNT.";
