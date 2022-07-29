@@ -37,6 +37,9 @@
 "login.Biometrics.evaluateError" = "Can't evaluate policy";
 "login.password.forgotTitle" = "WE CAN HELP\nYOU GET YOUR\nPASSWORD BACK.";
 "login.password.forgotMessage" = "Please enter your CNT email address below:";
+"login.password.forgotSuccessTitle" = "CHECK YOUR EMAIL";
+"login.password.forgotSuccessMessage" = "We just sent you an email with the instructions to reset your password.";
+"login.password.forgotSuccessBtn" = "LOG IN AGAIN";
 
 "ftue.intro.welcome" = "HELLO, %@\nWELCOME TO\nCNT!";
 "ftue.intro.welcomeMessage" = "This is CNT's new Retail Publishing Platform where you can find the latest news and updates around the world at CNT.";

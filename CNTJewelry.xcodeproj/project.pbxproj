@@ -209,6 +209,8 @@
 		8FE1195D2893C0C5002C9A1A /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE1195C2893C0C5002C9A1A /* ForgotPasswordViewModel.swift */; };
 		8FE119602893C935002C9A1A /* ForgotPasswordInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE1195F2893C935002C9A1A /* ForgotPasswordInputViewModel.swift */; };
 		8FE119622893C952002C9A1A /* ForgotPasswordInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE119612893C952002C9A1A /* ForgotPasswordInputView.swift */; };
+		8FE119642893D26D002C9A1A /* ForgotPasswordSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE119632893D26D002C9A1A /* ForgotPasswordSuccessView.swift */; };
+		8FE119662893D276002C9A1A /* ForgotPasswordSuccessViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE119652893D276002C9A1A /* ForgotPasswordSuccessViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -428,6 +430,8 @@
 		8FE1195C2893C0C5002C9A1A /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		8FE1195F2893C935002C9A1A /* ForgotPasswordInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordInputViewModel.swift; sourceTree = "<group>"; };
 		8FE119612893C952002C9A1A /* ForgotPasswordInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordInputView.swift; sourceTree = "<group>"; };
+		8FE119632893D26D002C9A1A /* ForgotPasswordSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordSuccessView.swift; sourceTree = "<group>"; };
+		8FE119652893D276002C9A1A /* ForgotPasswordSuccessViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordSuccessViewModel.swift; sourceTree = "<group>"; };
 		92A605BEF9EFD722332A0324 /* Pods-iOSBoilerplate.debug (qa).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSBoilerplate.debug (qa).xcconfig"; path = "Target Support Files/Pods-iOSBoilerplate/Pods-iOSBoilerplate.debug (qa).xcconfig"; sourceTree = "<group>"; };
 		AB76B813D4B93CDB25ED6AC5 /* Pods-CNTJewelry.release (production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNTJewelry.release (production).xcconfig"; path = "Target Support Files/Pods-CNTJewelry/Pods-CNTJewelry.release (production).xcconfig"; sourceTree = "<group>"; };
 		C77105EBC81F4430C0566355 /* Pods-iOSBoilerplate.release (staging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSBoilerplate.release (staging).xcconfig"; path = "Target Support Files/Pods-iOSBoilerplate/Pods-iOSBoilerplate.release (staging).xcconfig"; sourceTree = "<group>"; };
@@ -1161,6 +1165,8 @@
 				8FE1195C2893C0C5002C9A1A /* ForgotPasswordViewModel.swift */,
 				8FE119612893C952002C9A1A /* ForgotPasswordInputView.swift */,
 				8FE1195F2893C935002C9A1A /* ForgotPasswordInputViewModel.swift */,
+				8FE119632893D26D002C9A1A /* ForgotPasswordSuccessView.swift */,
+				8FE119652893D276002C9A1A /* ForgotPasswordSuccessViewModel.swift */,
 			);
 			path = ForgotPasswordView;
 			sourceTree = "<group>";
@@ -1448,6 +1454,7 @@
 				8F883EFC285B1A070025BE19 /* TimeInterval+Ext.swift in Sources */,
 				8F2A2028280D5A690008DB86 /* ContentView.swift in Sources */,
 				8FBC9FC6284F2068009E068C /* WeeklyCollectionViewModel+MockData.swift in Sources */,
+				8FE119662893D276002C9A1A /* ForgotPasswordSuccessViewModel.swift in Sources */,
 				8F883EFA285AFCFB0025BE19 /* PlayCardViewModel.swift in Sources */,
 				8FBC9FDD284F427B009E068C /* Quote.swift in Sources */,
 				8F58A3AA288A549F005E507B /* TakeAwayTypeView.swift in Sources */,
@@ -1461,6 +1468,7 @@
 				8FC241E22869981900923E6C /* View+Ext.swift in Sources */,
 				8F8EC5D62861D000007E2927 /* ScrollViewOffsetKey.swift in Sources */,
 				8FB61FF72823B75D0087BB3F /* DotOnlyViewModel.swift in Sources */,
+				8FE119642893D26D002C9A1A /* ForgotPasswordSuccessView.swift in Sources */,
 				8FBC9FCC284F246F009E068C /* ArticlePageViewModel.swift in Sources */,
 				8FBC9FD6284F2719009E068C /* ArticleTakeAwayViewModel+MockData.swift in Sources */,
 				8F7772F0280FB5CF00FF09AA /* ConfigEnvironment.swift in Sources */,

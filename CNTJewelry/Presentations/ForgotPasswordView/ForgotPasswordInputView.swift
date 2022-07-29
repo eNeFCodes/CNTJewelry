@@ -33,11 +33,13 @@ struct ForgotPasswordInputView: View {
       } label: {
         Text(model.actionTitle)
           .accessibilityLabel(model.actionTitle)
+          .font(FontCollection.BrilliantCutProB7.bold(size: 12).font)
           .frame(width: buttonSize.width, height: buttonSize.height, alignment: .center)
       }
       .border(model.canProceed ? .clear : ColorCollection.gray, width: 1)
       .foregroundColor(model.canProceed ? ColorCollection.white : ColorCollection.grayInactive)
       .background(model.canProceed ? ColorCollection.red : .clear)
+      .clipped()
       .disabled(!model.canProceed)
     }
     .onAppear {
