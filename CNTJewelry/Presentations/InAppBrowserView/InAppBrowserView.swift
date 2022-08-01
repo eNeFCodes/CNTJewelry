@@ -27,6 +27,7 @@ struct InAppBrowserView: View {
       .frame(width: geometry.size.width, alignment: .top)
     }
     .ignoresSafeArea()
+    .navigationBarHidden(true)
     .background(ColorCollection.black)
   }
 
@@ -64,7 +65,8 @@ struct InAppBrowserView: View {
 
   private func buildContentViewStack(geometry: GeometryProxy) -> some View {
     VStack {
-      ColorCollection.white
+      SafariWrapperView(model: .init(url: url,
+                                     configuration: .init()))
     }
     .frame(width: geometry.size.width, alignment: .center)
     .background(ColorCollection.white)

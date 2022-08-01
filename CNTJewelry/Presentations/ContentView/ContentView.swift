@@ -17,7 +17,8 @@ struct ContentView: View {
       // WelcomeView(model: model.welcome)
 //      LoginView(model: .init())
       // AddTakeAwayView(model: .init())
-      ForgotPasswordView(model: .init())
+      //ForgotPasswordView(model: .init())
+      InAppBrowserView(title: "Browser", url: URL(string: "https://github.com/eNeFCodes")!)
     }
   }
 
